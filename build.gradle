@@ -1,0 +1,60 @@
+plugins {
+    id 'java'
+    id 'checkstyle'
+    id 'com.github.spotbugs' version '1.6.9'
+}
+
+apply plugin: 'com.github.spotbugs'
+apply plugin: 'jacoco'
+
+group 'com.labs.introtoprogramming'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+//noinspection GroovyAssignabilityCheck
+task checkSpotBugsReport{
+    doLast {
+        def xmlReport = spotbugsMain.reports.xml
+        if (!xmlReport.destination.exists()) return
+        def slurped = new XmlSlurper().parse(xmlReport.destination)
+        def report = ""
+        slurped['BugInstance'].eachWithIndex { bug, index ->
+            report += "${index + 1}. Spotted bug risk ${bug.@'type'} of category ${bug.@'category'} "
+            report += "in the following places"
+            bug['SourceLine'].each { place ->
+                report += "\n       ${place.@'classname'} at lines ${place.@'start'}:${place.@'end'}"
+            }
+        }
+        if (report.length() > 1) {
+            logger.error "[SPOTBUGS]\n ${report}"
+        }
+    }
+}
+
+spotbugsMain.finalizedBy checkSpotBugsReport
+
+spotbugs {
+    effort = "max"
+    reportLevel = "high"
+    ignoreFailures = false
+}
+
+checkstyle {
+    toolVersion '8.17'
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
+}
