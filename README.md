@@ -6,7 +6,7 @@ Solution for [assignment #5](https://github.com/ProgramEngineeringKPI/Introducti
 
 Variant: 0
 
-This program render a 3d object onto a 2d plane.
+This program renders 3d scenes.
 
 TODO: add usage here.
 
