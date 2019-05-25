@@ -7,7 +7,7 @@ plugins {
 apply plugin: 'com.github.spotbugs'
 apply plugin: 'jacoco'
 
-group 'com.labs.introtoprogramming'
+group 'labs.introtoprogramming'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
