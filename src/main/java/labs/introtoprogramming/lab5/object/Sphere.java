@@ -9,6 +9,12 @@ public class Sphere extends SceneObject {
 
   private double radius;
 
+  /**
+   * Representation of spherical object.
+   *
+   * @param transform container of object transformations
+   * @param radius size of sphere
+   */
   public Sphere(Transform transform, double radius) {
     super(transform);
     this.radius = radius;
@@ -18,7 +24,7 @@ public class Sphere extends SceneObject {
   public boolean intersect(Ray ray) {
     Vector3 originToCenter = transform.position().subtract(ray.getOrigin());
     double distToCenter = originToCenter.dotProduct(ray.getDirection());
-    double sqrtDistToRay = originToCenter.sqrtMagnitude() - distToCenter * distToCenter;
+    double sqrtDistToRay = originToCenter.magnitudeSquared() - distToCenter * distToCenter;
     if (sqrtDistToRay > radius * radius) {
       return false;
     }
@@ -39,7 +45,7 @@ public class Sphere extends SceneObject {
         intersection = firstIntersection;
       }
     }
-    ray.setMultiplier(intersection);
+    ray.setScale(intersection);
     return true;
   }
 }

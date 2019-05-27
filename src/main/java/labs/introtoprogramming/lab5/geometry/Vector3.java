@@ -1,6 +1,14 @@
 package labs.introtoprogramming.lab5.geometry;
 
 public class Vector3 {
+  // Accuracy of comparing two double values
+  private static final double COORDINATES_PRECISION = 1e-10;
+
+  public static final Vector3 ZERO = new Vector3(0, 0, 0);
+  public static final Vector3 RIGHT = new Vector3(1, 0, 0);
+  public static final Vector3 UP = new Vector3(0, 1, 0);
+  public static final Vector3 FORWARD = new Vector3(0, 0, 1);
+  public static final Vector3 ONE = new Vector3(1, 1, 1);
 
   private final double x;
   private final double y;
@@ -13,10 +21,10 @@ public class Vector3 {
   }
 
   public double magnitude() {
-    return Math.sqrt(sqrtMagnitude());
+    return Math.sqrt(magnitudeSquared());
   }
 
-  public double sqrtMagnitude() {
+  public double magnitudeSquared() {
     return x * x + y * y + z * z;
   }
 
@@ -30,11 +38,7 @@ public class Vector3 {
   }
 
   public double distance(Vector3 v) {
-    return new Vector3(
-            v.x - x,
-            v.y - y,
-            v.z - z
-    ).magnitude();
+    return subtract(v).magnitude();
   }
 
   public double dotProduct(Vector3 v) {
@@ -66,33 +70,13 @@ public class Vector3 {
     if (!(obj instanceof Vector3)) return false;
     if (obj == this) return true;
     Vector3 vector = (Vector3) obj;
-    return Math.abs(vector.x - x) < 1e-10 &&
-            Math.abs(vector.y - y) < 1e-10 &&
-            Math.abs(vector.z - z) < 1e-10;
+    return Math.abs(vector.x - x) < COORDINATES_PRECISION &&
+            Math.abs(vector.y - y) < COORDINATES_PRECISION &&
+            Math.abs(vector.z - z) < COORDINATES_PRECISION;
   }
 
   @Override
   public int hashCode() {
     return (int) (x + y + z);
-  }
-
-  public static Vector3 zero() {
-    return new Vector3(0, 0, 0);
-  }
-
-  public static Vector3 right() {
-    return new Vector3(1, 0, 0);
-  }
-
-  public static Vector3 up() {
-    return new Vector3(0, 1, 0);
-  }
-
-  public static Vector3 forward() {
-    return new Vector3(0, 0, 1);
-  }
-
-  public static Vector3 one() {
-    return new Vector3(1, 1, 1);
   }
 }

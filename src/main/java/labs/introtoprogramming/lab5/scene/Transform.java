@@ -7,18 +7,24 @@ public class Transform {
   private Vector3 rotation;
   private Vector3 scale;
 
+  /**
+   * Container of object transformations.
+   *
+   * @param position position of object relatively to world coordinates
+   * @param rotation rotation around axes in euler angels
+   */
   public Transform(Vector3 position, Vector3 rotation) {
     this.position = position;
     this.rotation = rotation;
-    this.scale = Vector3.one();
+    this.scale = Vector3.ONE;
   }
 
   public Transform(Vector3 position) {
-    this(position, Vector3.zero());
+    this(position, Vector3.ZERO);
   }
 
   public Transform() {
-    this(Vector3.zero(), Vector3.zero());
+    this(Vector3.ZERO, Vector3.ZERO);
   }
 
   public Vector3 position() {

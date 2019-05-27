@@ -14,33 +14,33 @@ public class SphereTests {
 
   @Test
   public void testIntersection() {
-    Ray ray = new Ray(Vector3.zero(), Vector3.right());
-    Sphere sphere = new Sphere(new Transform(Vector3.right().multiply(2)), 1);
+    Ray ray = new Ray(Vector3.ZERO, Vector3.RIGHT);
+    Sphere sphere = new Sphere(new Transform(Vector3.RIGHT.multiply(2)), 1);
     assertTrue(sphere.intersect(ray));
-    assertEquals(ray.getMultiplier(), 1, DELTA);
+    assertEquals(ray.getScale(), 1, DELTA);
   }
 
   @Test
   public void testIntersectionInner() {
-    Ray ray = new Ray(Vector3.zero(), Vector3.right());
-    Sphere sphere = new Sphere(new Transform(Vector3.zero()), 1);
+    Ray ray = new Ray(Vector3.ZERO, Vector3.RIGHT);
+    Sphere sphere = new Sphere(new Transform(Vector3.ZERO), 1);
     assertTrue(sphere.intersect(ray));
-    assertEquals(ray.getMultiplier(), 1, DELTA);
+    assertEquals(ray.getScale(), 1, DELTA);
   }
 
   @Test
   public void testNoIntersection() {
-    Ray ray = new Ray(Vector3.zero(), Vector3.right());
-    Sphere sphere = new Sphere(new Transform(Vector3.one().multiply(2)), 1);
+    Ray ray = new Ray(Vector3.ZERO, Vector3.RIGHT);
+    Sphere sphere = new Sphere(new Transform(Vector3.ONE.multiply(2)), 1);
     assertFalse(sphere.intersect(ray));
-    assertEquals(ray.getMultiplier(), 1, DELTA);
+    assertEquals(ray.getScale(), 1, DELTA);
   }
 
   @Test
   public void testIntersectionOppositeDirection() {
-    Ray ray = new Ray(Vector3.zero(), Vector3.right().multiply(-1));
-    Sphere sphere = new Sphere(new Transform(Vector3.right().multiply(2)), 1);
+    Ray ray = new Ray(Vector3.ZERO, Vector3.RIGHT.multiply(-1));
+    Sphere sphere = new Sphere(new Transform(Vector3.RIGHT.multiply(2)), 1);
     assertFalse(sphere.intersect(ray));
-    assertEquals(ray.getMultiplier(), 1, DELTA);
+    assertEquals(ray.getScale(), 1, DELTA);
   }
 }

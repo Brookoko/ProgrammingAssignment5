@@ -7,6 +7,12 @@ public class SceneObject {
   protected Transform transform;
   protected Mesh mesh;
 
+  /**
+   * Base class of scene objects.
+   *
+   * @param transform container of object transformations
+   * @param mesh container of
+   */
   public SceneObject(Transform transform, Mesh mesh) {
     this.transform = transform;
     this.mesh = mesh;

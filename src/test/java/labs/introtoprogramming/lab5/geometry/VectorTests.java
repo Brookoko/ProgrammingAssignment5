@@ -10,53 +10,53 @@ public class VectorTests {
 
   @Test
   public void testSqrtMagnitude() {
-    Vector3 vector = Vector3.one();
-    assertEquals(3, vector.sqrtMagnitude(), DELTA);
+    Vector3 vector = Vector3.ONE;
+    assertEquals(3, vector.magnitudeSquared(), DELTA);
   }
 
   @Test
   public void testMagnitude() {
-    Vector3 vector = Vector3.right();
+    Vector3 vector = Vector3.RIGHT;
     assertEquals(1, vector.magnitude(), DELTA);
   }
 
   @Test
   public void testNormalize() {
     Vector3 a = new Vector3(2, 4, 4);
-    assertEquals(new Vector3( 2. / 6, 4. / 6, 4. / 6), a.normalize());
+    assertEquals(new Vector3( 2.0 / 6, 4.0 / 6, 4.0 / 6), a.normalize());
   }
 
   @Test
   public void testNormalizeZeroVector() {
-    Vector3 a = Vector3.zero();
-    assertEquals(Vector3.zero(), a.normalize());
+    Vector3 a = Vector3.ZERO;
+    assertEquals(Vector3.ZERO, a.normalize());
   }
 
   @Test
   public void testDistance() {
-    Vector3 from = Vector3.zero();
-    Vector3 to = Vector3.right();
+    Vector3 from = Vector3.ZERO;
+    Vector3 to = Vector3.RIGHT;
     assertEquals(1, from.distance(to), DELTA);
   }
 
   @Test
   public void testDistanceToSame() {
-    Vector3 vector = Vector3.one();
+    Vector3 vector = Vector3.ONE;
     assertEquals(0, vector.distance(vector), DELTA);
   }
 
   @Test
   public void testDotProduct() {
-    Vector3 a = Vector3.one();
-    Vector3 b = Vector3.one().multiply(3);
+    Vector3 a = Vector3.ONE;
+    Vector3 b = Vector3.ONE.multiply(3);
     assertEquals(9, a.dotProduct(b), DELTA);
   }
 
   @Test
   public void testCrossProduct() {
-    Vector3 a = Vector3.right();
-    Vector3 b = Vector3.up();
-    assertEquals(Vector3.forward(), a.crossProduct(b));
+    Vector3 a = Vector3.RIGHT;
+    Vector3 b = Vector3.UP;
+    assertEquals(Vector3.FORWARD, a.crossProduct(b));
   }
 
   @Test
@@ -82,8 +82,8 @@ public class VectorTests {
 
   @Test
   public void testEquals() {
-    Vector3 a = Vector3.one();
-    Vector3 b = Vector3.one();
+    Vector3 a = Vector3.ONE;
+    Vector3 b = Vector3.ONE;
     assertEquals(a, b);
   }
 
@@ -95,21 +95,35 @@ public class VectorTests {
 
   @Test
   public void testEqualsNotVector() {
-    Vector3 a = Vector3.one();
+    Vector3 a = Vector3.ONE;
     Ray ray = new Ray(a, a);
     assertNotEquals(a, ray);
   }
 
   @Test
-  public void testEqualsBiggerDelta() {
-    Vector3 a = Vector3.one();
-    Vector3 b = Vector3.one().add(Vector3.one().multiply(DELTA * 10));
+  public void testEqualsBiggerDeltaX() {
+    Vector3 a = Vector3.ONE;
+    Vector3 b = Vector3.ONE.add(Vector3.RIGHT.multiply(DELTA * 10));
+    assertNotEquals(a, b);
+  }
+
+  @Test
+  public void testEqualsBiggerDeltaY() {
+    Vector3 a = Vector3.ONE;
+    Vector3 b = Vector3.ONE.add(Vector3.UP.multiply(DELTA * 10));
+    assertNotEquals(a, b);
+  }
+
+  @Test
+  public void testEqualsBiggerDeltaZ() {
+    Vector3 a = Vector3.ONE;
+    Vector3 b = Vector3.ONE.add(Vector3.FORWARD.multiply(DELTA * 10));
     assertNotEquals(a, b);
   }
 
   @Test
   public void testHashCode() {
-    Vector3 a = Vector3.one();
+    Vector3 a = Vector3.ONE;
     assertEquals(3, a.hashCode(), DELTA);
   }
 }

@@ -3,24 +3,24 @@ package labs.introtoprogramming.lab5.geometry;
 public class Ray {
   private Vector3 origin;
   private Vector3 direction;
-  private double t;
+  private double scale;
 
-  public Ray(Vector3 origin, Vector3 direction, double t) {
+  public Ray(Vector3 origin, Vector3 direction, double scale) {
     this.origin = origin;
     this.direction = direction;
-    this.t = t;
+    this.scale = scale;
   }
 
   public Ray(Vector3 origin, Vector3 direction) {
     this(origin, direction, 1);
   }
 
-  public void setMultiplier(double t) {
-    this.t = t;
+  public void setScale(double scale) {
+    this.scale = scale;
   }
 
-  public double getMultiplier() {
-    return t;
+  public double getScale() {
+    return scale;
   }
 
   public Vector3 getOrigin() {
@@ -36,6 +36,6 @@ public class Ray {
   }
 
   public Vector3 getPoint() {
-    return origin.add(direction.multiply(t));
+    return origin.add(direction.multiply(scale));
   }
 }

@@ -1,6 +1,6 @@
 package labs.introtoprogramming.lab5.scene;
 
-import labs.introtoprogramming.lab5.exception.NoCamerException;
+import labs.introtoprogramming.lab5.exception.NoCameraException;
 import labs.introtoprogramming.lab5.geometry.Ray;
 import labs.introtoprogramming.lab5.geometry.Vector3;
 import labs.introtoprogramming.lab5.graphics.Raster;
@@ -21,14 +21,14 @@ public class RasterRender implements SceneRender {
 
   @Override
   public void render(Scene scene) {
-    Camera camera = scene.getCamera().orElseThrow(NoCamerException::new);
+    Camera camera = scene.getCamera().orElseThrow(NoCameraException::new);
     intractable = scene.getSceneObjects().stream()
             .filter(obj -> !(obj instanceof PointLight) && !(obj instanceof Camera))
             .collect(Collectors.toList());
     Vector3 pos = camera.getTransform().position();
     double aspectRation = (double) width / height;
     double fieldOfView = Math.tan(camera.fieldOfView() / 2);
-    Ray primaryRay = new Ray(pos, Vector3.zero());
+    Ray primaryRay = new Ray(pos, Vector3.ZERO);
     for (int y = 0; y < height; y++) {
       double normalizedY = 1 - 2 * (y + 0.5) / height;
       double cameraY = (1 - 2 * normalizedY) * fieldOfView;
