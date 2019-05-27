@@ -1,25 +1,19 @@
 package labs.introtoprogramming.lab5.graphics;
 
-public class Raster {
+import java.awt.Color;
+import java.awt.Image;
 
-  private final int width;
-  private final int height;
+public interface Raster {
 
-  private byte[][] red;
-  private byte[][] green;
-  private byte[][] blue;
+  Image toImage();
 
-  public Raster(int width, int height) {
-    this.width = width;
-    this.height = height;
-    this.red = new byte[width][height];
-    this.green = new byte[width][height];
-    this.blue = new byte[width][height];
-  }
+  void setPixel(int x, int y, int rgb);
+  void setPixel(int x, int y, byte red, byte green, byte blue);
 
-  public void setPixel(int x, int y, byte red, byte green, byte blue) {
-    this.red[x][y] = red;
-    this.green[x][y] = green;
-    this.blue[x][y] = blue;
-  }
+  Color getPixelColor(int x, int y);
+  int getPixelRGB(int x, int y);
+
+  int getWidth();
+  int getHeight();
+
 }
