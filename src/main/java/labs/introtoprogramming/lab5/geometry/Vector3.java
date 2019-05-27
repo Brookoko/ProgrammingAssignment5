@@ -22,30 +22,43 @@ public class Vector3 {
 
   public Vector3 normalize() {
     double magnitude = magnitude();
-    return new Vector3(x / magnitude, y / magnitude, z / magnitude);
+    if (magnitude > 0) {
+      double inverseMagnitude = 1 / magnitude;
+      return multiply(inverseMagnitude);
+    }
+    return multiply(1);
   }
 
-  public double distance(Vector3 target) {
-    double X = Math.pow(target.x - x, 2);
-    double Y = Math.pow(target.y - y, 2);
-    double Z = Math.pow(target.z - z, 2);
-    return Math.sqrt(X + Y + Z);
+  public double distance(Vector3 v) {
+    return new Vector3(
+            v.x - x,
+            v.y - y,
+            v.z - z
+    ).magnitude();
   }
 
-  public double dotProduct(Vector3 target) {
-    return target.x * x + target.y * y + target.z * z;
+  public double dotProduct(Vector3 v) {
+    return v.x * x + v.y * y + v.z * z;
+  }
+
+  public Vector3 crossProduct(Vector3 v) {
+    return new Vector3(
+            y * v.z - z * v.y,
+            z * v.x - x * v.z,
+            x * v.y - y * v.x
+    );
   }
 
   public Vector3 multiply(double t) {
     return new Vector3(x * t, y * t, z * t);
   }
 
-  public Vector3 subtract(Vector3 target) {
-    return new Vector3(x - target.x, y - target.y, z - target.z);
+  public Vector3 subtract(Vector3 v) {
+    return new Vector3(x - v.x, y - v.y, z - v.z);
   }
 
-  public Vector3 add(Vector3 target) {
-    return new Vector3(x + target.x, y + target.y, z + target.z);
+  public Vector3 add(Vector3 v) {
+    return new Vector3(x + v.x, y + v.y, z + v.z);
   }
 
   @Override

@@ -3,13 +3,14 @@ package labs.introtoprogramming.lab5.object;
 import labs.introtoprogramming.lab5.geometry.Ray;
 import labs.introtoprogramming.lab5.geometry.Vector3;
 import labs.introtoprogramming.lab5.scene.SceneObject;
+import labs.introtoprogramming.lab5.scene.Transform;
 
 public class Sphere extends SceneObject {
 
   private double radius;
 
-  public Sphere(Vector3 position, double radius) {
-    super(position);
+  public Sphere(Transform transform, double radius) {
+    super(transform);
     this.radius = radius;
   }
 

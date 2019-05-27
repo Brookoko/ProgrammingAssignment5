@@ -1,7 +1,6 @@
 package labs.introtoprogramming.lab5.scene;
 
 import labs.introtoprogramming.lab5.geometry.Ray;
-import labs.introtoprogramming.lab5.geometry.Vector3;
 
 public class SceneObject {
 
@@ -15,10 +14,6 @@ public class SceneObject {
 
   public SceneObject(Transform transform) {
     this(transform, new Mesh());
-  }
-
-  public SceneObject(Vector3 position) {
-    this(new Transform(position), new Mesh());
   }
 
   public SceneObject() {

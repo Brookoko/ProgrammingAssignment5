@@ -3,7 +3,8 @@ package labs.introtoprogramming.lab5.scene;
 import java.awt.Color;
 
 public class Mesh {
-  public Color color;
+
+  private Color color;
 
   public Mesh(Color color) {
     this.color = color;

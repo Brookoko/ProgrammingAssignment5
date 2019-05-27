@@ -31,6 +31,10 @@ public class Ray {
     return direction;
   }
 
+  public void setDirection(Vector3 direction) {
+    this.direction = direction;
+  }
+
   public Vector3 getPoint() {
     return origin.add(direction.multiply(t));
   }
