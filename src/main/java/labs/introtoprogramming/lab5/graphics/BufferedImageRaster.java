@@ -11,9 +11,13 @@ public class BufferedImageRaster implements Raster {
 
   public BufferedImageRaster(int width, int height) {
     // Image Data Model compatible with default screen device to avoid any conversions while rendering
-    image = GraphicsEnvironment.getLocalGraphicsEnvironment()
+    if (!GraphicsEnvironment.isHeadless()) {
+      image = GraphicsEnvironment.getLocalGraphicsEnvironment()
               .getDefaultScreenDevice()
               .getDefaultConfiguration().createCompatibleImage(width, height);
+    } else {
+      image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+    }
   }
 
   @Override
