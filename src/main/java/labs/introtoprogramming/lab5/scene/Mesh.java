@@ -17,4 +17,8 @@ public class Mesh {
   public Color color() {
     return color;
   }
+
+  public void setColor(Color color) {
+    this.color = color;
+  }
 }

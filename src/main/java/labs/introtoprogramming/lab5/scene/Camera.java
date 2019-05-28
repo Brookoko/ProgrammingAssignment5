@@ -1,6 +1,6 @@
 package labs.introtoprogramming.lab5.scene;
 
-public abstract class Camera extends SceneObject {
+public class Camera extends SceneObject {
   private static final double DEFAULT_SIZE = 1;
 
   private double size;
