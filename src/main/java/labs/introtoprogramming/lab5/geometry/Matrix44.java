@@ -88,7 +88,7 @@ public class Matrix44 {
     return v.add(new Vector3(m[0][3], m[1][3], m[2][3]));
   }
 
-  double[][] multiply(double[][] a, double[][] b) {
+  private double[][] multiply(double[][] a, double[][] b) {
     double[][] res = new double[a.length][b[0].length];
     for (int i = 0; i < 3; i++) {
       for (int j = 0; j < 3; j++) {

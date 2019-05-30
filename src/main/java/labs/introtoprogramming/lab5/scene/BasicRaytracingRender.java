@@ -51,14 +51,14 @@ public class BasicRaytracingRender implements SceneRender {
     SceneObject intersection = null;
     double minDistance = Double.POSITIVE_INFINITY;
     for (SceneObject obj : scene.getSceneObjects()) {
-      double distance = obj.getTransform().position().distance(primaryRay.getOrigin());
-      if (distance < minDistance) {
         if (obj.intersect(primaryRay)) {
-          minDistance = distance;
-          intersection = obj;
+          double distance = primaryRay.getScale();
+          if (distance < minDistance) {
+            minDistance = distance;
+            intersection = obj;
+          }
         }
       }
-    }
     return intersection;
   }
 }

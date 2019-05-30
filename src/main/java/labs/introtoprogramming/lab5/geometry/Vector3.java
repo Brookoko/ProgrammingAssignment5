@@ -10,9 +10,9 @@ public class Vector3 implements Cloneable {
   public static final Vector3 FORWARD = new Vector3(0, 0, 1);
   public static final Vector3 ONE = new Vector3(1, 1, 1);
 
-  final double x;
-  final double y;
-  final double z;
+  public final double x;
+  public final double y;
+  public final double z;
 
   public Vector3(double x, double y, double z) {
     this.x = x;

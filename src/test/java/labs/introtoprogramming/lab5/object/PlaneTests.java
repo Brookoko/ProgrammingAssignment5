@@ -1,5 +1,6 @@
 package labs.introtoprogramming.lab5.object;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -9,12 +10,14 @@ import labs.introtoprogramming.lab5.scene.Transform;
 import org.junit.Test;
 
 public class PlaneTests {
+  private static final double DELTA = 1e-10;
 
   @Test
   public void testIntersection() {
     Plane plane = new Plane(new Transform(Vector3.ZERO));
     Ray ray = new Ray(Vector3.UP.multiply(-3), Vector3.UP.multiply(1));
     assertTrue(plane.intersect(ray));
+    assertEquals(3, ray.getScale(), DELTA);
   }
 
   @Test
@@ -22,6 +25,7 @@ public class PlaneTests {
     Plane plane = new Plane(new Transform(Vector3.ZERO));
     Ray ray = new Ray(Vector3.ZERO, Vector3.FORWARD);
     assertFalse(plane.intersect(ray));
+    assertEquals(1, ray.getScale(), DELTA);
   }
 
   @Test
@@ -29,5 +33,6 @@ public class PlaneTests {
     Plane plane = new Plane(new Transform(Vector3.ZERO));
     Ray ray = new Ray(Vector3.UP.multiply(3), Vector3.UP.multiply(-1));
     assertFalse(plane.intersect(ray));
+    assertEquals(1, ray.getScale(), DELTA);
   }
 }

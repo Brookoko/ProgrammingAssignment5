@@ -24,7 +24,11 @@ public class Disk extends Plane {
       Vector3 intersection = ray.getPoint();
       Vector3 direction = intersection.subtract(transform.position());
       double distance = direction.magnitudeSquared();
-      return (distance <= radius * radius);
+      if (distance > radius * radius) {
+        ray.setScale(1);
+        return false;
+      }
+      return true;
     }
     return false;
   }
