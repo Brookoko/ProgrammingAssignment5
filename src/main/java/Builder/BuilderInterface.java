@@ -44,7 +44,7 @@ public interface BuilderInterface {
 
    void setCurrentGroupNames(String[] names);
 
-    void setCurrentSmoothingGroup(int groupNumber);
+    void setCurrentSmoothingGroup(long groupNumber);
 
     void setCurrentUseMap(String name);
 

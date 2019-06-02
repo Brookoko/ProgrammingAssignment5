@@ -30,9 +30,9 @@ public class BuildMe implements BuilderInterface {
     // Each face vertex as it is parsed, minus the redundant face vertices.
     public ArrayList<VertexFace> faceVertixList = new ArrayList<VertexFace>();
     public ArrayList<FacePlate> faces = new ArrayList<FacePlate>();
-    public HashMap<Integer, ArrayList<FacePlate>> smoothingGroups = new HashMap<Integer, ArrayList<FacePlate>>();
+    public HashMap<Long, ArrayList<FacePlate>> smoothingGroups = new HashMap<Long, ArrayList<FacePlate>>();
 
-    private int currentSmoothingGroupNumber = NO_SMOOTHING_GROUP;
+    private long currentSmoothingGroupNumber = NO_SMOOTHING_GROUP;
     private ArrayList<FacePlate> currentSmoothingGroup = null;
     public HashMap<String, ArrayList<FacePlate>> groups = new HashMap<String, ArrayList<FacePlate>>();
     private ArrayList<String> currentGroups = new ArrayList<String>();
@@ -201,7 +201,7 @@ public class BuildMe implements BuilderInterface {
         this.objectName = name;
     }
 
-    public void setCurrentSmoothingGroup(int groupNumber) {
+    public void setCurrentSmoothingGroup(long groupNumber) {
         currentSmoothingGroupNumber = groupNumber;
         if (currentSmoothingGroupNumber == NO_SMOOTHING_GROUP) {
             return;

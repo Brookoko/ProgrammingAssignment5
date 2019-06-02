@@ -164,9 +164,9 @@ public class ParseMe {
 
     private void processSmoothingGroup(String line) {
         line = line.substring(OBJ_SMOOTHING_GROUP.length()).trim();
-        int groupNumber = 0;
+        long groupNumber = 0;
         if (!line.equalsIgnoreCase("off")) {
-            groupNumber = Integer.parseInt(line);
+            groupNumber = Long.parseLong(line);
         }
         builder.setCurrentSmoothingGroup(groupNumber);
     }
