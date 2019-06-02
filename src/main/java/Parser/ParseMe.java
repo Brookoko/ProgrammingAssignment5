@@ -214,11 +214,11 @@ public class ParseMe {
 
     private void parseMtlFile(String mtlFilename) throws FileNotFoundException, IOException {
         int lineCount = 0;
-        FileReader fileReader = null;
+        InputStreamReader fileReader = null;
         BufferedReader bufferedReader = null;
 
         File mtlFile = new File(objFile.getParent(), mtlFilename);
-        fileReader = new FileReader(mtlFile);
+        fileReader = new InputStreamReader(new FileInputStream(mtlFile), "UTF-8");
         bufferedReader = new BufferedReader(fileReader);
 
         String line = null;
