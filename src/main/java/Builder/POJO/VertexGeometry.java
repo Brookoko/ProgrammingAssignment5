@@ -13,7 +13,7 @@ public class VertexGeometry {
 
     @Override
     public String toString() {
-        return "Builder.POJO.VertexGeometry{" +
+        return "VertexGeometry{" +
                 "x :: " + x +
                 ", y :: " + y +
                 ", z :: " + z +
