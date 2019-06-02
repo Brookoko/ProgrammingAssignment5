@@ -64,11 +64,11 @@ public class ParseMe {
 
     private void parseObjFile(String objFilename) throws FileNotFoundException, IOException {
         int lineCount = 0;
-        FileReader fileReader = null;
+        InputStreamReader fileReader = null;
         BufferedReader bufferedReader = null;
 
         objFile = new File(objFilename);
-        fileReader = new FileReader(objFile);
+        fileReader = new InputStreamReader(new FileInputStream(objFilename), "UTF-8");
         bufferedReader = new BufferedReader(fileReader);
 
         String line = null;
