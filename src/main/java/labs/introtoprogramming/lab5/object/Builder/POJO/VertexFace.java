@@ -1,4 +1,4 @@
-package Builder.POJO;
+package labs.introtoprogramming.lab5.object.Builder.POJO;
 
 public class VertexFace {
     public int index = -1;

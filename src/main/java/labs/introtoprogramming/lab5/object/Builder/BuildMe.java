@@ -1,6 +1,6 @@
-package Builder;
+package labs.introtoprogramming.lab5.object.Builder;
 
-import Builder.POJO.*;
+import labs.introtoprogramming.lab5.object.Builder.POJO.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,19 +15,15 @@ public class BuildMe implements BuilderInterface {
 
     public String objFilename = null;
 
-    // these accumulate each type of vertex as they are parsed, so they can then be referenced via index.
 
     public ArrayList<VertexGeometry> verticesG = new ArrayList<VertexGeometry>();
     public ArrayList<VertexTexture> verticesT = new ArrayList<VertexTexture>();
     public ArrayList<VertexNormal> verticesN = new ArrayList<VertexNormal>();
 
-    // we use this map to consolidate redundant face vertices.  Since a face is defined as a list of index
-    // triplets, each index referring to a vertex within ONE of the three arrayLists verticesG,  verticesT
-    // or verticesN, two faces might end up specifying the same combination.  Clearly
-    // combination should be shared between both faces
+
 
     HashMap<String, VertexFace> faceVertixMap = new HashMap<String, VertexFace>();
-    // Each face vertex as it is parsed, minus the redundant face vertices.
+
     public ArrayList<VertexFace> faceVertixList = new ArrayList<VertexFace>();
     public ArrayList<FacePlate> faces = new ArrayList<FacePlate>();
     public HashMap<Long, ArrayList<FacePlate>> smoothingGroups = new HashMap<Long, ArrayList<FacePlate>>();
@@ -56,12 +52,12 @@ public class BuildMe implements BuilderInterface {
 
     public void addVertexGeometric(float x, float y, float z) {
         verticesG.add(new VertexGeometry(x, y, z));
-//        log.log(INFO,"Added geometric vertex " + verticesG.size() + " = " + verticesG.get(verticesG.size() - 1));
+
     }
 
     public void addVertexTexture(float u, float v) {
         verticesT.add(new VertexTexture(u, v));
-//        log.log(INFO,"Added texture  vertex " + verticesT.size() + " = " + verticesT.get(verticesT.size() - 1));
+
     }
 
     public void addVertexNormal(float x, float y, float z) {
@@ -85,9 +81,7 @@ public class BuildMe implements BuilderInterface {
         int loopi = 0;
 
         while (loopi < vertexIndices.length) {
-            // >     v is the vertex reference number for a point element. Each point
-            // >     element requires one vertex. Positive values indicate absolute
-            // >     vertex numbers. Negative values indicate relative vertex numbers.
+
 
             VertexFace fv = new VertexFace();
 
@@ -127,8 +121,7 @@ public class BuildMe implements BuilderInterface {
                     vertexIndex = vertexIndex + verticesN.size();
                 }
                 if (((vertexIndex - 1) >= 0) && ((vertexIndex - 1) < verticesN.size())) {
-                    // Note: vertex indices are 1-indexed, i.e. they start at
-                    // one, so we offset by -1 for the 0-indexed array lists.
+
                     fv.vertexN = verticesN.get(vertexIndex - 1);
                 } else {
                     log.log(SEVERE, "Index for vertex normal=" + vertexIndex +
@@ -168,7 +161,7 @@ public class BuildMe implements BuilderInterface {
 
         faces.add(face);
 
-        // collect some stats for laughs
+
         if (face.vertices.size() == 3) {
             faceTriCount++;
         } else if (face.vertices.size() == 4) {
@@ -183,8 +176,7 @@ public class BuildMe implements BuilderInterface {
         currentGroups.clear();
         currentGroupFaceLists.clear();
         if (null == names) {
-            // Set current group to 'none' - so since we've already
-            // cleared the currentGroups lists, just return.
+
             return;
         }
         for (int loopi = 0; loopi < names.length; loopi++) {

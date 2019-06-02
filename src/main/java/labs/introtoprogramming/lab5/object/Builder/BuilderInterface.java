@@ -1,4 +1,4 @@
-package Builder;
+package labs.introtoprogramming.lab5.object.Builder;
 
 public interface BuilderInterface {
     public final int NO_SMOOTHING_GROUP = 0;

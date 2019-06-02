@@ -3,7 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="b26c0e44-f3f0-4123-9782-0c1da57cda60" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/ParseMe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser/ParseMe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Builder/BuildMe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/BuildMe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Builder/BuilderInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/BuilderInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Builder/POJO/FacePlate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/FacePlate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Builder/POJO/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/Material.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Builder/POJO/ReflectivityTransmiss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/ReflectivityTransmiss.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Builder/POJO/VertexFace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/VertexFace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Builder/POJO/VertexGeometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/VertexGeometry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Builder/POJO/VertexNormal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/VertexNormal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Builder/POJO/VertexTexture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/VertexTexture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ParseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/object/ParseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/ParseMe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Parser/ParseMe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Parser/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Parser/StringUtils.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -35,46 +46,45 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ParseTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/Material.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Liberty-MattoniBasamento-1.bmp">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Liberty-GreenBronze-1.bmp">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Liberty-DecorazioniMarmo-2.bmp">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LibertStatue.obj">
+        <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/ReflectivityTransmiss.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="351" column="23" selection-start-line="351" selection-start-column="23" selection-end-line="351" selection-end-column="23" />
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/FacePlate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Parser/ParseMe.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/VertexTexture.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="226" column="45" lean-forward="true" selection-start-line="226" selection-start-column="45" selection-end-line="226" selection-end-column="45" />
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Parser/StringUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,23 +93,51 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Liberty-PortaBronzo-1.bmp">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/VertexFace.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Liberty-Pavimentazione-1.bmp">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/VertexGeometry.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LibertStatue.mtl">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/VertexNormal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gradlew.bat">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/BuilderInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret lean-forward="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/BuildMe.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="625">
+              <caret line="330" lean-forward="true" selection-start-line="330" selection-end-line="330" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -157,10 +195,14 @@
         <option value="$PROJECT_DIR$/src/main/java/Builder/Material.java" />
         <option value="$PROJECT_DIR$/src/main/java/Builder/POJO/Material.java" />
         <option value="$PROJECT_DIR$/src/main/java/Parser/StringUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ParseTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Builder/BuilderInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/Builder/BuildMe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ParseTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Parser/ParseMe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Parser/ParseMe.java" />
+        <option value="$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/object/ParseTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Parser/StringUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/BuildMe.java" />
       </list>
     </option>
   </component>
@@ -175,6 +217,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -206,6 +250,25 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lab5" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProgrammingAssignment5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProgrammingAssignment5" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lab5" type="462c0819:PsiDirectoryNode" />
+              <item name="object" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProgrammingAssignment5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProgrammingAssignment5" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lab5" type="462c0819:PsiDirectoryNode" />
+              <item name="object" type="462c0819:PsiDirectoryNode" />
               <item name="Builder" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -214,6 +277,8 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="lab5" type="462c0819:PsiDirectoryNode" />
+              <item name="object" type="462c0819:PsiDirectoryNode" />
               <item name="Builder" type="462c0819:PsiDirectoryNode" />
               <item name="POJO" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -221,16 +286,12 @@
               <item name="ProgrammingAssignment5" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProgrammingAssignment5" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Parser" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -250,6 +311,8 @@
       <recent name="C:\Users\ekate\IdeaProjects\ProgrammingAssignment5\src\main\java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ekate\IdeaProjects\ProgrammingAssignment5\src\test\java" />
+      <recent name="C:\Users\ekate\IdeaProjects\ProgrammingAssignment5\src\test" />
       <recent name="C:\Users\ekate\IdeaProjects\ProgrammingAssignment5\src\main\java\Builder\POJO" />
       <recent name="C:\Users\ekate\IdeaProjects\ProgrammingAssignment5\src\main\java" />
       <recent name="C:\Users\ekate\IdeaProjects\ProgrammingAssignment5\src\main\java\Builder" />
@@ -327,7 +390,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559484438004</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix problem with fileReader">
+      <created>1559489066219</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1559489066219</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -343,14 +413,13 @@
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2562039" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25955734" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Build" weight="0.3649222" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.31966054" />
@@ -358,10 +427,11 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32956153" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49899396" visible="true" weight="0.32956153" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49899396" weight="0.55162656" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.501006" side_tool="true" weight="0.32956153" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32956153" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32956153" />
+      <window_info anchor="bottom" id="Build" order="11" weight="0.3649222" />
       <window_info anchor="right" id="Gradle" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -381,17 +451,9 @@
     <MESSAGE value="fix problem with fileReader" />
     <option name="LAST_COMMIT_MESSAGE" value="fix problem with fileReader" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ParseTest.java</url>
-          <line>12</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/Main.java">
@@ -404,80 +466,10 @@
     <entry file="file://$PROJECT_DIR$/ProgrammingAssignment5.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Builder/POJO/VertexFace.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Builder/POJO/VertexTexture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Parser/StringUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="286" column="9" selection-start-line="286" selection-start-column="9" selection-end-line="286" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3460#3469#0" expanded="true" />
-            <element signature="e#7372#7381#0" expanded="true" />
-            <element signature="e#9342#9350#0" expanded="true" />
-            <element signature="e#10721#10729#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Builder/POJO/FacePlate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Builder/POJO/Material.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Builder/POJO/VertexNormal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Builder/POJO/ReflectivityTransmiss.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Builder/POJO/VertexGeometry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Builder/BuilderInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -492,62 +484,126 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Builder/BuildMe.java">
+    <entry file="file://$PROJECT_DIR$/Liberty-GreenBronze-1.bmp" />
+    <entry file="file://$PROJECT_DIR$/LibertStatue.mtl" />
+    <entry file="file://$PROJECT_DIR$/Liberty-PortaBronzo-1.bmp" />
+    <entry file="file://$PROJECT_DIR$/Liberty-Pavimentazione-1.bmp" />
+    <entry file="file://$PROJECT_DIR$/Liberty-MattoniBasamento-1.bmp" />
+    <entry file="file://$PROJECT_DIR$/Liberty-DecorazioniMarmo-2.bmp" />
+    <entry file="file://$PROJECT_DIR$/LibertStatue.obj" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/io/obj/ObjReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="32" column="105" selection-start-line="32" selection-start-column="105" selection-end-line="32" selection-end-column="105" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1467#1495#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ParseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Liberty-GreenBronze-1.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LibertStatue.mtl">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/gradlew.bat">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Liberty-PortaBronzo-1.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Liberty-Pavimentazione-1.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Liberty-MattoniBasamento-1.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Liberty-DecorazioniMarmo-2.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LibertStatue.obj">
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Sphere.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="351" column="23" selection-start-line="351" selection-start-column="23" selection-end-line="351" selection-end-column="23" />
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Parser/ParseMe.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/graphics/ArrayRasterTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="226" column="45" lean-forward="true" selection-start-line="226" selection-start-column="45" selection-end-line="226" selection-end-column="45" />
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Parser/ParseMe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="377" column="18" selection-start-line="377" selection-start-column="18" selection-end-line="377" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/object/ParseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Parser/StringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/BuilderInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/BuildMe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="330" lean-forward="true" selection-start-line="330" selection-end-line="330" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/FacePlate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/Material.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/ReflectivityTransmiss.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/VertexFace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/VertexGeometry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/VertexNormal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/VertexTexture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>

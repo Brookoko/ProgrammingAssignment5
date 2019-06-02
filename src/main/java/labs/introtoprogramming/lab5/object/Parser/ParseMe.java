@@ -1,6 +1,6 @@
-package Parser;
+package labs.introtoprogramming.lab5.object.Parser;
 
-import Builder.BuilderInterface;
+import labs.introtoprogramming.lab5.object.Builder.BuilderInterface;
 
 import java.io.*;
 import java.util.logging.Logger;
@@ -10,7 +10,6 @@ import static java.util.logging.Level.*;
 public class ParseMe {
     private Logger log = Logger.getLogger(ParseMe.class.getName());
 
-    // Tokens for parsing.
     private final static String OBJ_VERTEX_TEXTURE = "vt";
     private final static String OBJ_VERTEX_NORMAL = "vn";
     private final static String OBJ_VERTEX = "v";
@@ -85,8 +84,7 @@ public class ParseMe {
                 continue;
             }
 
-            if (line.startsWith("#")) // comment
-            {
+            if (line.startsWith("#")) {
                 continue;
             } else if (line.startsWith(OBJ_VERTEX_TEXTURE)) {
                 processVertexTexture(line);
@@ -235,7 +233,7 @@ public class ParseMe {
                 continue;
             }
 
-            if (line.startsWith("#")) // comment
+            if (line.startsWith("#"))
             {
                 continue;
             } else if (line.startsWith(MTL_NEWMTL)) {
@@ -374,6 +372,14 @@ public class ParseMe {
         line = line.substring(MTL_NS.length()).trim();
         float exponent = Float.parseFloat(line);
         builder.setNs(exponent);
+    }
+
+    @Override
+    public String toString() {
+        return "ParseMe{" +
+                "builder=" + builder +
+                ", objFile=" + objFile +
+                '}';
     }
 
     private void processSharpness(String line) {

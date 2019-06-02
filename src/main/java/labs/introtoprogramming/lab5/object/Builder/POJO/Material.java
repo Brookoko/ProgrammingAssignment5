@@ -1,6 +1,6 @@
-package Builder.POJO;
+package labs.introtoprogramming.lab5.object.Builder.POJO;
 
-import Builder.BuilderInterface;
+import labs.introtoprogramming.lab5.object.Builder.BuilderInterface;
 
 public class Material {
     public String nameOfMaterial;

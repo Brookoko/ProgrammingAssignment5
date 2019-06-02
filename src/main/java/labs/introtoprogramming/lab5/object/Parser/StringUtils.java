@@ -1,6 +1,6 @@
-package Parser;
+package labs.introtoprogramming.lab5.object.Parser;
 
-import Builder.BuilderInterface;
+import labs.introtoprogramming.lab5.object.Builder.BuilderInterface;
 
 import java.util.ArrayList;
 import java.util.logging.Logger;
@@ -101,7 +101,7 @@ public class StringUtils {
 
         ArrayList<Integer> returnList = new ArrayList<Integer>();
 
-        // Copy list into a char array.
+
         char listChars[];
         listChars = new char[list.length()];
         list.getChars(0, list.length(), listChars, 0);
@@ -149,17 +149,16 @@ public class StringUtils {
             return null;
         }
 
-        //	log.log(INFO, "list=|"+list+"|");
+
 
         String[] vertexStrings = parseWhitespaceList(list);
 
-        //	log.log(INFO, "found "+vertexStrings.length+" strings in parseWhitespaceList");
 
         ArrayList<Integer> returnList = new ArrayList<Integer>();
         Integer emptyMarker = new Integer(BuilderInterface.EMPTY_VERTEX_VALUE);
 
         for (int loopi = 0; loopi < vertexStrings.length; loopi++) {
-            //	    log.log(INFO, "parsing vertexStrings["+loopi+"]=|"+vertexStrings[loopi]+"|");
+
             parseVerticeNTuple(vertexStrings[loopi], returnList, emptyMarker, expectedValuesPerTuple);
         }
 
@@ -182,10 +181,10 @@ public class StringUtils {
         while (index < numbers.length) {
 
             if (numbers[index].trim().equals("")) {
-//                log.log(INFO, "numbers["+index+"] is empty, adding emptymarker to list");
+
                 returnList.add(emptyMarker);
             } else {
-//                                log.log(INFO, "numbers["+index+"] is NOT empty, adding parsed int "+Integer.parseInt(numbers[index])+" to list.");
+
                 returnList.add(Integer.parseInt(numbers[index]));
             }
             foundCount++;
@@ -208,7 +207,7 @@ public class StringUtils {
         ArrayList<String> returnVec = new ArrayList<String>();
         String[] returnArray = null;
 
-        // Copy list into a char array.
+
         char listChars[];
         listChars = new char[list.length()];
         list.getChars(0, list.length(), listChars, 0);
@@ -237,7 +236,7 @@ public class StringUtils {
             count = itemEnd;
             returnVec.add(newItem);
         }
-        // Convert from vector to array, and return it.
+
         returnArray = new String[1];
         returnArray = (String[]) returnVec.toArray((Object[]) returnArray);
         return returnArray;
@@ -265,7 +264,7 @@ public class StringUtils {
         String newItem = null;
 
         while (count < listChars.length) {
-            // Skip any leading whitespace
+
             itemEnd = skipWhiteSpace(count, listChars, null);
             count = itemEnd;
             if (count >= listChars.length) {
