@@ -8,7 +8,7 @@ public class ParseTest {
 
 
     @Test
-    public void ParseTest(String fileName) {
+    public void ParseTest() {
         try {
                 BuildMe builder = new BuildMe();
                 ParseMe obj = new ParseMe(builder,"LibertStatue.obj" );
