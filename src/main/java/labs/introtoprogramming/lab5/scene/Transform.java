@@ -28,15 +28,15 @@ public class Transform {
   }
 
   public Vector3 position() {
-    return position.multiply(1);
+    return new Vector3(position);
   }
 
   public Vector3 rotation() {
-    return rotation.multiply(1);
+    return new Vector3(rotation);
   }
 
   public Vector3 scale() {
-    return scale.multiply(1);
+    return new Vector3(scale);
   }
 
   public void setPosition(Vector3 position) {

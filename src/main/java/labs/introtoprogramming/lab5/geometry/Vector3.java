@@ -1,6 +1,6 @@
 package labs.introtoprogramming.lab5.geometry;
 
-public class Vector3 {
+public class Vector3 implements Cloneable {
   // Accuracy of comparing two double values
   private static final double COORDINATES_PRECISION = 1e-10;
 
@@ -18,6 +18,12 @@ public class Vector3 {
     this.x = x;
     this.y = y;
     this.z = z;
+  }
+
+  public Vector3(Vector3 v) {
+    x = v.x;
+    y = v.y;
+    z = v.z;
   }
 
   public double magnitude() {
@@ -78,5 +84,10 @@ public class Vector3 {
   @Override
   public int hashCode() {
     return (int) (x + y + z);
+  }
+
+  @Override
+  public Object clone() throws CloneNotSupportedException {
+    return super.clone();
   }
 }

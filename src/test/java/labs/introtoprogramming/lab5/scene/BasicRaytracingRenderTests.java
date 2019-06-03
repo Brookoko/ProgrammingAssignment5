@@ -81,11 +81,11 @@ public class BasicRaytracingRenderTests {
 
   @Test
   public void testRender() {
+    Raster raster = new BufferedImageRaster(100, 100);
     List<SceneObject> list = Arrays.asList(
             new Sphere(new Transform(Vector3.FORWARD.multiply(-3)), 1),
-            new Camera(new Transform(Vector3.ZERO))
+            new Camera(raster, new Transform(Vector3.ZERO))
     );
-    Raster raster = new BufferedImageRaster(100, 100);
     Scene scene = new BasicScene(list);
     BasicRaytracingRender render = new BasicRaytracingRender(raster);
     render.render(scene);

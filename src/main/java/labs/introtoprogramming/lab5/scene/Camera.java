@@ -1,9 +1,12 @@
 package labs.introtoprogramming.lab5.scene;
 
+import labs.introtoprogramming.lab5.graphics.Raster;
+
 public class Camera extends SceneObject {
   private static final double DEFAULT_SIZE = 1;
 
   private double size;
+  private Raster raster;
 
   /**
    * Representation of camera.
@@ -11,13 +14,14 @@ public class Camera extends SceneObject {
    * @param transform container of object transformations
    * @param size perspective size of camera (half of plane height at distance 1 from camera origin)
    */
-  public Camera(Transform transform, double size) {
+  public Camera(Raster raster, Transform transform, double size) {
     super(transform);
+    this.raster = raster;
     this.size = size;
   }
 
-  public Camera(Transform transform) {
-    this(transform, DEFAULT_SIZE);
+  public Camera(Raster raster, Transform transform) {
+    this(raster, transform, DEFAULT_SIZE);
   }
 
   public double size() {
@@ -34,5 +38,9 @@ public class Camera extends SceneObject {
    */
   public double fieldOfView() {
     return 2 * Math.atan(size);
+  }
+
+  public double aspectRatio() {
+    return (double) raster.getWidth() / raster.getHeight();
   }
 }
