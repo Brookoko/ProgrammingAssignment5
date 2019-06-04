@@ -1,7 +1,7 @@
 package labs.introtoprogramming.lab5.object;
 
-import labs.introtoprogramming.lab5.object.Builder.BuildMe;
-import labs.introtoprogramming.lab5.object.Parser.ParseMe;
+import labs.introtoprogramming.lab5.object.Builder.BuildParserObj;
+import labs.introtoprogramming.lab5.object.Parser.ParseObj;
 import org.junit.Test;
 
 public class ParseTest {
@@ -10,8 +10,8 @@ public class ParseTest {
     @Test
     public void ParseTest() {
         try {
-                BuildMe builder = new BuildMe();
-                ParseMe obj = new ParseMe(builder,"LibertStatue.obj" );
+                BuildParserObj builder = new BuildParserObj();
+                ParseObj obj = new ParseObj(builder,"LibertStatue.obj" );
                 obj.toString();
             } catch (java.io.FileNotFoundException e) {
 

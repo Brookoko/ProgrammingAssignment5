@@ -9,9 +9,9 @@ import java.util.logging.Logger;
 import static java.util.logging.Level.INFO;
 import static java.util.logging.Level.SEVERE;
 
-public class BuildMe implements BuilderInterface {
+public class BuildParserObj implements BuilderInterface {
 
-    private Logger log = Logger.getLogger(BuildMe.class.getName());
+    private Logger log = Logger.getLogger(BuildParserObj.class.getName());
 
     public String objFilename = null;
 
@@ -22,9 +22,9 @@ public class BuildMe implements BuilderInterface {
 
 
 
-    HashMap<String, VertexFace> faceVertixMap = new HashMap<String, VertexFace>();
+    HashMap<String, VertexFace> faceVertexMap = new HashMap<String, VertexFace>();
 
-    public ArrayList<VertexFace> faceVertixList = new ArrayList<VertexFace>();
+    public ArrayList<VertexFace> faceVertexList = new ArrayList<VertexFace>();
     public ArrayList<FacePlate> faces = new ArrayList<FacePlate>();
     public HashMap<Long, ArrayList<FacePlate>> smoothingGroups = new HashMap<Long, ArrayList<FacePlate>>();
 
@@ -39,7 +39,6 @@ public class BuildMe implements BuilderInterface {
     public HashMap<String, Material> materialLib = new HashMap<String, Material>();
     private Material currentMaterialBeingParsed = null;
     public HashMap<String, Material> mapLib = new HashMap<String, Material>();
-    private Material currentMapBeingParsed = null;
     public int faceTriCount = 0;
     public int faceQuadCount = 0;
     public int facePolyCount = 0;
@@ -94,7 +93,7 @@ public class BuildMe implements BuilderInterface {
             }
             if (((vertexIndex - 1) >= 0) && ((vertexIndex - 1) < verticesG.size())) {
 
-                fv.vertexG = verticesG.get(vertexIndex - 1);
+                fv.setVertexG(verticesG.get(vertexIndex - 1));
             } else {
                 log.log(SEVERE, "Index for geometric vertex=" +
                         vertexIndex + " is out of the current range of geometric vertex values 1 to " + verticesG.size() + ", ignoring");
@@ -107,7 +106,7 @@ public class BuildMe implements BuilderInterface {
                 }
                 if (((vertexIndex - 1) >= 0) && ((vertexIndex - 1) < verticesT.size())) {
 
-                    fv.vertexT = verticesT.get(vertexIndex - 1);
+                    fv.setVertexT(verticesT.get(vertexIndex - 1));
                 } else {
                     log.log(SEVERE, "Index for texture vertex=" + vertexIndex +
                             " is out of the current range of texture vertex values 1 to " + verticesT.size() + ", ignoring");
@@ -122,14 +121,14 @@ public class BuildMe implements BuilderInterface {
                 }
                 if (((vertexIndex - 1) >= 0) && ((vertexIndex - 1) < verticesN.size())) {
 
-                    fv.vertexN = verticesN.get(vertexIndex - 1);
+                    fv.setVertexN(verticesN.get(vertexIndex - 1));
                 } else {
                     log.log(SEVERE, "Index for vertex normal=" + vertexIndex +
                             " is out of the current range of vertex normal values 1 to " + verticesN.size() + ", ignoring");
                 }
             }
 
-            if (fv.vertexG == null) {
+            if (fv.getVertexN() == null) {
                 log.log(SEVERE, "Can't add vertex to face with missing vertex!  Throwing away face.");
                 faceErrorCount++;
                 return;
@@ -137,11 +136,11 @@ public class BuildMe implements BuilderInterface {
 
 
             String key = fv.toString();
-            VertexFace fv2 = faceVertixMap.get(key);
+            VertexFace fv2 = faceVertexMap.get(key);
             if (null == fv2) {
-                faceVertixMap.put(key, fv);
-                fv.index = faceVertixList.size();
-                faceVertixList.add(fv);
+                faceVertexMap.put(key, fv);
+                fv.setIndex(faceVertexList.size());
+                faceVertexList.add(fv);
             } else {
                 fv = fv2;
             }
@@ -235,85 +234,85 @@ public class BuildMe implements BuilderInterface {
     }
 
     public void setXYZ(int type, float x, float y, float z) {
-        ReflectivityTransmiss rt = currentMaterialBeingParsed.ka;
+        ReflectivityTransmission rt = currentMaterialBeingParsed.getKa();
         if (type == MTL_KD) {
-            rt = currentMaterialBeingParsed.kd;
+            rt = currentMaterialBeingParsed.getKd();
         } else if (type == MTL_KS) {
-            rt = currentMaterialBeingParsed.ks;
+            rt = currentMaterialBeingParsed.getKs();
         } else if (type == MTL_TF) {
-            rt = currentMaterialBeingParsed.tf;
+            rt = currentMaterialBeingParsed.getTf();
         }
 
-        rt.rx = x;
-        rt.gy = y;
-        rt.bz = z;
-        rt.isXYZ = true;
-        rt.isRGB = false;
+        rt.setRedX(x);
+        rt.setGy(y);
+        rt.setBz(z);
+        rt.setXYZ(true);
+        rt.setRGB(false);
     }
 
     public void setRGB(int type, float r, float g, float b) {
-        ReflectivityTransmiss rt = currentMaterialBeingParsed.ka;
+        ReflectivityTransmission rt = currentMaterialBeingParsed.getKa();
         if (type == MTL_KD) {
-            rt = currentMaterialBeingParsed.kd;
+            rt = currentMaterialBeingParsed.getKd();
         } else if (type == MTL_KS) {
-            rt = currentMaterialBeingParsed.ks;
+            rt = currentMaterialBeingParsed.getKs();
         } else if (type == MTL_TF) {
-            rt = currentMaterialBeingParsed.tf;
+            rt = currentMaterialBeingParsed.getTf();
         }
 
-        rt.rx = r;
-        rt.gy = g;
-        rt.bz = b;
-        rt.isRGB = true;
-        rt.isXYZ = false;
+        rt.setRedX(r);
+        rt.setGy(g);
+        rt.setBz(b);
+        rt.setRGB(true);
+        rt.setXYZ(false);
     }
 
     public void setIllum(int illumModel) {
-        currentMaterialBeingParsed.illumModel = illumModel;
+        currentMaterialBeingParsed.setIllumModel(illumModel);
     }
 
     public void setD(boolean halo, float factor) {
-        currentMaterialBeingParsed.dHalo = halo;
-        currentMaterialBeingParsed.dFactor = factor;
-        log.log(INFO, "@TODO: got a setD call!");
+        currentMaterialBeingParsed.setdHalo( halo);
+        currentMaterialBeingParsed.setdFactor(factor);
+
     }
 
     public void setNs(float exponent) {
-        currentMaterialBeingParsed.nsExponent = exponent;
-        log.log(INFO, "@TODO: got a setNs call!");
+        currentMaterialBeingParsed.setNsExponent(exponent);
+
     }
 
     public void setSharpness(float value) {
-        currentMaterialBeingParsed.sharpnessValue = value;
+        currentMaterialBeingParsed.setSharpnessValue(value);
     }
 
     public void setNi(float opticalDensity) {
-        currentMaterialBeingParsed.niOpticalDensity = opticalDensity;
+        currentMaterialBeingParsed.setNiOpticalDensity(opticalDensity);
     }
 
     public void setMapDecalDispBump(int type, String filename) {
         if (type == MTL_MAP_KA) {
-            currentMaterialBeingParsed.mapKaFilename = filename;
+            currentMaterialBeingParsed.setMapKaFilename(filename);
         } else if (type == MTL_MAP_KD) {
-            currentMaterialBeingParsed.mapKdFilename = filename;
+            currentMaterialBeingParsed.setMapKdFilename(filename);
         } else if (type == MTL_MAP_KS) {
-            currentMaterialBeingParsed.mapKsFilename = filename;
+            currentMaterialBeingParsed.setMapKsFilename(filename);
         } else if (type == MTL_MAP_NS) {
-            currentMaterialBeingParsed.mapNsFilename = filename;
+            currentMaterialBeingParsed.setMapNsFilename(filename);
         } else if (type == MTL_MAP_D) {
-            currentMaterialBeingParsed.mapDFilename = filename;
+            currentMaterialBeingParsed.setMapDFilename(filename);
         } else if (type == MTL_DECAL) {
-            currentMaterialBeingParsed.decalFilename = filename;
+            currentMaterialBeingParsed.setDecalFilename(filename);
         } else if (type == MTL_DISP) {
-            currentMaterialBeingParsed.dispFilename = filename;
+            currentMaterialBeingParsed.setDispFilename(filename);
         } else if (type == MTL_BUMP) {
-            currentMaterialBeingParsed.bumpFilename = filename;
+            currentMaterialBeingParsed.setBumpFilename(filename);
         }
     }
 
     public void setRefl(int type, String filename) {
-        currentMaterialBeingParsed.reflType = type;
-        currentMaterialBeingParsed.reflFilename = filename;
+        currentMaterialBeingParsed.setReflType(type);
+        currentMaterialBeingParsed.setReflFilename(filename);
     }
 
     public void doneParsingMaterial() {

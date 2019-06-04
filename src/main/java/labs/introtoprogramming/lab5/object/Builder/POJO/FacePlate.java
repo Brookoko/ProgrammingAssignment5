@@ -20,12 +20,12 @@ public class FacePlate {
         float[] edgeF = new float[3];
         float[] edgeS = new float[3];
         float[] normal = new float[3];
-        VertexGeometry first = vertices.get(0).vertexG;
-        VertexGeometry second = vertices.get(1).vertexG;
-        VertexGeometry third = vertices.get(2).vertexG;
-        float[] pointOne = {first.x, first.y, first.z};
-        float[] pointTwo = {second.x, second.y, second.z};
-        float[] pointThree = {second.x, second.y, second.z};
+        VertexGeometry first = vertices.get(0).getVertexG();
+        VertexGeometry second = vertices.get(1).getVertexG();
+        VertexGeometry third = vertices.get(2).getVertexG();
+        float[] pointOne = {first.getX(), first.getY(), first.getZ()};
+        float[] pointTwo = {second.getX(), second.getY(), second.getZ()};
+        float[] pointThree = {second.getX(), second.getY(), second.getZ()};
 
         edgeF[0] = pointTwo[0] - pointOne[0];
         edgeF[1] = pointTwo[1] - pointOne[1];
@@ -39,9 +39,9 @@ public class FacePlate {
         normal[1] = edgeF[2] * edgeS[0] - edgeF[0] * edgeS[2];
         normal[2] = edgeF[0] * edgeS[1] - edgeF[1] * edgeS[0];
 
-        faceNormal.x = normal[0];
-        faceNormal.y = normal[1];
-        faceNormal.z = normal[2];
+        faceNormal.setX(normal[0]);
+        faceNormal.setY(normal[1]);
+        faceNormal.setZ(normal[2]);
     }
 
     public String toString() {

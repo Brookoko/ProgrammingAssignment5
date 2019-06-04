@@ -7,8 +7,8 @@ import java.util.logging.Logger;
 
 import static java.util.logging.Level.*;
 
-public class ParseMe {
-    private Logger log = Logger.getLogger(ParseMe.class.getName());
+public class ParseObj {
+    private Logger log = Logger.getLogger(ParseObj.class.getName());
 
     private final static String OBJ_VERTEX_TEXTURE = "vt";
     private final static String OBJ_VERTEX_NORMAL = "vn";
@@ -53,7 +53,7 @@ public class ParseMe {
     BuilderInterface builder = null;
     File objFile = null;
 
-    public ParseMe(BuilderInterface builder, String filename) throws FileNotFoundException, IOException {
+    public ParseObj(BuilderInterface builder, String filename) throws FileNotFoundException, IOException {
         this.builder = builder;
         builder.setObjFilename(filename);
         parseObjFile(filename);

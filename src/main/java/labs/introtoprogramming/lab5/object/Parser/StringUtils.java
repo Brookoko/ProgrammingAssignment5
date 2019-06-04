@@ -253,7 +253,6 @@ public class StringUtils {
         ArrayList<String> returnVec = new ArrayList<String>();
         String[] returnArray = null;
 
-        // Copy list into a char array.
         char listChars[];
         listChars = new char[list.length()];
         list.getChars(0, list.length(), listChars, 0);
