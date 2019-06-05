@@ -15,7 +15,7 @@ public class BoxTests {
   @Test
   public void testIntersection() {
     Ray ray = new Ray(Vector3.ZERO, Vector3.RIGHT);
-    Box box = new Box(new Transform(Vector3.RIGHT.multiply(2)),1);
+    Box box = new Box(new Transform(Vector3.RIGHT.multiply(2)));
     assertTrue(box.intersect(ray));
     assertEquals(1.5, ray.getScale(), DELTA);
   }
@@ -23,32 +23,39 @@ public class BoxTests {
   @Test
   public void testIntersectionInner() {
     Ray ray = new Ray(Vector3.ZERO, Vector3.RIGHT);
-    Box box = new Box(new Transform(Vector3.ZERO), 1);
+    Box box = new Box(new Transform(Vector3.ZERO), 2);
     assertTrue(box.intersect(ray));
-    assertEquals(0.5, ray.getScale(), DELTA);
+    assertEquals(1, ray.getScale(), DELTA);
   }
 
   @Test
   public void testNoIntersectionUpAxis() {
     Ray ray = new Ray(Vector3.ZERO, Vector3.RIGHT);
-    Box box = new Box(new Transform(Vector3.ONE.multiply(2)), 1);
+    Box box = new Box(new Transform(Vector3.ONE.multiply(2)));
     assertFalse(box.intersect(ray));
     assertEquals(1, ray.getScale(), DELTA);
   }
 
   @Test
-  public void testNoIntersectionForwardAxis() {
+  public void testNoIntersectionForwardAxisUpperBound() {
     Ray ray = new Ray(Vector3.ZERO, Vector3.FORWARD);
-    Box box = new Box(new Transform(Vector3.ONE.multiply(2)), 1);
+    Box box = new Box(new Transform(Vector3.ONE.multiply(2)));
     assertFalse(box.intersect(ray));
     assertEquals(1, ray.getScale(), DELTA);
   }
 
+  @Test
+  public void testNoIntersectionForwardAxisLowerBound() {
+    Ray ray = new Ray(Vector3.ZERO, Vector3.FORWARD);
+    Box box = new Box(new Transform(Vector3.ONE.multiply(-2)));
+    assertFalse(box.intersect(ray));
+    assertEquals(1, ray.getScale(), DELTA);
+  }
 
   @Test
   public void testIntersectionOppositeDirection() {
     Ray ray = new Ray(Vector3.ZERO, Vector3.RIGHT.multiply(-1));
-    Box box = new Box(new Transform(Vector3.RIGHT.multiply(2)), 1);
+    Box box = new Box(new Transform(Vector3.RIGHT.multiply(2)));
     assertFalse(box.intersect(ray));
     assertEquals(1, ray.getScale(), DELTA);
   }
@@ -56,7 +63,7 @@ public class BoxTests {
   @Test
   public void testIntersectionNegativeDirection() {
     Ray ray = new Ray(Vector3.ZERO, Vector3.ONE.multiply(-1));
-    Box box = new Box(new Transform(Vector3.ONE.multiply(-2)),1);
+    Box box = new Box(new Transform(Vector3.ONE.multiply(-2)));
     assertTrue(box.intersect(ray));
     assertEquals(1.5, ray.getScale(), DELTA);
   }
@@ -64,7 +71,14 @@ public class BoxTests {
   @Test
   public void testIntersectionZeroDirection() {
     Ray ray = new Ray(Vector3.ZERO, Vector3.ZERO);
-    Box box = new Box(new Transform(Vector3.RIGHT.multiply(2)),1);
+    Box box = new Box(new Transform(Vector3.RIGHT.multiply(2)));
+    assertFalse(box.intersect(ray));
+  }
+
+  @Test
+  public void testIntersectionMinusZeroDirection() {
+    Ray ray = new Ray(Vector3.ZERO, new Vector3(-DELTA, -DELTA, -DELTA));
+    Box box = new Box(new Transform(Vector3.RIGHT.multiply(2)));
     assertFalse(box.intersect(ray));
   }
 }

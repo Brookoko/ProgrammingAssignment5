@@ -2,6 +2,7 @@ package labs.introtoprogramming.lab5.geometry;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotSame;
 
 import org.junit.Test;
 
@@ -23,7 +24,7 @@ public class VectorTests {
   @Test
   public void testNormalize() {
     Vector3 a = new Vector3(2, 4, 4);
-    assertEquals(new Vector3( 2.0 / 6, 4.0 / 6, 4.0 / 6), a.normalize());
+    assertEquals(new Vector3(2.0 / 6, 4.0 / 6, 4.0 / 6), a.normalize());
   }
 
   @Test
@@ -125,5 +126,13 @@ public class VectorTests {
   public void testHashCode() {
     Vector3 a = Vector3.ONE;
     assertEquals(3, a.hashCode(), DELTA);
+  }
+
+  @Test
+  public void testClone() throws CloneNotSupportedException {
+    Vector3 a = Vector3.ONE;
+    Vector3 b = (Vector3) a.clone();
+    assertNotSame(a, b);
+    assertEquals(a, b);
   }
 }

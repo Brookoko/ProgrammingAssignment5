@@ -3,6 +3,9 @@ package labs.introtoprogramming.lab5.geometry;
 public class Matrix44 {
   private double[][] m;
 
+  /**
+   * Transformation matrix.
+   */
   public Matrix44() {
     m = new double[4][4];
     for (int i = 0; i < 4; i++) {
@@ -10,6 +13,13 @@ public class Matrix44 {
     }
   }
 
+  /**
+   * Create new transformation matrix from given translation, rotation and scale.
+   *
+   * @param translation translation of object relatively to world origin
+   * @param rotation rotation of object relatively to world origin
+   * @param scale scale of object
+   */
   public void generateTransformation(Vector3 translation, Vector3 rotation, Vector3 scale) {
     applyTranslation(translation);
     applyRotation(rotation);
@@ -72,6 +82,12 @@ public class Matrix44 {
     return rotation;
   }
 
+  /**
+   * Apply transformation matrix to vector.
+   *
+   * @param v vector to transform
+   * @return transformed vector
+   */
   public Vector3 applyVector(Vector3 v) {
     return new Vector3(
             v.x * m[0][0] + v.y * m[0][1] + v.z * m[0][2],
@@ -80,8 +96,14 @@ public class Matrix44 {
     );
   }
 
-  public Vector3 applyPoint(Vector3 v) {
-    return translate(applyVector(v));
+  /**
+   * Apply transformation matrix to point.
+   *
+   * @param p point to transform
+   * @return transformed point
+   */
+  public Vector3 applyPoint(Vector3 p) {
+    return translate(applyVector(p));
   }
 
   private Vector3 translate(Vector3 v) {
@@ -92,14 +114,23 @@ public class Matrix44 {
     double[][] res = new double[a.length][b[0].length];
     for (int i = 0; i < 3; i++) {
       for (int j = 0; j < 3; j++) {
-        res[i][j] = a[i][0] * b[0][j] +
-                a[i][1] * b[1][j] +
-                a[i][2] * b[2][j];
+        res[i][j] = a[i][0] * b[0][j]
+                + a[i][1] * b[1][j]
+                + a[i][2] * b[2][j];
       }
     }
     return res;
   }
 
+  /**
+   * Create transformation matrix from given right, up, forward vectors
+   * and translation relatively to world origin.
+   *
+   * @param right normalized right vector
+   * @param up normalized up vector
+   * @param forward normalized forward vector
+   * @param translate translation of object relatively to world origin
+   */
   public void setMatrix(Vector3 right, Vector3 up, Vector3 forward, Vector3 translate) {
     m[0][0] = right.x;
     m[1][0] = right.y;

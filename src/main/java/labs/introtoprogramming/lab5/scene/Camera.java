@@ -1,7 +1,7 @@
 package labs.introtoprogramming.lab5.scene;
 
-import labs.introtoprogramming.lab5.graphics.Raster;
 import labs.introtoprogramming.lab5.geometry.Vector3;
+import labs.introtoprogramming.lab5.graphics.Raster;
 
 public class Camera extends SceneObject {
   private static final double DEFAULT_SIZE = 1;
@@ -46,7 +46,7 @@ public class Camera extends SceneObject {
   }
 
   /**
-   * Set position of camera to from and and orientation to face to
+   * Set position of camera to from and and orientation to face to.
    *
    * @param from position of camera
    * @param to point to look at

@@ -35,4 +35,12 @@ public class PlaneTests {
     assertFalse(plane.intersect(ray));
     assertEquals(1, ray.getScale(), DELTA);
   }
+
+  @Test
+  public void testBelowRayOrigin() {
+    Plane plane = new Plane(new Transform(Vector3.UP.multiply(-1)));
+    Ray ray = new Ray(Vector3.ZERO, Vector3.UP);
+    assertFalse(plane.intersect(ray));
+    assertEquals(1, ray.getScale(), DELTA);
+  }
 }

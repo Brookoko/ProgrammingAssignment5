@@ -1,8 +1,8 @@
 package labs.introtoprogramming.lab5.object;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertEquals;
 
 import labs.introtoprogramming.lab5.geometry.Ray;
 import labs.introtoprogramming.lab5.geometry.Vector3;

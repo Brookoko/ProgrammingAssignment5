@@ -6,7 +6,7 @@ import labs.introtoprogramming.lab5.scene.SceneObject;
 import labs.introtoprogramming.lab5.scene.Transform;
 
 public class Box extends SceneObject {
-  private static final double DELTA = 1e-10;
+  private static final double DELTA = 1e-6;
   private static final double DEFAULT_SIZE = 1;
 
   private Vector3 lowerBounds;
@@ -17,7 +17,7 @@ public class Box extends SceneObject {
     Vector3 pos = transform.position();
     Vector3 bound = Vector3.ONE.multiply(size * 0.5);
     upperBounds = pos.add(bound);
-    lowerBounds = pos.add(bound.multiply(-size));
+    lowerBounds = pos.add(bound.multiply(-1));
   }
 
   public Box(Transform transform) {
@@ -29,12 +29,9 @@ public class Box extends SceneObject {
     Vector3 direction = ray.getDirection();
     Vector3 origin = ray.getOrigin();
     double tMin, tMax, tyMin, tyMax, tzMin, tzMax;
-    double x = Math.abs(direction.x) < DELTA ?
-            direction.x >= 0 ? 1 / DELTA : -1 / DELTA : 1 / direction.x;
-    double y = Math.abs(direction.y) < DELTA ?
-            direction.y >= 0 ? 1 / DELTA : -1 / DELTA : 1 / direction.y;
-    double z = Math.abs(direction.z) < DELTA ?
-            direction.z >= 0 ? 1 / DELTA : -1 / DELTA : 1 / direction.z;
+    double x = axisDirection(direction.x);
+    double y = axisDirection(direction.y);
+    double z = axisDirection(direction.z);
 
     if (direction.x >= 0) {
       tMin = (lowerBounds.x - origin.x) * x;
@@ -89,5 +86,9 @@ public class Box extends SceneObject {
 
     ray.setScale(t);
     return true;
+  }
+
+  private double axisDirection(double val) {
+    return Math.abs(val) < DELTA ? val >= 0 ? 1 / DELTA : -1 / DELTA : 1 / val;
   }
 }
