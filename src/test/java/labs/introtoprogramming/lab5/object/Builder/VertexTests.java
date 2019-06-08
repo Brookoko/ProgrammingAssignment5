@@ -13,30 +13,30 @@ public class VertexTests {
     @Test
     public void VertexTextureTest(){
         VertexTexture vertexTexture = new VertexTexture(0,1);
-        assertEquals(new VertexTexture(0,1).getU(), vertexTexture.getU());
-        assertEquals(new VertexTexture(0,1).getV(), vertexTexture.getV());
+        assertEquals(0, vertexTexture.getU(), 0);
+        assertEquals(1, vertexTexture.getV(), 0);
     }
 
     @Test
     public void VertexNormalTest(){
         VertexNormal normal = new VertexNormal(0, 4, 5);
-        assertEquals(new VertexNormal(0,4,5).getX(), normal.getX());
-        assertEquals(new VertexNormal(0,4,5).getY(), normal.getY());
-        assertEquals(new VertexNormal(0,4,5).getZ(), normal.getZ());
+        assertEquals(0, normal.getX(),0);
+        assertEquals(4, normal.getY(), 0);
+        assertEquals(5, normal.getZ(), 0);
         normal.add(5,5,5);
-        assertEquals(new VertexNormal(5,5,5).getX(), normal.getX());
-        assertEquals(new VertexNormal(5,5,5).getY(), normal.getY());
-        assertEquals(new VertexNormal(5,5,5).getZ(), normal.getZ());
+        assertEquals(5, normal.getX(), 0);
+        assertEquals(5, normal.getX(), 0);
+        assertEquals(5, normal.getX(), 0);
         normal.setZ(2);
-        assertEquals(new VertexNormal(5,5,2).getZ(), normal.getZ());
+        assertEquals(2, normal.getZ(),0);
     }
 
     @Test
     public void VertexGeometryTest(){
         VertexGeometry geometry = new VertexGeometry(0,0,0);
-        assertEquals(new VertexGeometry(0,0,0).getX(), geometry.getX());
-        assertEquals(new VertexGeometry(0,0,0).getY(), geometry.getY());
-        assertEquals(new VertexGeometry(0,0,0).getZ(), geometry.getZ());
+       assertEquals(0, geometry.getX(),0);
+       assertEquals(0, geometry.getY(),0);
+       assertEquals(0, geometry.getZ(),0);
     }
 
     @Test
@@ -45,13 +45,15 @@ public class VertexTests {
         vertexFace.setVertexT(new VertexTexture(1,2));
         vertexFace.setVertexG(new VertexGeometry(0,0,0));
         vertexFace.setVertexN(new VertexNormal(0,0,0));
-        assertEquals(new VertexNormal(0,0,0).getX(), vertexFace.getVertexN().getX());
-        assertEquals(new VertexNormal(0,0,0).getY(), vertexFace.getVertexN().getY());
-        assertEquals(new VertexNormal(0,0,0).getZ(), vertexFace.getVertexN().getZ());
-        assertEquals(new VertexGeometry(0,0,0).getX(), vertexFace.getVertexG().getX());
-        assertEquals(new VertexGeometry(0,0,0).getY(), vertexFace.getVertexG().getY());
-        assertEquals(new VertexGeometry(0,0,0).getZ(), vertexFace.getVertexG().getZ());
-        assertEquals(new VertexTexture(1,2).getU(), vertexFace.getVertexT().getU());
-        assertEquals(new VertexTexture(1,2).getV(), vertexFace.getVertexT().getV());
+        assertEquals(1, vertexFace.getVertexT().getU(), 0);
+        assertEquals(2, vertexFace.getVertexT().getV(), 0);
+
+        assertEquals(0,  vertexFace.getVertexG().getX(), 0);
+        assertEquals(0,  vertexFace.getVertexG().getY(), 0);
+        assertEquals(0,  vertexFace.getVertexG().getZ(), 0);
+
+        assertEquals(0,  vertexFace.getVertexN().getZ(), 0);
+        assertEquals(0,  vertexFace.getVertexN().getX(), 0);
+        assertEquals(0,  vertexFace.getVertexN().getY(), 0);
     }
 }
