@@ -3,6 +3,7 @@ package labs.introtoprogramming.lab5.object.Builder.POJO;
 public class VertexGeometry {
     private float x = 0;
     private float y = 0;
+    private float z = 0;
 
     public float getX() {
         return x;
@@ -27,8 +28,6 @@ public class VertexGeometry {
     public void setZ(float z) {
         this.z = z;
     }
-
-    private float z = 0;
 
     public VertexGeometry(float x, float y, float z) {
         this.x = x;

@@ -1,7 +1,12 @@
 package labs.introtoprogramming.lab5.object.Builder.POJO;
 
+/**
+ * class that describes structure of normal for current vertex
+ */
 public class VertexNormal {
     private float x = 0;
+    private float y = 0;
+    private float z = 0;
 
     public float getX() {
         return x;
@@ -27,8 +32,7 @@ public class VertexNormal {
         this.z = z;
     }
 
-    private float y = 0;
-    private float z = 0;
+
 
 
 

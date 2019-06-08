@@ -1,5 +1,9 @@
 package labs.introtoprogramming.lab5.object.Builder.POJO;
 
+/**
+ *
+ */
+
 public class VertexTexture {
     private float u = 0;
     private float v = 0;

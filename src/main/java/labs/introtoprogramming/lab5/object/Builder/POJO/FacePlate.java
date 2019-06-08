@@ -25,7 +25,7 @@ public class FacePlate {
         VertexGeometry third = vertices.get(2).getVertexG();
         float[] pointOne = {first.getX(), first.getY(), first.getZ()};
         float[] pointTwo = {second.getX(), second.getY(), second.getZ()};
-        float[] pointThree = {second.getX(), second.getY(), second.getZ()};
+        float[] pointThree = {third.getX(), third.getY(), third.getZ()};
 
         edgeF[0] = pointTwo[0] - pointOne[0];
         edgeF[1] = pointTwo[1] - pointOne[1];

@@ -13,27 +13,27 @@ public class BuildParserObj implements BuilderInterface {
 
     private Logger log = Logger.getLogger(BuildParserObj.class.getName());
 
-    public String objFilename = null;
+    private String objFilename = null;
 
 
-    public ArrayList<VertexGeometry> verticesG = new ArrayList<VertexGeometry>();
-    public ArrayList<VertexTexture> verticesT = new ArrayList<VertexTexture>();
-    public ArrayList<VertexNormal> verticesN = new ArrayList<VertexNormal>();
+    private ArrayList<VertexGeometry> verticesG = new ArrayList<VertexGeometry>();
+    private ArrayList<VertexTexture> verticesT = new ArrayList<VertexTexture>();
+    private ArrayList<VertexNormal> verticesN = new ArrayList<VertexNormal>();
 
 
 
-    HashMap<String, VertexFace> faceVertexMap = new HashMap<String, VertexFace>();
+     private HashMap<String, VertexFace> faceVertexMap = new HashMap<String, VertexFace>();
 
-    public ArrayList<VertexFace> faceVertexList = new ArrayList<VertexFace>();
-    public ArrayList<FacePlate> faces = new ArrayList<FacePlate>();
-    public HashMap<Long, ArrayList<FacePlate>> smoothingGroups = new HashMap<Long, ArrayList<FacePlate>>();
+    private ArrayList<VertexFace> faceVertexList = new ArrayList<VertexFace>();
+    private ArrayList<FacePlate> faces = new ArrayList<FacePlate>();
+    private HashMap<Long, ArrayList<FacePlate>> smoothingGroups = new HashMap<Long, ArrayList<FacePlate>>();
 
     private long currentSmoothingGroupNumber = NO_SMOOTHING_GROUP;
     private ArrayList<FacePlate> currentSmoothingGroup = null;
-    public HashMap<String, ArrayList<FacePlate>> groups = new HashMap<String, ArrayList<FacePlate>>();
+    private HashMap<String, ArrayList<FacePlate>> groups = new HashMap<String, ArrayList<FacePlate>>();
     private ArrayList<String> currentGroups = new ArrayList<String>();
     private ArrayList<ArrayList<FacePlate>> currentGroupFaceLists = new ArrayList<ArrayList<FacePlate>>();
-    public String objectName = null;
+    private String objectName = null;
     private Material currentMaterial = null;
     private Material currentMap = null;
     public HashMap<String, Material> materialLib = new HashMap<String, Material>();
@@ -69,6 +69,74 @@ public class BuildParserObj implements BuilderInterface {
 
     public void addLine(int[] values) {
         log.log(INFO, "@TODO: Got a line of " + values.length + " segments in builder, ignoring");
+    }
+
+    public String getObjFilename() {
+        return objFilename;
+    }
+
+    public ArrayList<VertexGeometry> getVerticesG() {
+        return verticesG;
+    }
+
+    public ArrayList<VertexTexture> getVerticesT() {
+        return verticesT;
+    }
+
+    public ArrayList<VertexNormal> getVerticesN() {
+        return verticesN;
+    }
+
+    public HashMap<String, VertexFace> getFaceVertexMap() {
+        return faceVertexMap;
+    }
+
+    public ArrayList<VertexFace> getFaceVertexList() {
+        return faceVertexList;
+    }
+
+    public ArrayList<FacePlate> getFaces() {
+        return faces;
+    }
+
+    public HashMap<Long, ArrayList<FacePlate>> getSmoothingGroups() {
+        return smoothingGroups;
+    }
+
+    public long getCurrentSmoothingGroupNumber() {
+        return currentSmoothingGroupNumber;
+    }
+
+    public ArrayList<FacePlate> getCurrentSmoothingGroup() {
+        return currentSmoothingGroup;
+    }
+
+    public HashMap<String, ArrayList<FacePlate>> getGroups() {
+        return groups;
+    }
+
+    public ArrayList<String> getCurrentGroups() {
+        return currentGroups;
+    }
+
+    public ArrayList<ArrayList<FacePlate>> getCurrentGroupFaceLists() {
+        return currentGroupFaceLists;
+    }
+
+    public String getObjectName() {
+        return objectName;
+    }
+
+    public Material getCurrentMaterial() {
+        return currentMaterial;
+    }
+
+    public Material getCurrentMap() {
+        return currentMap;
+    }
+
+    public Material getCurrentMaterialBeingParsed() {
+        return currentMaterialBeingParsed;
     }
 
     public void addFace(int[] vertexIndices) {

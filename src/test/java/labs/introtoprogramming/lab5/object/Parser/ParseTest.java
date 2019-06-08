@@ -1,7 +1,6 @@
-package labs.introtoprogramming.lab5.object;
+package labs.introtoprogramming.lab5.object.Parser;
 
 import labs.introtoprogramming.lab5.object.Builder.BuildParserObj;
-import labs.introtoprogramming.lab5.object.Parser.ParseObj;
 import org.junit.Test;
 
 public class ParseTest {

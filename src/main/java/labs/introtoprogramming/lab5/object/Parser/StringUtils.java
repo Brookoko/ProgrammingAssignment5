@@ -141,16 +141,13 @@ public class StringUtils {
         return returnArray;
     }
 
-    public static int[] parseListVerticeNTuples(String list, int expectedValuesPerTuple) {
+    public static int[] parseListVertexNTuples(String list, int expectedValuesPerTuple) {
         if (list == null) {
             return null;
         }
         if (list.equals("")) {
             return null;
         }
-
-
-
         String[] vertexStrings = parseWhitespaceList(list);
 
 

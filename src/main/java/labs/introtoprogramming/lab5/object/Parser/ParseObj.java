@@ -10,6 +10,10 @@ import static java.util.logging.Level.*;
 public class ParseObj {
     private Logger log = Logger.getLogger(ParseObj.class.getName());
 
+    /**
+     * string indicators of parameter in .obj file
+     */
+
     private final static String OBJ_VERTEX_TEXTURE = "vt";
     private final static String OBJ_VERTEX_NORMAL = "vn";
     private final static String OBJ_VERTEX = "v";
@@ -53,6 +57,7 @@ public class ParseObj {
     BuilderInterface builder = null;
     File objFile = null;
 
+
     public ParseObj(BuilderInterface builder, String filename) throws FileNotFoundException, IOException {
         this.builder = builder;
         builder.setObjFilename(filename);
@@ -61,17 +66,25 @@ public class ParseObj {
         builder.doneParsingObj(filename);
     }
 
+    /**
+     * this part pars object file
+     *
+     * @param objFilename
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
     private void parseObjFile(String objFilename) throws FileNotFoundException, IOException {
         int lineCount = 0;
-        InputStreamReader fileReader = null;
-        BufferedReader bufferedReader = null;
+        InputStreamReader fileReader;
+        BufferedReader bufferedReader;
 
         objFile = new File(objFilename);
         fileReader = new InputStreamReader(new FileInputStream(objFilename), "UTF-8");
         bufferedReader = new BufferedReader(fileReader);
 
-        String line = null;
+        String line;
 
+        // read .obj file
         while (true) {
             line = bufferedReader.readLine();
             if (null == line) {
@@ -84,12 +97,14 @@ public class ParseObj {
                 continue;
             }
 
+            // cases to process
             if (line.startsWith("#")) {
                 continue;
             } else if (line.startsWith(OBJ_VERTEX_TEXTURE)) {
                 processVertexTexture(line);
             } else if (line.startsWith(OBJ_VERTEX_NORMAL)) {
                 processVertexNormal(line);
+                // add vertex with some coordinates
             } else if (line.startsWith(OBJ_VERTEX)) {
                 processVertex(line);
             } else if (line.startsWith(OBJ_FACE)) {
@@ -123,12 +138,15 @@ public class ParseObj {
     }
 
 
+    /**
+     * create vertex from data of file
+     * @param line
+     */
 
     private void processVertex(String line) {
         float[] values = StringUtils.parseFloatList(3, line, OBJ_VERTEX.length());
         builder.addVertexGeometric(values[0], values[1], values[2]);
     }
-
 
     private void processVertexTexture(String line) {
         float[] values = StringUtils.parseFloatList(2, line, OBJ_VERTEX_TEXTURE.length());
@@ -143,18 +161,26 @@ public class ParseObj {
 
     private void processFace(String line) {
         line = line.substring(OBJ_FACE.length()).trim();
-        int[] verticeIndexAry = StringUtils.parseListVerticeNTuples(line, 3);
+        int[] vertexIndexAry = StringUtils.parseListVertexNTuples(line, 3);
 
-        builder.addFace(verticeIndexAry);
+        builder.addFace(vertexIndexAry);
     }
 
+    /**
+     * add group name to builder-object
+     * @param line
+     */
 
     private void processGroupName(String line) {
-        String[] groupnames = StringUtils.parseWhitespaceList(line.substring(OBJ_GROUP_NAME.length()).trim());
-        builder.setCurrentGroupNames(groupnames);
+        String[] groupNames = StringUtils.parseWhitespaceList(line.substring(OBJ_GROUP_NAME.length()).trim());
+        builder.setCurrentGroupNames(groupNames);
     }
 
 
+    /**
+     * add to builder name of the object
+     * @param line
+     */
     private void processObjectName(String line) {
         builder.addObjectName(line.substring(OBJ_OBJECT_NAME.length()).trim());
     }
@@ -171,26 +197,32 @@ public class ParseObj {
 
     private void processPoint(String line) {
         line = line.substring(OBJ_POINT.length()).trim();
-        int[] values = StringUtils.parseListVerticeNTuples(line, 1);
+        int[] values = StringUtils.parseListVertexNTuples(line, 1);
         builder.addPoints(values);
     }
 
     private void processLine(String line) {
         line = line.substring(OBJ_LINE.length()).trim();
-        int[] values = StringUtils.parseListVerticeNTuples(line, 2);
+        int[] values = StringUtils.parseListVertexNTuples(line, 2);
         builder.addLine(values);
     }
 
+    /**
+     * find material from files that exist (.bmp)
+     * @param line
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
 
     private void processMaterialLib(String line) throws FileNotFoundException, IOException {
-        String[] matlibnames = StringUtils.parseWhitespaceList(line.substring(OBJ_MTLLIB.length()).trim());
+        String[] matLibNames = StringUtils.parseWhitespaceList(line.substring(OBJ_MTLLIB.length()).trim());
 
-        if (null != matlibnames) {
-            for (int loopi = 0; loopi < matlibnames.length; loopi++) {
+        if (null != matLibNames) {
+            for (int loopi = 0; loopi < matLibNames.length; loopi++) {
                 try {
-                    parseMtlFile(matlibnames[loopi]);
+                    parseMtlFile(matLibNames[loopi]);
                 } catch (FileNotFoundException e) {
-                    log.log(SEVERE, "Can't find material file name='" + matlibnames[loopi] + "', e=" + e);
+                    log.log(SEVERE, "Can't find material file name='" + matLibNames[loopi] + "', e=" + e);
                 }
             }
         }
@@ -201,14 +233,20 @@ public class ParseObj {
     }
 
     private void processMapLib(String line) {
-        String[] maplibnames = StringUtils.parseWhitespaceList(line.substring(OBJ_MAPLIB.length()).trim());
-        builder.addMapLib(maplibnames);
+        String[] multipleNames = StringUtils.parseWhitespaceList(line.substring(OBJ_MAPLIB.length()).trim());
+        builder.addMapLib(multipleNames);
     }
 
     private void processUseMap(String line) {
         builder.setCurrentUseMap(line.substring(OBJ_USEMAP.length()).trim());
     }
 
+    /**
+     * read information from .mtl file
+     * @param mtlFilename
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
 
     private void parseMtlFile(String mtlFilename) throws FileNotFoundException, IOException {
         int lineCount = 0;
@@ -233,8 +271,7 @@ public class ParseObj {
                 continue;
             }
 
-            if (line.startsWith("#"))
-            {
+            if (line.startsWith("#")) {
                 continue;
             } else if (line.startsWith(MTL_NEWMTL)) {
                 processNewmtl(line);
@@ -309,18 +346,9 @@ public class ParseObj {
             log.log(SEVERE, "Got Ka line with no tokens, line = |" + line + "|");
             return;
         }
-        if (tokens[0].equals("spectral")) {
-            // Ka spectral file.rfl factor_num
-            log.log(WARNING, "Sorry Charlie, this parse doesn't handle \'spectral\' parsing.  (Mostly because I can't find any info on the spectra.rfl file.)");
-            return;
+        if (tokens[0].equals("xyz")) {
 
-        } else if (tokens[0].equals("xyz")) {
-            // Ka xyz x_num y_num z_num
 
-            if (tokens.length < 2) {
-                log.log(SEVERE, "Got xyz line with not enough x/y/z tokens, need at least one value for x, found " + (tokens.length - 1) + " line = |" + line + "|");
-                return;
-            }
             float x = Float.parseFloat(tokens[1]);
             float y = x;
             float z = x;
@@ -350,13 +378,12 @@ public class ParseObj {
         line = line.substring(MTL_ILLUM.length()).trim();
         int illumModel = Integer.parseInt(line);
         if ((illumModel < 0) || (illumModel > 10)) {
-            log.log(SEVERE, "Got illum model value out of range (0 to 10 inclusive is allowed), value=" + illumModel + ", line=" + line);
             return;
         }
         builder.setIllum(illumModel);
     }
 
-    // "d nnn.nn" or "d -halo nnn.nn"
+
     private void processD(String line) {
         line = line.substring(MTL_D.length()).trim();
         boolean halo = false;
