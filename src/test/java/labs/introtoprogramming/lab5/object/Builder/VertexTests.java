@@ -1,5 +1,6 @@
 package labs.introtoprogramming.lab5.object.Builder;
 
+import labs.introtoprogramming.lab5.object.Builder.POJO.VertexFace;
 import labs.introtoprogramming.lab5.object.Builder.POJO.VertexGeometry;
 import labs.introtoprogramming.lab5.object.Builder.POJO.VertexNormal;
 import labs.introtoprogramming.lab5.object.Builder.POJO.VertexTexture;
@@ -29,5 +30,16 @@ public class VertexTests {
     public void VertexGeometryTest(){
         VertexGeometry geometry = new VertexGeometry(0,0,0);
         assertEquals(new VertexGeometry(0,0,0), geometry);
+    }
+
+    @Test
+    public void VertexFaceTest(){
+        VertexFace vertexFace = new VertexFace();
+        vertexFace.setVertexT(new VertexTexture(1,2));
+        vertexFace.setVertexG(new VertexGeometry(0,0,0));
+        vertexFace.setVertexN(new VertexNormal(0,0,0));
+        assertEquals(new VertexNormal(0,0,0), vertexFace.getVertexN());
+        assertEquals(new VertexGeometry(0,0,0), vertexFace.getVertexG());
+        assertEquals(new VertexTexture(1,2), vertexFace.getVertexT());
     }
 }
