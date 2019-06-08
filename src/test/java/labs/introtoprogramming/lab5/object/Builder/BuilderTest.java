@@ -15,4 +15,5 @@ public class BuilderTest {
         assertEquals(groupNames[1], object.getCurrentGroups().get(1));
         assertEquals(groupNames[2], object.getCurrentGroups().get(2));
     }
+
 }
