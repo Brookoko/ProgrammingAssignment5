@@ -57,4 +57,8 @@ public class Camera extends SceneObject {
     Vector3 up = forward.crossProduct(right);
     transform.setMatrix(right, up, forward, from);
   }
+
+  public Raster raster() {
+    return raster;
+  }
 }

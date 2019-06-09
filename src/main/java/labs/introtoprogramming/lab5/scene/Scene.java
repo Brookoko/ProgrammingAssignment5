@@ -1,17 +1,25 @@
 package labs.introtoprogramming.lab5.scene;
 
 import java.awt.Color;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-public interface Scene {
+public abstract class Scene {
 
-  List<SceneObject> getSceneObjects();
+  public abstract void update(int delta);
 
-  List<PointLight> getLights();
+  public abstract List<SceneObject> getSceneObjects();
 
-  Optional<Camera> getCamera();
+  public abstract List<PointLight> getLights();
 
-  Color getBackgroundColor();
+  public abstract Optional<Camera> getCamera();
 
+  abstract Color getBackgroundColor();
+
+  public abstract void addSceneObject(SceneObject obj);
+
+  public void addSceneObjects(SceneObject... obj) {
+    Arrays.stream(obj).forEach(this::addSceneObject);
+  }
 }

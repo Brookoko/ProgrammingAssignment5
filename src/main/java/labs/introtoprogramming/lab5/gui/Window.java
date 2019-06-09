@@ -8,7 +8,7 @@ public class Window {
 
   private static final int FPS_UPDATE_RATE = 100;
 
-  private JFrame frame;
+  protected JFrame frame;
   private RasterRendererComponent renderer;
   private Toolkit toolkit;
   private String title;
@@ -74,6 +74,7 @@ public class Window {
   }
 
   public void setRaster(Raster raster) {
+    setDimensions(raster.getWidth(), raster.getHeight());
     this.renderer.setRaster(raster);
   }
   

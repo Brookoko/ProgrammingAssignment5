@@ -1,11 +1,12 @@
 package labs.introtoprogramming.lab5.scene;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class BasicScene implements Scene {
+public class BasicScene extends Scene {
   private List<SceneObject> entities;
   private Color background;
 
@@ -16,6 +17,15 @@ public class BasicScene implements Scene {
 
   public BasicScene(List<SceneObject> entities) {
     this(entities, new Color(0, 0, 0));
+  }
+
+  public BasicScene() {
+    this(new ArrayList<>());
+  }
+
+  @Override
+  public void update(int delta) {
+    entities.forEach(obj -> obj.update(delta));
   }
 
   @Override
@@ -42,5 +52,10 @@ public class BasicScene implements Scene {
   @Override
   public Color getBackgroundColor() {
     return background;
+  }
+
+  @Override
+  public void addSceneObject(SceneObject obj) {
+    entities.add(obj);
   }
 }
