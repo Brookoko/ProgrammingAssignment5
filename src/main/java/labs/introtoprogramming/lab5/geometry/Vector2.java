@@ -62,7 +62,7 @@ public class Vector2 implements Cloneable {
 
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof Vector3)) return false;
+        if (!(obj instanceof Vector2)) return false;
         if (obj == this) return true;
         Vector2 vector = (Vector2) obj;
         return Math.abs(vector.x - x) < COORDINATES_PRECISION &&
