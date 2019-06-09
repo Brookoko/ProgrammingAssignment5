@@ -1,7 +1,7 @@
 package labs.introtoprogramming.lab5.object.Builder.POJO;
 
 /**
- * class that describes structure of vertex
+ * Class that describes structure of vertex.
  */
 public class VertexFace {
     private int index = -1;

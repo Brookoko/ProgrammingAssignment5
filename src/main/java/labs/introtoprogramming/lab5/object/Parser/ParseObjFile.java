@@ -1,17 +1,18 @@
 package labs.introtoprogramming.lab5.object.Parser;
 
 import labs.introtoprogramming.lab5.object.Builder.BuilderInterface;
+import labs.introtoprogramming.lab5.object.Builder.LoadDataFromParserObject;
 
 import java.io.*;
 import java.util.logging.Logger;
 
 import static java.util.logging.Level.*;
 
-public class ParseObj {
-    private Logger log = Logger.getLogger(ParseObj.class.getName());
+public class ParseObjFile {
+    private Logger log = Logger.getLogger(ParseObjFile.class.getName());
 
     /**
-     * string indicators of parameter in .obj file
+     * String indicators of parameter in .obj file.
      */
 
     private final static String OBJ_VERTEX_TEXTURE = "vt";
@@ -54,11 +55,11 @@ public class ParseObj {
     public final static String MTL_REFL_TYPE_CUBE_BACK = "cube_back";
     public final static String MTL_REFL_TYPE_CUBE_LEFT = "cube_left";
     public final static String MTL_REFL_TYPE_CUBE_RIGHT = "cube_right";
-    BuilderInterface builder = null;
+    LoadDataFromParserObject builder;
     File objFile = null;
 
 
-    public ParseObj(BuilderInterface builder, String filename) throws FileNotFoundException, IOException {
+    public ParseObjFile(LoadDataFromParserObject builder, String filename) throws FileNotFoundException, IOException {
         this.builder = builder;
         builder.setObjFilename(filename);
         parseObjFile(filename);
@@ -67,8 +68,7 @@ public class ParseObj {
     }
 
     /**
-     * this part pars object file
-     *
+     * This part pars object file.
      * @param objFilename
      * @throws FileNotFoundException
      * @throws IOException
@@ -139,7 +139,7 @@ public class ParseObj {
 
 
     /**
-     * create vertex from data of file
+     * Create vertex from data of file.
      * @param line
      */
 
@@ -167,7 +167,7 @@ public class ParseObj {
     }
 
     /**
-     * add group name to builder-object
+     * Add group name to builder-object.
      * @param line
      */
 
@@ -178,7 +178,7 @@ public class ParseObj {
 
 
     /**
-     * add to builder name of the object
+     * Add to builder name of the object.
      * @param line
      */
     private void processObjectName(String line) {
@@ -208,7 +208,7 @@ public class ParseObj {
     }
 
     /**
-     * find material from files that exist (.bmp)
+     * Find material from files that exist (.bmp).
      * @param line
      * @throws FileNotFoundException
      * @throws IOException

@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class BuilderTest {
-    private BuildParserObj object = new BuildParserObj();
+    private LoadDataFromParserObject object = new LoadDataFromParserObject();
 
     @Test
     public void testSetCurrentGroupNames() {

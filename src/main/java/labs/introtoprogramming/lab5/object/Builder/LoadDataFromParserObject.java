@@ -9,9 +9,9 @@ import java.util.logging.Logger;
 import static java.util.logging.Level.INFO;
 import static java.util.logging.Level.SEVERE;
 
-public class BuildParserObj implements BuilderInterface {
+public class LoadDataFromParserObject implements BuilderInterface {
 
-    private Logger log = Logger.getLogger(BuildParserObj.class.getName());
+    private Logger log = Logger.getLogger(LoadDataFromParserObject.class.getName());
 
     private String objFilename = null;
 
@@ -20,9 +20,99 @@ public class BuildParserObj implements BuilderInterface {
     private ArrayList<VertexTexture> verticesT = new ArrayList<VertexTexture>();
     private ArrayList<VertexNormal> verticesN = new ArrayList<VertexNormal>();
 
+    public void setLog(Logger log) {
+        this.log = log;
+    }
 
+    public void setVerticesG(ArrayList<VertexGeometry> verticesG) {
+        this.verticesG = verticesG;
+    }
 
-     private HashMap<String, VertexFace> faceVertexMap = new HashMap<String, VertexFace>();
+    public void setVerticesT(ArrayList<VertexTexture> verticesT) {
+        this.verticesT = verticesT;
+    }
+
+    public void setVerticesN(ArrayList<VertexNormal> verticesN) {
+        this.verticesN = verticesN;
+    }
+
+    public void setFaceVertexMap(HashMap<String, VertexFace> faceVertexMap) {
+        this.faceVertexMap = faceVertexMap;
+    }
+
+    public void setFaceVertexList(ArrayList<VertexFace> faceVertexList) {
+        this.faceVertexList = faceVertexList;
+    }
+
+    public void setFaces(ArrayList<FacePlate> faces) {
+        this.faces = faces;
+    }
+
+    public void setSmoothingGroups(HashMap<Long, ArrayList<FacePlate>> smoothingGroups) {
+        this.smoothingGroups = smoothingGroups;
+    }
+
+    public void setCurrentSmoothingGroupNumber(long currentSmoothingGroupNumber) {
+        this.currentSmoothingGroupNumber = currentSmoothingGroupNumber;
+    }
+
+    public void setCurrentSmoothingGroup(ArrayList<FacePlate> currentSmoothingGroup) {
+        this.currentSmoothingGroup = currentSmoothingGroup;
+    }
+
+    public void setGroups(HashMap<String, ArrayList<FacePlate>> groups) {
+        this.groups = groups;
+    }
+
+    public void setCurrentGroups(ArrayList<String> currentGroups) {
+        this.currentGroups = currentGroups;
+    }
+
+    public void setCurrentGroupFaceLists(ArrayList<ArrayList<FacePlate>> currentGroupFaceLists) {
+        this.currentGroupFaceLists = currentGroupFaceLists;
+    }
+
+    public void setObjectName(String objectName) {
+        this.objectName = objectName;
+    }
+
+    public void setCurrentMaterial(Material currentMaterial) {
+        this.currentMaterial = currentMaterial;
+    }
+
+    public void setCurrentMap(Material currentMap) {
+        this.currentMap = currentMap;
+    }
+
+    public void setMaterialLib(HashMap<String, Material> materialLib) {
+        this.materialLib = materialLib;
+    }
+
+    public void setCurrentMaterialBeingParsed(Material currentMaterialBeingParsed) {
+        this.currentMaterialBeingParsed = currentMaterialBeingParsed;
+    }
+
+    public void setMapLib(HashMap<String, Material> mapLib) {
+        this.mapLib = mapLib;
+    }
+
+    public void setFaceTriCount(int faceTriCount) {
+        this.faceTriCount = faceTriCount;
+    }
+
+    public void setFaceQuadCount(int faceQuadCount) {
+        this.faceQuadCount = faceQuadCount;
+    }
+
+    public void setFacePolyCount(int facePolyCount) {
+        this.facePolyCount = facePolyCount;
+    }
+
+    public void setFaceErrorCount(int faceErrorCount) {
+        this.faceErrorCount = faceErrorCount;
+    }
+
+    private HashMap<String, VertexFace> faceVertexMap = new HashMap<String, VertexFace>();
 
     private ArrayList<VertexFace> faceVertexList = new ArrayList<VertexFace>();
     private ArrayList<FacePlate> faces = new ArrayList<FacePlate>();

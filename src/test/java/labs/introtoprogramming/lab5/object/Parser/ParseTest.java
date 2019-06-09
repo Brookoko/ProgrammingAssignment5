@@ -1,6 +1,6 @@
 package labs.introtoprogramming.lab5.object.Parser;
 
-import labs.introtoprogramming.lab5.object.Builder.BuildParserObj;
+import labs.introtoprogramming.lab5.object.Builder.LoadDataFromParserObject;
 import org.junit.Test;
 
 public class ParseTest {
@@ -9,8 +9,8 @@ public class ParseTest {
     @Test
     public void ParseTest() {
         try {
-                BuildParserObj builder = new BuildParserObj();
-                ParseObj obj = new ParseObj(builder,"LibertStatue.obj" );
+                LoadDataFromParserObject builder = new LoadDataFromParserObject();
+                ParseObjFile obj = new ParseObjFile(builder,"LibertStatue.obj" );
                 obj.toString();
             } catch (java.io.FileNotFoundException e) {
 
