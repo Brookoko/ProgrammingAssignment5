@@ -8,7 +8,7 @@ public class FacePlateTests {
 
     @Test
     public void testCalculateNormal(){
-        FacePlate facePlate = new FacePlate();
+
         VertexFace first = new VertexFace();
         VertexFace second = new VertexFace();
         VertexFace third = new VertexFace();

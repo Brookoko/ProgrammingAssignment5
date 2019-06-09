@@ -55,6 +55,7 @@ public class ParseObjFile {
     public final static String MTL_REFL_TYPE_CUBE_BACK = "cube_back";
     public final static String MTL_REFL_TYPE_CUBE_LEFT = "cube_left";
     public final static String MTL_REFL_TYPE_CUBE_RIGHT = "cube_right";
+
     LoadDataFromParserObject builder;
     File objFile = null;
 
@@ -64,7 +65,6 @@ public class ParseObjFile {
         builder.setObjFilename(filename);
         parseObjFile(filename);
 
-        builder.doneParsingObj(filename);
     }
 
     /**
@@ -139,23 +139,43 @@ public class ParseObjFile {
 
 
     /**
-     * Create vertex from data of file.
+     * Create vertex( just coordinates of each one) from data of file.
      * @param line
      */
 
     private void processVertex(String line) {
-        float[] values = StringUtils.parseFloatList(3, line, OBJ_VERTEX.length());
-        builder.addVertexGeometric(values[0], values[1], values[2]);
+        String[] values = line.split(" ");
+        float[] result = new float[3];
+        for (int i = 2; i <values.length; i++) {
+            result[i - 2] = Float.parseFloat(values[i]);
+        }
+        builder.addVertexGeometric(result[0], result[1], result[2]);
     }
 
+    /**
+     * Create texture info about vertex
+     * @param line
+     */
     private void processVertexTexture(String line) {
-        float[] values = StringUtils.parseFloatList(2, line, OBJ_VERTEX_TEXTURE.length());
-        builder.addVertexTexture(values[0], values[1]);
+        String[] values = line.split(" ");
+        float[] result = new float[3];
+        for (int i = 2; i <values.length; i++) {
+            result[i - 2] = Float.parseFloat(values[i]);
+        }
+        builder.addVertexTexture(result[0], result[1]);
     }
 
+    /**
+     * Create normal-data of vertex
+     * @param line
+     */
     private void processVertexNormal(String line) {
-        float[] values = StringUtils.parseFloatList(3, line, OBJ_VERTEX_NORMAL.length());
-        builder.addVertexNormal(values[0], values[1], values[2]);
+        String[] values = line.split(" ");
+        float[] result = new float[3];
+        for (int i = 2; i <values.length; i++) {
+            result[i - 2] = Float.parseFloat(values[i]);
+        }
+        builder.addVertexNormal(result[0], result[1], result[2]);
     }
 
 

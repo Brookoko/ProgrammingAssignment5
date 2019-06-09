@@ -1,6 +1,11 @@
 package labs.introtoprogramming.lab5.object.Builder;
 
-import labs.introtoprogramming.lab5.object.Builder.POJO.*;
+import labs.introtoprogramming.lab5.geometry.Vector2;
+import labs.introtoprogramming.lab5.geometry.Vector3;
+import labs.introtoprogramming.lab5.object.Builder.POJO.FacePlate;
+import labs.introtoprogramming.lab5.object.Builder.POJO.Material;
+import labs.introtoprogramming.lab5.object.Builder.POJO.ReflectivityTransmission;
+import labs.introtoprogramming.lab5.object.Builder.POJO.VertexFace;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,24 +20,44 @@ public class LoadDataFromParserObject implements BuilderInterface {
 
     private String objFilename = null;
 
+    private ArrayList<Vector3> verticesG = new ArrayList<Vector3>();
+    private ArrayList<Vector2> verticesT = new ArrayList<Vector2>();
+    private ArrayList<Vector3> verticesN = new ArrayList<>();
+    private HashMap<String, VertexFace> faceVertexMap = new HashMap<>();
 
-    private ArrayList<VertexGeometry> verticesG = new ArrayList<VertexGeometry>();
-    private ArrayList<VertexTexture> verticesT = new ArrayList<VertexTexture>();
-    private ArrayList<VertexNormal> verticesN = new ArrayList<VertexNormal>();
+    private ArrayList<VertexFace> faceVertexList = new ArrayList<VertexFace>();
+    private ArrayList<FacePlate> faces = new ArrayList<FacePlate>();
+    private HashMap<Long, ArrayList<FacePlate>> smoothingGroups = new HashMap<Long, ArrayList<FacePlate>>();
+
+    private long currentSmoothingGroupNumber = NO_SMOOTHING_GROUP;
+    private ArrayList<FacePlate> currentSmoothingGroup = null;
+    private HashMap<String, ArrayList<FacePlate>> groups = new HashMap<String, ArrayList<FacePlate>>();
+    private ArrayList<String> currentGroups = new ArrayList<String>();
+    private ArrayList<ArrayList<FacePlate>> currentGroupFaceLists = new ArrayList<ArrayList<FacePlate>>();
+    private String objectName = null;
+    private Material currentMaterial = null;
+    private Material currentMap = null;
+    public HashMap<String, Material> materialLib = new HashMap<String, Material>();
+    private Material currentMaterialBeingParsed = null;
+    public HashMap<String, Material> mapLib = new HashMap<String, Material>();
+    public int faceTriCount = 0;
+    public int faceQuadCount = 0;
+    public int facePolyCount = 0;
+    public int faceErrorCount = 0;
 
     public void setLog(Logger log) {
         this.log = log;
     }
 
-    public void setVerticesG(ArrayList<VertexGeometry> verticesG) {
+    public void setVerticesG(ArrayList<Vector3> verticesG) {
         this.verticesG = verticesG;
     }
 
-    public void setVerticesT(ArrayList<VertexTexture> verticesT) {
+    public void setVerticesT(ArrayList<Vector2> verticesT) {
         this.verticesT = verticesT;
     }
 
-    public void setVerticesN(ArrayList<VertexNormal> verticesN) {
+    public void setVerticesN(ArrayList<Vector3> verticesN) {
         this.verticesN = verticesN;
     }
 
@@ -112,45 +137,23 @@ public class LoadDataFromParserObject implements BuilderInterface {
         this.faceErrorCount = faceErrorCount;
     }
 
-    private HashMap<String, VertexFace> faceVertexMap = new HashMap<String, VertexFace>();
-
-    private ArrayList<VertexFace> faceVertexList = new ArrayList<VertexFace>();
-    private ArrayList<FacePlate> faces = new ArrayList<FacePlate>();
-    private HashMap<Long, ArrayList<FacePlate>> smoothingGroups = new HashMap<Long, ArrayList<FacePlate>>();
-
-    private long currentSmoothingGroupNumber = NO_SMOOTHING_GROUP;
-    private ArrayList<FacePlate> currentSmoothingGroup = null;
-    private HashMap<String, ArrayList<FacePlate>> groups = new HashMap<String, ArrayList<FacePlate>>();
-    private ArrayList<String> currentGroups = new ArrayList<String>();
-    private ArrayList<ArrayList<FacePlate>> currentGroupFaceLists = new ArrayList<ArrayList<FacePlate>>();
-    private String objectName = null;
-    private Material currentMaterial = null;
-    private Material currentMap = null;
-    public HashMap<String, Material> materialLib = new HashMap<String, Material>();
-    private Material currentMaterialBeingParsed = null;
-    public HashMap<String, Material> mapLib = new HashMap<String, Material>();
-    public int faceTriCount = 0;
-    public int faceQuadCount = 0;
-    public int facePolyCount = 0;
-    public int faceErrorCount = 0;
-
 
     public void setObjFilename(String filename) {
         this.objFilename = filename;
     }
 
     public void addVertexGeometric(float x, float y, float z) {
-        verticesG.add(new VertexGeometry(x, y, z));
+        verticesG.add(new Vector3(x, y, z));
 
     }
 
     public void addVertexTexture(float u, float v) {
-        verticesT.add(new VertexTexture(u, v));
+        verticesT.add(new Vector2(u, v));
 
     }
 
     public void addVertexNormal(float x, float y, float z) {
-        verticesN.add(new VertexNormal(x, y, z));
+        verticesN.add(new Vector3(x, y, z));
     }
 
     public void addPoints(int[] values) {
@@ -165,15 +168,15 @@ public class LoadDataFromParserObject implements BuilderInterface {
         return objFilename;
     }
 
-    public ArrayList<VertexGeometry> getVerticesG() {
+    public ArrayList<Vector3> getVerticesG() {
         return verticesG;
     }
 
-    public ArrayList<VertexTexture> getVerticesT() {
+    public ArrayList<Vector2> getVerticesT() {
         return verticesT;
     }
 
-    public ArrayList<VertexNormal> getVerticesN() {
+    public ArrayList<Vector3> getVerticesN() {
         return verticesN;
     }
 
@@ -230,10 +233,7 @@ public class LoadDataFromParserObject implements BuilderInterface {
     }
 
     public void addFace(int[] vertexIndices) {
-        FacePlate face = new FacePlate();
-
-        face.setMaterial(currentMaterial);
-        face.setMap(currentMap);
+        FacePlate face = new FacePlate(currentMaterial, currentMap);
 
         int loopi = 0;
 
@@ -430,7 +430,7 @@ public class LoadDataFromParserObject implements BuilderInterface {
     }
 
     public void setD(boolean halo, float factor) {
-        currentMaterialBeingParsed.setdHalo( halo);
+        currentMaterialBeingParsed.setdHalo(halo);
         currentMaterialBeingParsed.setdFactor(factor);
 
     }

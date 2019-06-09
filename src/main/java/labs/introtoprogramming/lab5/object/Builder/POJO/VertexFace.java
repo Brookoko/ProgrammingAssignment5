@@ -1,27 +1,30 @@
 package labs.introtoprogramming.lab5.object.Builder.POJO;
 
+import labs.introtoprogramming.lab5.geometry.Vector2;
+import labs.introtoprogramming.lab5.geometry.Vector3;
+
 /**
  * Class that describes structure of vertex.
  */
 public class VertexFace {
     private int index = -1;
-    private VertexGeometry vertexG = null;
-    private VertexTexture vertexT = null;
-    private VertexNormal vertexN = null;
+    private Vector3 vertexG = null;
+    private Vector2 vertexT = null;
+    private Vector3 vertexN = null;
 
     public void setIndex(int index) {
         this.index = index;
     }
 
-    public void setVertexG(VertexGeometry vertexG) {
+    public void setVertexG(Vector3 vertexG) {
         this.vertexG = vertexG;
     }
 
-    public void setVertexT(VertexTexture vertexT) {
+    public void setVertexT(Vector2 vertexT) {
         this.vertexT = vertexT;
     }
 
-    public void setVertexN(VertexNormal vertexN) {
+    public void setVertexN(Vector3 vertexN) {
         this.vertexN = vertexN;
     }
 
@@ -29,15 +32,15 @@ public class VertexFace {
         return index;
     }
 
-    public VertexGeometry getVertexG() {
+    public Vector3 getVertexG() {
         return vertexG;
     }
 
-    public VertexTexture getVertexT() {
+    public Vector2 getVertexT() {
         return vertexT;
     }
 
-    public VertexNormal getVertexN() {
+    public Vector3 getVertexN() {
         return vertexN;
     }
 
