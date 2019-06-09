@@ -1,8 +1,8 @@
 package labs.introtoprogramming.lab5.object;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertEquals;
 
 import labs.introtoprogramming.lab5.geometry.Ray;
 import labs.introtoprogramming.lab5.geometry.Vector3;
@@ -17,7 +17,7 @@ public class SphereTests {
     Ray ray = new Ray(Vector3.ZERO, Vector3.RIGHT);
     Sphere sphere = new Sphere(new Transform(Vector3.RIGHT.multiply(2)), 1);
     assertTrue(sphere.intersect(ray));
-    assertEquals(ray.getScale(), 1, DELTA);
+    assertEquals(1, ray.getScale(), DELTA);
   }
 
   @Test
@@ -25,7 +25,7 @@ public class SphereTests {
     Ray ray = new Ray(Vector3.ZERO, Vector3.RIGHT);
     Sphere sphere = new Sphere(new Transform(Vector3.ZERO), 1);
     assertTrue(sphere.intersect(ray));
-    assertEquals(ray.getScale(), 1, DELTA);
+    assertEquals(1, ray.getScale(), DELTA);
   }
 
   @Test
@@ -41,6 +41,6 @@ public class SphereTests {
     Ray ray = new Ray(Vector3.ZERO, Vector3.RIGHT.multiply(-1));
     Sphere sphere = new Sphere(new Transform(Vector3.RIGHT.multiply(2)), 1);
     assertFalse(sphere.intersect(ray));
-    assertEquals(ray.getScale(), 1, DELTA);
+    assertEquals(1, ray.getScale(), DELTA);
   }
 }

@@ -10,9 +10,9 @@ public class Vector3 implements Cloneable {
   public static final Vector3 FORWARD = new Vector3(0, 0, 1);
   public static final Vector3 ONE = new Vector3(1, 1, 1);
 
-  private final double x;
-  private final double y;
-  private final double z;
+  public final double x;
+  public final double y;
+  public final double z;
 
   public Vector3(double x, double y, double z) {
     this.x = x;
@@ -21,9 +21,7 @@ public class Vector3 implements Cloneable {
   }
 
   public Vector3(Vector3 v) {
-    x = v.x;
-    y = v.y;
-    z = v.z;
+    this(v.x, v.y, v.z);
   }
 
   public double magnitude() {
@@ -73,12 +71,16 @@ public class Vector3 implements Cloneable {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof Vector3)) return false;
-    if (obj == this) return true;
-    Vector3 vector = (Vector3) obj;
-    return Math.abs(vector.x - x) < COORDINATES_PRECISION &&
-            Math.abs(vector.y - y) < COORDINATES_PRECISION &&
-            Math.abs(vector.z - z) < COORDINATES_PRECISION;
+    if (!(obj instanceof Vector3)) {
+      return false;
+    }
+    if (obj == this) {
+      return true;
+    }
+    Vector3 v = (Vector3) obj;
+    return Math.abs(v.x - x) < COORDINATES_PRECISION
+            && Math.abs(v.y - y) < COORDINATES_PRECISION
+            && Math.abs(v.z - z) < COORDINATES_PRECISION;
   }
 
   @Override

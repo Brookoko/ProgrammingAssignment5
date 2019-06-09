@@ -35,4 +35,11 @@ public class RayTests {
     ray.setDirection(Vector3.ONE);
     assertEquals(Vector3.ONE, ray.getDirection());
   }
+
+  @Test
+  public void testSetOrigin() {
+    Ray ray = new Ray(Vector3.ZERO, Vector3.ZERO);
+    ray.setOrigin(Vector3.ONE);
+    assertEquals(Vector3.ONE, ray.getOrigin());
+  }
 }
