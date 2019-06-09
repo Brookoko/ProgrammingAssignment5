@@ -24,8 +24,8 @@ public class TriangleTests {
   @Test
   public void testNoIntersection() {
     Ray ray = new Ray(Vector3.ZERO, Vector3.RIGHT);
-    Triangle triangle = new Triangle(new Transform(Vector3.UP.multiply(10)),
-            Vector3.FORWARD, Vector3.UP, Vector3.FORWARD.multiply(-1));
+    Triangle triangle = new Triangle(new Transform(Vector3.RIGHT.multiply(2)),
+            Vector3.FORWARD.multiply(-1), Vector3.ONE, Vector3.UP);
     assertFalse(triangle.intersect(ray));
     assertEquals(1, ray.getScale(), DELTA);
   }
@@ -40,10 +40,28 @@ public class TriangleTests {
   }
 
   @Test
-  public void testOutOfBoundNoIntersection() {
+  public void testNoIntersectionOverTriangle() {
     Ray ray = new Ray(Vector3.ZERO, Vector3.RIGHT);
-    Triangle triangle = new Triangle(new Transform(Vector3.RIGHT.multiply(2)),
-            Vector3.FORWARD.multiply(-1), Vector3.ONE, Vector3.UP.multiply(1));
+    Triangle triangle = new Triangle(new Transform(Vector3.UP.multiply(10)),
+            Vector3.FORWARD, Vector3.UP, Vector3.FORWARD.multiply(-1));
+    assertFalse(triangle.intersect(ray));
+    assertEquals(1, ray.getScale(), DELTA);
+  }
+
+  @Test
+  public void testNoIntersectionBellowTriangle() {
+    Ray ray = new Ray(Vector3.ZERO, Vector3.RIGHT);
+    Triangle triangle = new Triangle(new Transform(Vector3.UP.multiply(-10)),
+            Vector3.FORWARD, Vector3.UP, Vector3.FORWARD.multiply(-1));
+    assertFalse(triangle.intersect(ray));
+    assertEquals(1, ray.getScale(), DELTA);
+  }
+
+  @Test
+  public void testNoIntersectionOutOfBounds() {
+    Ray ray = new Ray(Vector3.ZERO, Vector3.RIGHT);
+    Triangle triangle = new Triangle(new Transform(Vector3.ZERO),
+            Vector3.FORWARD.multiply(1), Vector3.ONE, Vector3.UP.multiply(-1));
     assertFalse(triangle.intersect(ray));
     assertEquals(1, ray.getScale(), DELTA);
   }
