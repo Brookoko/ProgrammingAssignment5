@@ -142,8 +142,8 @@ public class BuildParserObj implements BuilderInterface {
     public void addFace(int[] vertexIndices) {
         FacePlate face = new FacePlate();
 
-        face.material = currentMaterial;
-        face.map = currentMap;
+        face.setMaterial(currentMaterial);
+        face.setMap(currentMap);
 
         int loopi = 0;
 
@@ -229,9 +229,9 @@ public class BuildParserObj implements BuilderInterface {
         faces.add(face);
 
 
-        if (face.vertices.size() == 3) {
+        if (face.getVertices().size() == 3) {
             faceTriCount++;
-        } else if (face.vertices.size() == 4) {
+        } else if (face.getVertices().size() == 4) {
             faceQuadCount++;
         } else {
             facePolyCount++;

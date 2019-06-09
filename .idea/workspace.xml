@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b26c0e44-f3f0-4123-9782-0c1da57cda60" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/object/Builder/FacePlateTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/BuildParserObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/BuildParserObj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/FacePlate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/FacePlate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/object/Builder/VertexTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/object/Builder/VertexTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -35,19 +38,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/object/SphereTests.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Parser/StringUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/graphics/ArrayRasterTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="36" column="3" lean-forward="true" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+            <state relative-caret-position="2397">
+              <caret line="146" column="8" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,43 +50,35 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/object/Builder/BuilderTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/FacePlate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/VertexTexture.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="782">
+              <caret line="62" selection-start-line="62" selection-end-line="62" />
               <folding>
-                <element signature="e#199#200#0" expanded="true" />
+                <element signature="e#274#275#0" expanded="true" />
+                <element signature="e#305#306#0" expanded="true" />
+                <element signature="e#342#343#0" expanded="true" />
+                <element signature="e#373#374#0" expanded="true" />
+                <element signature="e#405#406#0" expanded="true" />
+                <element signature="e#431#432#0" expanded="true" />
+                <element signature="e#638#639#0" expanded="true" />
+                <element signature="e#678#679#0" expanded="true" />
+                <element signature="e#728#729#0" expanded="true" />
+                <element signature="e#768#769#0" expanded="true" />
+                <element signature="e#808#809#0" expanded="true" />
+                <element signature="e#838#839#0" expanded="true" />
+                <element signature="e#896#897#0" expanded="true" />
+                <element signature="e#940#941#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/object/Builder/VertexTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/graphics/BufferedImageRasterTests.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/object/Builder/FacePlateTests.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,16 +152,18 @@
         <option value="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/VertexGeometry.java" />
         <option value="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/VertexFace.java" />
         <option value="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/Material.java" />
-        <option value="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/FacePlate.java" />
         <option value="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Parser/StringUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/ReflectivityTransmiss.java" />
         <option value="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/ReflectivityTransmis.java" />
         <option value="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/ReflectivityTransmission.java" />
-        <option value="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/BuildParserObj.java" />
         <option value="$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/object/Builder/BuilderTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/VertexNormal.java" />
         <option value="$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/object/Builder/VertexTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/FacePlate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/BuildParserObj.java" />
+        <option value="$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/object/Builder/FasePlateTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/object/Builder/FacePlateTests.java" />
       </list>
     </option>
   </component>
@@ -213,40 +201,6 @@
               <item name="ProgrammingAssignment5" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProgrammingAssignment5" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProgrammingAssignment5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProgrammingAssignment5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lab5" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProgrammingAssignment5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProgrammingAssignment5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="object" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProgrammingAssignment5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProgrammingAssignment5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="object" type="462c0819:PsiDirectoryNode" />
-              <item name="Builder" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProgrammingAssignment5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProgrammingAssignment5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -255,52 +209,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProgrammingAssignment5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProgrammingAssignment5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lab5" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProgrammingAssignment5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProgrammingAssignment5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="graphics" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProgrammingAssignment5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProgrammingAssignment5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="object" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProgrammingAssignment5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProgrammingAssignment5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="object" type="462c0819:PsiDirectoryNode" />
-              <item name="Builder" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProgrammingAssignment5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProgrammingAssignment5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="object" type="462c0819:PsiDirectoryNode" />
-              <item name="Parser" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -521,13 +429,17 @@
       <option name="project" value="LOCAL" />
       <updated>1560004245568</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix test for vertex part (test.com.*.builder.vertexTest)">
+      <created>1560004926014</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1560004926014</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="VertexTests_VertexTextureTest - 2019.06.08 at 17h 34m 30s.xml">
-      <configuration name="VertexTests.VertexTextureTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="VertexTests_VertexTextureTest - 2019.06.08 at 17h 35m 54s.xml">
       <configuration name="VertexTests.VertexTextureTest" configurationId="JUnit" />
     </history-entry>
@@ -546,6 +458,18 @@
     <history-entry file="VertexTests_VertexTextureTest - 2019.06.08 at 17h 38m 27s.xml">
       <configuration name="VertexTests.VertexTextureTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="VertexTests_VertexTextureTest - 2019.06.08 at 17h 38m 39s.xml">
+      <configuration name="VertexTests.VertexTextureTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VertexTests_VertexNormalTest - 2019.06.08 at 17h 39m 55s.xml">
+      <configuration name="VertexTests.VertexNormalTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VertexTests_VertexGeometryTest - 2019.06.08 at 17h 41m 10s.xml">
+      <configuration name="VertexTests.VertexGeometryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VertexTests_VertexFaceTest - 2019.06.08 at 17h 41m 57s.xml">
+      <configuration name="VertexTests.VertexFaceTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -558,9 +482,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26693493" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26760563" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -569,12 +492,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31966054" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31966054" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32956153" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49899396" weight="0.042432815" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49899396" weight="0.39321074" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.501006" side_tool="true" weight="0.32956153" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32956153" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32956153" />
@@ -670,117 +593,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/Material.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
-          <folding>
-            <element signature="e#1150#1151#0" expanded="true" />
-            <element signature="e#1210#1211#0" expanded="true" />
-            <element signature="e#1262#1263#0" expanded="true" />
-            <element signature="e#1306#1307#0" expanded="true" />
-            <element signature="e#1331#1332#0" expanded="true" />
-            <element signature="e#1382#1383#0" expanded="true" />
-            <element signature="e#1410#1411#0" expanded="true" />
-            <element signature="e#1454#1455#0" expanded="true" />
-            <element signature="e#1479#1480#0" expanded="true" />
-            <element signature="e#1530#1531#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="e#1602#1603#0" expanded="true" />
-            <element signature="e#1627#1628#0" expanded="true" />
-            <element signature="e#1678#1679#0" expanded="true" />
-            <element signature="e#1706#1707#0" expanded="true" />
-            <element signature="e#1750#1751#0" expanded="true" />
-            <element signature="e#1775#1776#0" expanded="true" />
-            <element signature="e#1826#1827#0" expanded="true" />
-            <element signature="e#1854#1855#0" expanded="true" />
-            <element signature="e#1888#1889#0" expanded="true" />
-            <element signature="e#1921#1922#0" expanded="true" />
-            <element signature="e#1970#1971#0" expanded="true" />
-            <element signature="e#2014#2015#0" expanded="true" />
-            <element signature="e#2046#2047#0" expanded="true" />
-            <element signature="e#2074#2075#0" expanded="true" />
-            <element signature="e#2117#2118#0" expanded="true" />
-            <element signature="e#2151#2152#0" expanded="true" />
-            <element signature="e#2185#2186#0" expanded="true" />
-            <element signature="e#2215#2216#0" expanded="true" />
-            <element signature="e#2261#2262#0" expanded="true" />
-            <element signature="e#2299#2300#0" expanded="true" />
-            <element signature="e#2336#2337#0" expanded="true" />
-            <element signature="e#2369#2370#0" expanded="true" />
-            <element signature="e#2421#2422#0" expanded="true" />
-            <element signature="e#2465#2466#0" expanded="true" />
-            <element signature="e#2506#2507#0" expanded="true" />
-            <element signature="e#2543#2544#0" expanded="true" />
-            <element signature="e#2603#2604#0" expanded="true" />
-            <element signature="e#2655#2656#0" expanded="true" />
-            <element signature="e#2698#2699#0" expanded="true" />
-            <element signature="e#2737#2738#0" expanded="true" />
-            <element signature="e#2801#2802#0" expanded="true" />
-            <element signature="e#2857#2858#0" expanded="true" />
-            <element signature="e#2897#2898#0" expanded="true" />
-            <element signature="e#2933#2934#0" expanded="true" />
-            <element signature="e#2991#2992#0" expanded="true" />
-            <element signature="e#3041#3042#0" expanded="true" />
-            <element signature="e#3081#3082#0" expanded="true" />
-            <element signature="e#3117#3118#0" expanded="true" />
-            <element signature="e#3175#3176#0" expanded="true" />
-            <element signature="e#3225#3226#0" expanded="true" />
-            <element signature="e#3265#3266#0" expanded="true" />
-            <element signature="e#3301#3302#0" expanded="true" />
-            <element signature="e#3359#3360#0" expanded="true" />
-            <element signature="e#3409#3410#0" expanded="true" />
-            <element signature="e#3449#3450#0" expanded="true" />
-            <element signature="e#3485#3486#0" expanded="true" />
-            <element signature="e#3543#3544#0" expanded="true" />
-            <element signature="e#3593#3594#0" expanded="true" />
-            <element signature="e#3632#3633#0" expanded="true" />
-            <element signature="e#3667#3668#0" expanded="true" />
-            <element signature="e#3723#3724#0" expanded="true" />
-            <element signature="e#3771#3772#0" expanded="true" />
-            <element signature="e#3811#3812#0" expanded="true" />
-            <element signature="e#3847#3848#0" expanded="true" />
-            <element signature="e#3905#3906#0" expanded="true" />
-            <element signature="e#3955#3956#0" expanded="true" />
-            <element signature="e#3994#3995#0" expanded="true" />
-            <element signature="e#4029#4030#0" expanded="true" />
-            <element signature="e#4085#4086#0" expanded="true" />
-            <element signature="e#4133#4134#0" expanded="true" />
-            <element signature="e#4172#4173#0" expanded="true" />
-            <element signature="e#4207#4208#0" expanded="true" />
-            <element signature="e#4263#4264#0" expanded="true" />
-            <element signature="e#4311#4312#0" expanded="true" />
-            <element signature="e#4343#4344#0" expanded="true" />
-            <element signature="e#4374#4375#0" expanded="true" />
-            <element signature="e#4419#4420#0" expanded="true" />
-            <element signature="e#4459#4460#0" expanded="true" />
-            <element signature="e#4498#4499#0" expanded="true" />
-            <element signature="e#4533#4534#0" expanded="true" />
-            <element signature="e#4589#4590#0" expanded="true" />
-            <element signature="e#4637#4638#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/FacePlate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/object/ParseTest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Parser/ParseObj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6290">
-          <caret line="377" column="18" selection-start-line="377" selection-start-column="18" selection-end-line="377" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -803,45 +620,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/ReflectivityTransmission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding>
-            <element signature="e#653#654#0" expanded="true" />
-            <element signature="e#682#683#0" expanded="true" />
-            <element signature="e#779#780#0" expanded="true" />
-            <element signature="e#807#808#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/VertexGeometry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/BuildParserObj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="315" column="20" selection-start-line="315" selection-start-column="20" selection-end-line="315" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#532#548#0" expanded="true" />
-            <element signature="e#614#629#0" expanded="true" />
-            <element signature="e#694#708#0" expanded="true" />
-            <element signature="e#783#803#0" expanded="true" />
-            <element signature="e#872#884#0" expanded="true" />
-            <element signature="e#942#953#0" expanded="true" />
-            <element signature="e#1034#1062#0" expanded="true" />
-            <element signature="e#1267#1297#0" expanded="true" />
-            <element signature="e#1360#1368#0" expanded="true" />
-            <element signature="e#1453#1475#0" expanded="true" />
-            <element signature="e#1664#1682#0" expanded="true" />
-            <element signature="e#1799#1817#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -859,26 +641,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Parser/StringUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="146" column="8" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Test.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/object/SphereTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -890,16 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/VertexTexture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#199#200#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -977,8 +730,121 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/object/Builder/VertexTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/BuildParserObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="233" column="37" selection-start-line="233" selection-start-column="37" selection-end-line="233" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#532#548#0" expanded="true" />
+            <element signature="e#614#629#0" expanded="true" />
+            <element signature="e#694#708#0" expanded="true" />
+            <element signature="e#783#803#0" expanded="true" />
+            <element signature="e#872#884#0" expanded="true" />
+            <element signature="e#942#953#0" expanded="true" />
+            <element signature="e#1034#1062#0" expanded="true" />
+            <element signature="e#1267#1297#0" expanded="true" />
+            <element signature="e#1360#1368#0" expanded="true" />
+            <element signature="e#1453#1475#0" expanded="true" />
+            <element signature="e#1664#1682#0" expanded="true" />
+            <element signature="e#1799#1817#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/Material.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+          <folding>
+            <element signature="e#1174#1175#0" expanded="true" />
+            <element signature="e#3771#3772#0" expanded="true" />
+            <element signature="e#3819#3820#0" expanded="true" />
+            <element signature="e#4133#4134#0" expanded="true" />
+            <element signature="e#4181#4182#0" expanded="true" />
+            <element signature="e#4311#4312#0" expanded="true" />
+            <element signature="e#4359#4360#0" expanded="true" />
+            <element signature="e#4637#4638#0" expanded="true" />
+            <element signature="e#4685#4686#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/VertexTexture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#199#200#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Parser/ParseObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="377" column="18" selection-start-line="377" selection-start-column="18" selection-end-line="377" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/ReflectivityTransmission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#682#683#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#807#808#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Parser/StringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2397">
+          <caret line="146" column="8" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/labs/introtoprogramming/lab5/object/Builder/POJO/FacePlate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+          <folding>
+            <element signature="e#274#275#0" expanded="true" />
+            <element signature="e#305#306#0" expanded="true" />
+            <element signature="e#342#343#0" expanded="true" />
+            <element signature="e#373#374#0" expanded="true" />
+            <element signature="e#405#406#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#678#679#0" expanded="true" />
+            <element signature="e#728#729#0" expanded="true" />
+            <element signature="e#768#769#0" expanded="true" />
+            <element signature="e#808#809#0" expanded="true" />
+            <element signature="e#838#839#0" expanded="true" />
+            <element signature="e#896#897#0" expanded="true" />
+            <element signature="e#940#941#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/labs/introtoprogramming/lab5/object/Builder/FacePlateTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

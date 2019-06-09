@@ -4,9 +4,22 @@ import java.util.ArrayList;
 
 public class FacePlate {
 
-    public ArrayList<VertexFace> vertices = new ArrayList<VertexFace>();
-    public Material material = null;
-    public Material map = null;
+    private ArrayList<VertexFace> vertices = new ArrayList<VertexFace>();
+    private Material material = null;
+
+    public ArrayList<VertexFace> getVertices() {
+        return vertices;
+    }
+
+    public Material getMaterial() {
+        return material;
+    }
+
+    public Material getMap() {
+        return map;
+    }
+
+    private Material map = null;
 
     public FacePlate() {
     }
@@ -14,7 +27,24 @@ public class FacePlate {
     public void add(VertexFace vertex) {
         vertices.add(vertex);
     }
-    public VertexNormal faceNormal = new VertexNormal(0, 0, 0);
+
+    public void setVertices(ArrayList<VertexFace> vertices) {
+        this.vertices = vertices;
+    }
+
+    public void setMaterial(Material material) {
+        this.material = material;
+    }
+
+    public void setMap(Material map) {
+        this.map = map;
+    }
+
+    public void setFaceNormal(VertexNormal faceNormal) {
+        this.faceNormal = faceNormal;
+    }
+
+    private VertexNormal faceNormal = new VertexNormal(0, 0, 0);
 
     public void calculateTriangleNormal() {
         float[] edgeF = new float[3];
