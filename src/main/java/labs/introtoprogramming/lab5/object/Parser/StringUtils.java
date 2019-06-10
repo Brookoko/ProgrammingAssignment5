@@ -1,8 +1,5 @@
 package labs.introtoprogramming.lab5.object.Parser;
 
-import labs.introtoprogramming.lab5.object.Builder.BuilderInterface;
-
-import java.util.ArrayList;
 import java.util.logging.Logger;
 
 import static java.util.logging.Level.SEVERE;
@@ -43,7 +40,7 @@ public class StringUtils {
     }
 
 
-    public static Integer[] parseListVertexNTuples(String list, int expectedValuesPerTuple) {
+    public static Integer[] parseCodeLine(String list, int expectedValuesPerTuple) {
         if (list == null) {
             return null;
         }
@@ -88,49 +85,5 @@ public class StringUtils {
 
 
 
-    public static String[] parseWhitespaceList(String list) {
-        if (list == null) {
-            return null;
-        }
-        if (list.equals("")) {
-            return null;
-        }
 
-        ArrayList<String> returnVec = new ArrayList<String>();
-        String[] returnArray = null;
-
-        char listChars[];
-        listChars = new char[list.length()];
-        list.getChars(0, list.length(), listChars, 0);
-
-        int count = 0;
-        int itemStart = 0;
-        int itemEnd = 0;
-        String newItem = null;
-
-        while (count < listChars.length) {
-
-            itemEnd = skipWhiteSpace(count, listChars, null);
-            count = itemEnd;
-            if (count >= listChars.length) {
-                break;
-            }
-            itemStart = count;
-            itemEnd = itemStart;
-            while (itemEnd < listChars.length) {
-                if ((listChars[itemEnd] != ' ') && (listChars[itemEnd] != '\n') && (listChars[itemEnd] != '\t')) {
-                    itemEnd++;
-                } else {
-                    break;
-                }
-            }
-            newItem = new String(listChars, itemStart, itemEnd - itemStart);
-            itemEnd++;
-            count = itemEnd;
-            returnVec.add(newItem);
-        }
-        returnArray = new String[1];
-        returnArray = (String[]) returnVec.toArray((Object[]) returnArray);
-        return returnArray;
-    }
 }
