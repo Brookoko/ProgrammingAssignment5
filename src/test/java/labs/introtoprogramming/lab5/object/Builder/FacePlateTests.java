@@ -17,8 +17,8 @@ public class FacePlateTests {
         Material material = new Material(materStr);
         Material map = new Material(mapStr);
         FacePlate fp = new FacePlate(material, map);
-        assertEquals(mapStr, fp.getMap());
-        assertEquals(materStr, fp.getMaterial());
+        assertEquals(mapStr, fp.getMap().getNameOfMaterial());
+        assertEquals(materStr, fp.getMaterial().getNameOfMaterial());
     }
 
 }
