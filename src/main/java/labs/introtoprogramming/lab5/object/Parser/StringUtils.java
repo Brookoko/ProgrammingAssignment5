@@ -43,105 +43,50 @@ public class StringUtils {
     }
 
 
-
-
-    public static int[] parseListVertexNTuples(String list, int expectedValuesPerTuple) {
+    public static Integer[] parseListVertexNTuples(String list, int expectedValuesPerTuple) {
         if (list == null) {
             return null;
         }
         if (list.equals("")) {
             return null;
         }
-        String[] vertexStrings = parseWhitespaceList(list);
-
-
-        ArrayList<Integer> returnList = new ArrayList<Integer>();
-        Integer emptyMarker = new Integer(BuilderInterface.EMPTY_VERTEX_VALUE);
-
-        for (int loopi = 0; loopi < vertexStrings.length; loopi++) {
-
-            parseVerticeNTuple(vertexStrings[loopi], returnList, emptyMarker, expectedValuesPerTuple);
+        String[] temp;
+        String[] vertexStrings = list.split(" ");
+        temp = vertexStrings[0].split("/");
+        boolean mark = true;
+        Integer[] parsed;
+        if (!temp[1].equals("")) {
+            mark = false;
+            parsed = new Integer[vertexStrings.length * 4];
+        } else {
+            parsed = new Integer[vertexStrings.length * 3];
         }
 
-        int returnArray[] = new int[returnList.size()];
-        for (int loopi = 0; loopi < returnList.size(); loopi++) {
-            returnArray[loopi] = returnList.get(loopi);
-        }
-        return returnArray;
-    }
-
-    private static void parseVerticeNTuple(String list, ArrayList<Integer> returnList, Integer emptyMarker, int expectedValueCount) {
+        int j = 0;
+        for (int i = 0; i < vertexStrings.length; i++) {
+            if (mark) {
+                temp = vertexStrings[i].split("//");
+                parsed[j] = Integer.parseInt(temp[0]);
+                parsed[++j] = Integer.parseInt(temp[1]);
 
 
-
-        String[] numbers = parseList('/', list);
-
-        int foundCount = 0;
-
-        int index = 0;
-        while (index < numbers.length) {
-
-            if (numbers[index].trim().equals("")) {
-
-                returnList.add(emptyMarker);
             } else {
+                temp = vertexStrings[i].split("/");
+                parsed[j] = Integer.parseInt(temp[0]);
+                parsed[++j] = Integer.parseInt(temp[1]);
+                parsed[++j] = Integer.parseInt(temp[2]);
 
-                returnList.add(Integer.parseInt(numbers[index]));
+
             }
-            foundCount++;
-            index++;
+            parsed[++j] = null;
+            j++;
+
         }
-        while (foundCount < expectedValueCount) {
-            returnList.add(emptyMarker);
-            foundCount++;
-        }
+        return parsed;
     }
 
-    public static String[] parseList(char delim, String list) {
-        if (list == null) {
-            return null;
-        }
-        if (list.equals("")) {
-            return null;
-        }
-
-        ArrayList<String> returnVec = new ArrayList<String>();
-        String[] returnArray = null;
 
 
-        char listChars[];
-        listChars = new char[list.length()];
-        list.getChars(0, list.length(), listChars, 0);
-
-        int count = 0;
-        int itemStart = 0;
-        int itemEnd = 0;
-        String newItem = null;
-
-        while (count < listChars.length) {
-            count = itemEnd;
-            if (count >= listChars.length) {
-                break;
-            }
-            itemStart = count;
-            itemEnd = itemStart;
-            while (itemEnd < listChars.length) {
-                if (delim != listChars[itemEnd]) {
-                    itemEnd++;
-                } else {
-                    break;
-                }
-            }
-            newItem = new String(listChars, itemStart, itemEnd - itemStart);
-            itemEnd++;
-            count = itemEnd;
-            returnVec.add(newItem);
-        }
-
-        returnArray = new String[1];
-        returnArray = (String[]) returnVec.toArray((Object[]) returnArray);
-        return returnArray;
-    }
 
     public static String[] parseWhitespaceList(String list) {
         if (list == null) {

@@ -12,7 +12,6 @@ import java.util.HashMap;
 import java.util.logging.Logger;
 
 import static java.util.logging.Level.INFO;
-import static java.util.logging.Level.SEVERE;
 
 public class LoadDataFromParserObject implements BuilderInterface {
 
@@ -156,28 +155,16 @@ public class LoadDataFromParserObject implements BuilderInterface {
         verticesN.add(new Vector3(x, y, z));
     }
 
-    public void addPoints(int[] values) {
+    public void addPoints(Integer[] values) {
         log.log(INFO, "@TODO: Got " + values.length + " points in builder, ignoring");
     }
 
-    public void addLine(int[] values) {
+    public void addLine(Integer[] values) {
         log.log(INFO, "@TODO: Got a line of " + values.length + " segments in builder, ignoring");
     }
 
     public String getObjFilename() {
         return objFilename;
-    }
-
-    public ArrayList<Vector3> getVerticesG() {
-        return verticesG;
-    }
-
-    public ArrayList<Vector2> getVerticesT() {
-        return verticesT;
-    }
-
-    public ArrayList<Vector3> getVerticesN() {
-        return verticesN;
     }
 
     public HashMap<String, VertexFace> getFaceVertexMap() {
@@ -232,65 +219,20 @@ public class LoadDataFromParserObject implements BuilderInterface {
         return currentMaterialBeingParsed;
     }
 
-    public void addFace(int[] vertexIndices) {
+    public void addFace(Integer[] vertexIndices) {
         FacePlate face = new FacePlate(currentMaterial, currentMap);
 
-        int loopi = 0;
+        int indexOfStructure = 0;
+        VertexFace fv;
 
-        while (loopi < vertexIndices.length) {
+        while (indexOfStructure + 2 < vertexIndices.length) {
 
-
-            VertexFace fv = new VertexFace();
-
-            int vertexIndex;
-            vertexIndex = vertexIndices[loopi++];
-
-
-            if (vertexIndex < 0) {
-                vertexIndex = vertexIndex + verticesG.size();
+            fv = new VertexFace();
+            fv.setVertexG(verticesG.get(vertexIndices[indexOfStructure] - 1));
+            if (vertexIndices[indexOfStructure + 2] != null) {
+                fv.setVertexT(verticesT.get(vertexIndices[++indexOfStructure] - 1));
             }
-            if (((vertexIndex - 1) >= 0) && ((vertexIndex - 1) < verticesG.size())) {
-
-                fv.setVertexG(verticesG.get(vertexIndex - 1));
-            } else {
-                log.log(SEVERE, "Index for geometric vertex=" +
-                        vertexIndex + " is out of the current range of geometric vertex values 1 to " + verticesG.size() + ", ignoring");
-            }
-
-            vertexIndex = vertexIndices[loopi++];
-            if (vertexIndex != EMPTY_VERTEX_VALUE) {
-                if (vertexIndex < 0) {
-                    vertexIndex = vertexIndex + verticesT.size();
-                }
-                if (((vertexIndex - 1) >= 0) && ((vertexIndex - 1) < verticesT.size())) {
-
-                    fv.setVertexT(verticesT.get(vertexIndex - 1));
-                } else {
-                    log.log(SEVERE, "Index for texture vertex=" + vertexIndex +
-                            " is out of the current range of texture vertex values 1 to " + verticesT.size() + ", ignoring");
-                }
-            }
-
-            vertexIndex = vertexIndices[loopi++];
-            if (vertexIndex != EMPTY_VERTEX_VALUE) {
-                if (vertexIndex < 0) {
-
-                    vertexIndex = vertexIndex + verticesN.size();
-                }
-                if (((vertexIndex - 1) >= 0) && ((vertexIndex - 1) < verticesN.size())) {
-
-                    fv.setVertexN(verticesN.get(vertexIndex - 1));
-                } else {
-                    log.log(SEVERE, "Index for vertex normal=" + vertexIndex +
-                            " is out of the current range of vertex normal values 1 to " + verticesN.size() + ", ignoring");
-                }
-            }
-
-            if (fv.getVertexN() == null) {
-                log.log(SEVERE, "Can't add vertex to face with missing vertex!  Throwing away face.");
-                faceErrorCount++;
-                return;
-            }
+            fv.setVertexN(verticesN.get(vertexIndices[++indexOfStructure] - 1));
 
 
             String key = fv.toString();
@@ -304,6 +246,7 @@ public class LoadDataFromParserObject implements BuilderInterface {
             }
 
             face.add(fv);
+            indexOfStructure+=2;
         }
 
         if (currentSmoothingGroup != null) {
@@ -311,8 +254,8 @@ public class LoadDataFromParserObject implements BuilderInterface {
         }
 
         if (currentGroupFaceLists.size() > 0) {
-            for (loopi = 0; loopi < currentGroupFaceLists.size(); loopi++) {
-                currentGroupFaceLists.get(loopi).add(face);
+            for (indexOfStructure = 0; indexOfStructure < currentGroupFaceLists.size(); indexOfStructure++) {
+                currentGroupFaceLists.get(indexOfStructure).add(face);
             }
         }
 
@@ -326,6 +269,7 @@ public class LoadDataFromParserObject implements BuilderInterface {
         } else {
             facePolyCount++;
         }
+
     }
 
 

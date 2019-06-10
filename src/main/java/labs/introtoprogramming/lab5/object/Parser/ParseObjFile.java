@@ -181,7 +181,7 @@ public class ParseObjFile {
 
     private void processFace(String line) {
         line = line.substring(OBJ_FACE.length()).trim();
-        int[] vertexIndexAry = StringUtils.parseListVertexNTuples(line, 3);
+        Integer[] vertexIndexAry = StringUtils.parseListVertexNTuples(line, 3);
 
         builder.addFace(vertexIndexAry);
     }
@@ -217,13 +217,13 @@ public class ParseObjFile {
 
     private void processPoint(String line) {
         line = line.substring(OBJ_POINT.length()).trim();
-        int[] values = StringUtils.parseListVertexNTuples(line, 1);
+        Integer[] values = StringUtils.parseListVertexNTuples(line, 1);
         builder.addPoints(values);
     }
 
     private void processLine(String line) {
         line = line.substring(OBJ_LINE.length()).trim();
-        int[] values = StringUtils.parseListVertexNTuples(line, 2);
+        Integer[] values = StringUtils.parseListVertexNTuples(line, 2);
         builder.addLine(values);
     }
 

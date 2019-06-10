@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class FacePlateTests {
 
-    @Test
+
     public void testCalculateNormal(){
 
         VertexFace first = new VertexFace();
