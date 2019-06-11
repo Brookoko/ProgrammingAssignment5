@@ -1,6 +1,5 @@
 package labs.introtoprogramming.lab5.object.Parser;
 
-import labs.introtoprogramming.lab5.geometry.Vector2;
 import labs.introtoprogramming.lab5.geometry.Vector3;
 
 public class Vertex {

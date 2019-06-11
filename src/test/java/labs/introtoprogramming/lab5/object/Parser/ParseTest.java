@@ -10,7 +10,7 @@ public class ParseTest {
         try {
 
                 ParseObjFile obj = new ParseObjFile("LibertStatue.obj" );
-                obj.toString();
+                obj.getPolygonObject().toString();
             } catch (java.io.FileNotFoundException e) {
 
                 e.printStackTrace();

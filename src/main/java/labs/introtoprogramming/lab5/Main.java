@@ -1,9 +1,12 @@
 package labs.introtoprogramming.lab5;
 
-import java.awt.AWTException;
-        import java.awt.Robot;
-        import java.awt.Toolkit;
+
+import labs.introtoprogramming.lab5.exception.NotImplementedException;
 
 public class Main {
+
+        public static void main(String[] args) {
+                throw new NotImplementedException();
+        }
 
 }

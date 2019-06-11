@@ -22,13 +22,14 @@ public class ParseObjFile {
 
     private ArrayList<Vector3> verticesNormals = new ArrayList<>();
     private ArrayList<Vector3> verticesGeometry = new ArrayList<>();
-    private ArrayList<Vertex> vertices = new ArrayList<>();
-    private ArrayList<PolygonObject> polygons = new ArrayList<>();
+    private PolygonObject polygonObject = null;
+
     File objFile = null;
 
 
     public ParseObjFile(String filename) throws FileNotFoundException, IOException {
 
+        polygonObject = new PolygonObject();
         parseObjFile(filename);
 
     }
@@ -85,6 +86,10 @@ public class ParseObjFile {
     }
 
 
+    public PolygonObject getPolygonObject() {
+        return polygonObject;
+    }
+
     /**
      * Create vertex( just coordinates of each one) from data of file.
      *
@@ -125,7 +130,7 @@ public class ParseObjFile {
     }
 
     public void addPolygon(Integer[] vertexIndices) {
-        PolygonObject polygonObject = new PolygonObject();
+        Polygon polygon = new Polygon();
 
         int indexOfStructure = 0;
         Vertex fv;
@@ -138,13 +143,13 @@ public class ParseObjFile {
                 indexOfStructure++;
             }
             fv.setVertexN(verticesNormals.get(vertexIndices[++indexOfStructure] - 1));
-            vertices.add(fv);
             polygonObject.addVertex(fv);
-            indexOfStructure+=2;
+            polygon.addVertex(fv);
+            indexOfStructure += 2;
 
         }
 
-        polygonObject.calculatePolygonNormal();
-        polygons.add(polygonObject);
+        polygon.calculatePolygonNormalTriangle();
+        polygonObject.addPolygon(polygon);
     }
 }
