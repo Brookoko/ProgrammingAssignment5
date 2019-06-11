@@ -40,10 +40,7 @@ public class Polygon {
                     vertices.get(0).getVertexG().y - vertices.get(2).getVertexG().y,
                     vertices.get(0).getVertexG().z - vertices.get(2).getVertexG().z);
 
-            polygonNormal = new Vector3(fromOneToTwo.x*fromOneToThree.y + fromOneToThree.x*fromOneToTwo.y,
-                    fromOneToThree.x*fromOneToTwo.z + fromOneToThree.z*fromOneToTwo.x,
-                    fromOneToTwo.y*fromOneToThree.z + fromOneToThree.y*fromOneToTwo.z);
-
+            polygonNormal = fromOneToTwo.crossProduct(fromOneToThree);
         }
 
     }
