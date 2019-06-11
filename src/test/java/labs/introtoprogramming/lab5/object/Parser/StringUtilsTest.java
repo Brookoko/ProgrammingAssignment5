@@ -14,6 +14,6 @@ public class StringUtilsTest {
         Integer[] firstArr = StringUtils.parseCodeLine(firstLine);
         Integer[] secondArr = StringUtils.parseCodeLine(secondLine);
         assertEquals(1, secondArr[0], DELTA);
-        assertEquals(1, secondArr[1], DELTA);
+        assertEquals(1, secondArr[0], DELTA);
     }
 }
