@@ -5,9 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import labs.introtoprogramming.lab5.controllers.Controller;
+import labs.introtoprogramming.lab5.gui.Input;
 
 public class BasicScene extends Scene {
   private List<SceneObject> entities;
+  private List<Controller> controllers = new ArrayList<>();
   private Color background;
 
   public BasicScene(List<SceneObject> entities, Color background) {
@@ -24,8 +27,8 @@ public class BasicScene extends Scene {
   }
 
   @Override
-  public void update(int delta) {
-    entities.forEach(obj -> obj.update(delta));
+  public void update(int delta, Input input) {
+    controllers.forEach(controller -> controller.update(delta, input));
   }
 
   @Override
@@ -39,6 +42,11 @@ public class BasicScene extends Scene {
             .filter(obj -> obj instanceof PointLight)
             .map(obj -> (PointLight) obj)
             .collect(Collectors.toList());
+  }
+
+  @Override
+  public List<Controller> getControllers() {
+    return controllers;
   }
 
   @Override
@@ -57,5 +65,10 @@ public class BasicScene extends Scene {
   @Override
   public void addSceneObject(SceneObject obj) {
     entities.add(obj);
+  }
+
+  @Override
+  public void addController(Controller controller) {
+    this.controllers.add(controller);
   }
 }

@@ -1,12 +1,12 @@
 package labs.introtoprogramming.lab5;
 
+import labs.introtoprogramming.lab5.controllers.KeyAndMouseMovementController;
 import labs.introtoprogramming.lab5.geometry.Vector3;
 import labs.introtoprogramming.lab5.graphics.BufferedImageRaster;
 import labs.introtoprogramming.lab5.graphics.Raster;
 import labs.introtoprogramming.lab5.gui.SceneRendererWindow;
 import labs.introtoprogramming.lab5.scene.Scene;
 import labs.introtoprogramming.lab5.scene.Camera;
-import labs.introtoprogramming.lab5.scene.ControllableCamera;
 import labs.introtoprogramming.lab5.scene.Transform;
 import labs.introtoprogramming.lab5.scenes.DemoScene;
 
@@ -22,7 +22,9 @@ public class Main {
 
   private void run() {
     Scene demoScene = new DemoScene();
-    demoScene.addSceneObject(createCamera());
+    Camera camera = createCamera();
+    demoScene.addSceneObjects(camera);
+    demoScene.addController(new KeyAndMouseMovementController(camera));
 
     SceneRendererWindow window = new SceneRendererWindow(demoScene);
     window.setTitle(APP_TILE);
@@ -32,6 +34,6 @@ public class Main {
 
   private Camera createCamera() {
     Raster raster = new BufferedImageRaster(SCREEN_WIDTH, SCREEN_HEIGHT);
-    return new ControllableCamera(raster, new Transform(Vector3.ZERO));
+    return new Camera(raster, new Transform(Vector3.ZERO));
   }
 }

@@ -13,7 +13,6 @@ public class SceneRendererWindow extends Window {
   private static final int UPDATE_LOOP_DELAY = 100; // ms
   private static final int TARGET_FPS = 60;
   private static final int UPDATE_RATE = 1000/TARGET_FPS;
-  private static final boolean DEFAULT_CAMERA_CONTROLLABLE = false;
 
   private SceneRender render;
   private Scene scene;
@@ -30,7 +29,6 @@ public class SceneRendererWindow extends Window {
     this.scene = scene;
     input = new Input();
     scene.getCamera().ifPresent(camera -> setRaster(camera.raster()));
-    scene.getSceneObjects().forEach(obj -> obj.setInput(input));
     mouseController = new MouseController(input, frame);
   }
 
@@ -60,7 +58,7 @@ public class SceneRendererWindow extends Window {
 
   private void updateIteration(int delta) {
     this.mouseController.update();
-    scene.update(delta);
+    scene.update(delta, input);
     render.render(scene);
     this.update();
   }
@@ -68,5 +66,4 @@ public class SceneRendererWindow extends Window {
   private void setScene(Scene scene) {
     this.scene = scene;
   }
-
 }
