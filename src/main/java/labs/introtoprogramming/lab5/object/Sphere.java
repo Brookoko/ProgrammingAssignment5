@@ -53,6 +53,6 @@ public class Sphere extends SceneObject {
   public Box getBoundary() {
     Vector3 pos = transform.position();
     Vector3 size = Vector3.ONE.multiply(radius);
-    return new Box(new Transform(), pos.add(size), pos.add(size.multiply(-1)));
+    return new Box(new Transform(), pos.subtract(size), pos.add(size));
   }
 }

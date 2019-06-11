@@ -43,4 +43,12 @@ public class SphereTests {
     assertFalse(sphere.intersect(ray));
     assertEquals(1, ray.getScale(), DELTA);
   }
+
+  @Test
+  public void testBoundary() {
+    Sphere sphere = new Sphere(new Transform(), 5);
+    Box boundary = sphere.getBoundary();
+    assertEquals(Vector3.ONE.multiply(5), boundary.upperBounds);
+    assertEquals(Vector3.ONE.multiply(-5), boundary.lowerBounds);
+  }
 }

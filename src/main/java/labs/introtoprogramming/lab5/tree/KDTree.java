@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class KDTree {
-  private static double MIN_NUMBER_OF_OBJECTS = 3;
+  private static final double MIN_NUMBER_OF_OBJECTS = 3;
   private KDNode root;
   private SceneObject intersection;
 
@@ -40,6 +40,12 @@ public class KDTree {
               Math.max(upperBound.y, boundary.upperBounds.y),
               Math.max(upperBound.z, boundary.upperBounds.z)
       );
+    }
+    if (lowerBound.equals(Vector3.ONE.multiply(Double.MAX_VALUE))) {
+      lowerBound = Vector3.ONE.multiply(Double.MIN_VALUE);
+    }
+    if (upperBound.equals(Vector3.ONE.multiply(Double.MIN_VALUE))) {
+      upperBound = Vector3.ONE.multiply(Double.MAX_VALUE);
     }
     return new Box(new Transform(), lowerBound, upperBound);
   }
