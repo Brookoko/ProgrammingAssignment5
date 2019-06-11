@@ -17,6 +17,7 @@ public class CameraTests {
     assertEquals(cam.size(), 1, DELTA);
     assertEquals(cam.fieldOfView(), 2 * Math.atan(1), DELTA);
     assertEquals(cam.aspectRatio(), 600.0 / 400.0, DELTA);
+    assertEquals(DUMMY_RASTER, cam.raster());
   }
 
   @Test

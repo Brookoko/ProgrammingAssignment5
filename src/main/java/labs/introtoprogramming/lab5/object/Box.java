@@ -9,8 +9,8 @@ public class Box extends SceneObject {
   private static final double DELTA = 1e-6;
   private static final double DEFAULT_SIZE = 1;
 
-  private Vector3 lowerBounds;
-  private Vector3 upperBounds;
+  public Vector3 lowerBounds;
+  public Vector3 upperBounds;
 
   public Box(Transform transform, double size) {
     super(transform);
@@ -18,6 +18,12 @@ public class Box extends SceneObject {
     Vector3 bound = Vector3.ONE.multiply(size * 0.5);
     upperBounds = pos.add(bound);
     lowerBounds = pos.add(bound.multiply(-1));
+  }
+
+  public Box(Transform transform, Vector3 lowerBounds, Vector3 upperBounds) {
+    super(transform);
+    this.lowerBounds = lowerBounds;
+    this.upperBounds = upperBounds;
   }
 
   public Box(Transform transform) {
@@ -86,6 +92,11 @@ public class Box extends SceneObject {
 
     ray.setScale(t);
     return true;
+  }
+
+  @Override
+  public Box getBoundary() {
+    return new Box(transform, lowerBounds, upperBounds);
   }
 
   private double axisDirection(double val) {

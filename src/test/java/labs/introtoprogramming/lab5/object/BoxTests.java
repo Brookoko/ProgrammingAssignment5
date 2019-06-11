@@ -2,6 +2,7 @@ package labs.introtoprogramming.lab5.object;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import labs.introtoprogramming.lab5.geometry.Ray;
@@ -80,5 +81,13 @@ public class BoxTests {
     Ray ray = new Ray(Vector3.ZERO, new Vector3(-DELTA, -DELTA, -DELTA));
     Box box = new Box(new Transform(Vector3.RIGHT.multiply(2)));
     assertFalse(box.intersect(ray));
+  }
+
+  @Test
+  public void testBoundary() {
+    Box box = new Box(new Transform(Vector3.RIGHT.multiply(2)));
+    Box boundary = box.getBoundary();
+    assertEquals(box.upperBounds, boundary.upperBounds);
+    assertEquals(box.lowerBounds, boundary.lowerBounds);
   }
 }
