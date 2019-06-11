@@ -3,6 +3,7 @@ package labs.introtoprogramming.lab5.graphics;
 import java.awt.Color;
 import java.awt.GraphicsEnvironment;
 import java.awt.Image;
+import java.awt.Transparency;
 import java.awt.image.BufferedImage;
 
 public class BufferedImageRaster implements Raster {
@@ -14,9 +15,9 @@ public class BufferedImageRaster implements Raster {
     if (!GraphicsEnvironment.isHeadless()) {
       image = GraphicsEnvironment.getLocalGraphicsEnvironment()
               .getDefaultScreenDevice()
-              .getDefaultConfiguration().createCompatibleImage(width, height);
+              .getDefaultConfiguration().createCompatibleImage(width, height, Transparency.BITMASK);
     } else {
-      image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+      image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
     }
   }
 
