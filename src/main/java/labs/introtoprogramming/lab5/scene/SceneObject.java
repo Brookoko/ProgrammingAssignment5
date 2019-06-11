@@ -1,6 +1,7 @@
 package labs.introtoprogramming.lab5.scene;
 
 import labs.introtoprogramming.lab5.geometry.Ray;
+import labs.introtoprogramming.lab5.object.Box;
 
 public class SceneObject {
 
@@ -36,5 +37,9 @@ public class SceneObject {
 
   public boolean intersect(Ray ray) {
     return false;
+  }
+
+  public Box getBoundary() {
+    return null;
   }
 }

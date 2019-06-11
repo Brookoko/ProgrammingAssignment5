@@ -2,6 +2,7 @@ package labs.introtoprogramming.lab5.object;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import labs.introtoprogramming.lab5.geometry.Ray;
@@ -42,5 +43,11 @@ public class PlaneTests {
     Ray ray = new Ray(Vector3.ZERO, Vector3.UP);
     assertFalse(plane.intersect(ray));
     assertEquals(1, ray.getScale(), DELTA);
+  }
+
+  @Test
+  public void testBoundary() {
+    Plane plane = new Plane(new Transform());
+    assertNull(plane.getBoundary());
   }
 }
