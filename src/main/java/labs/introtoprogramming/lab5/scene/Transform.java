@@ -8,6 +8,7 @@ public class Transform {
   private Vector3 rotation;
   private Vector3 scale;
   private Matrix44 matrix;
+  private Transform parent;
 
   /**
    * Container of object transformations.
@@ -65,6 +66,9 @@ public class Transform {
    * @return transformed vector to local space
    */
   public Vector3 applyVector(Vector3 v) {
+    if (parent != null) {
+      v = parent.applyVector(v);
+    }
     return matrix.applyVector(v);
   }
 
@@ -75,6 +79,9 @@ public class Transform {
    * @return transformed point to local space
    */
   public Vector3 applyPoint(Vector3 v) {
+    if (parent != null) {
+      v = parent.applyPoint(v);
+    }
     return matrix.applyPoint(v);
   }
 
@@ -88,5 +95,9 @@ public class Transform {
    */
   public void setMatrix(Vector3 right, Vector3 up, Vector3 forward, Vector3 translate) {
     matrix.setMatrix(right, up, forward, translate);
+  }
+
+  public void setParent(Transform parent) {
+    this.parent = parent;
   }
 }

@@ -25,13 +25,14 @@ public class BasicRaytracingRender implements SceneRender {
   @Override
   public void render(Scene scene) {
     Camera camera = scene.getCamera().orElseThrow(NoCameraException::new);
+    Transform transform = camera.getTransform();
     Vector3 pos = camera.getTransform().position();
     int width = raster.getWidth();
     int height = raster.getHeight();
     double aspectRatio = camera.aspectRatio();
     double fieldOfView = Math.tan(camera.fieldOfView() / 2);
     Ray primaryRay = new Ray(pos, Vector3.ZERO);
-    Transform transform = camera.getTransform();
+    primaryRay.setOrigin(transform.applyPoint(transform.position()));
     for (int y = 0; y < height; y++) {
       double normalizedY = 1 - 2 * (y + 0.5) / height;
       double cameraY =  normalizedY * fieldOfView;
@@ -40,7 +41,6 @@ public class BasicRaytracingRender implements SceneRender {
         double cameraX = normalizedX * aspectRatio * fieldOfView;
         Vector3 direction = new Vector3(cameraX, cameraY, -1).normalize();
         primaryRay.setDirection(transform.applyVector(direction).normalize());
-        primaryRay.setOrigin(transform.applyPoint(transform.position()));
         Color color = getColor(primaryRay, scene);
         raster.setPixel(x, y,
                 (byte) color.getRed(),
