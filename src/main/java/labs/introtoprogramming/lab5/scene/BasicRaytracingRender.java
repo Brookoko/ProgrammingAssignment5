@@ -10,6 +10,14 @@ import java.awt.Color;
 public class BasicRaytracingRender implements SceneRender {
   private Raster raster;
 
+  public BasicRaytracingRender(Scene scene) {
+    this(scene.getCamera().orElseThrow(NoCameraException::new));
+  }
+
+  public BasicRaytracingRender(Camera camera) {
+    this(camera.raster());
+  }
+
   public BasicRaytracingRender(Raster raster) {
     this.raster = raster;
   }
