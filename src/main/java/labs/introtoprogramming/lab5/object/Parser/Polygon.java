@@ -32,14 +32,9 @@ public class Polygon {
 
     public void calculatePolygonNormalTriangle(){
         if(vertices.size() == 3){
-            Vector3 fromOneToTwo = new Vector3(vertices.get(0).getVertexG().x - vertices.get(1).getVertexG().x,
-                    vertices.get(0).getVertexG().y - vertices.get(1).getVertexG().y,
-                    vertices.get(0).getVertexG().z - vertices.get(1).getVertexG().z);
-            Vector3 fromOneToThree = new Vector3(
-                    vertices.get(0).getVertexG().x - vertices.get(2).getVertexG().x,
-                    vertices.get(0).getVertexG().y - vertices.get(2).getVertexG().y,
-                    vertices.get(0).getVertexG().z - vertices.get(2).getVertexG().z);
 
+            Vector3 fromOneToTwo = vertices.get(0).getVertexG().subtract(vertices.get(1).getVertexG());
+            Vector3 fromOneToThree = vertices.get(0).getVertexG().subtract(vertices.get(2).getVertexG());
             polygonNormal = fromOneToTwo.crossProduct(fromOneToThree);
         }
 
