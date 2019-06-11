@@ -37,10 +37,10 @@ public class BasicScene extends Scene {
   }
 
   @Override
-  public List<PointLight> getLights() {
+  public List<Light> getLights() {
     return entities.stream()
-            .filter(obj -> obj instanceof PointLight)
-            .map(obj -> (PointLight) obj)
+            .filter(obj -> obj instanceof Light)
+            .map(obj -> (Light) obj)
             .collect(Collectors.toList());
   }
 

@@ -13,7 +13,7 @@ public abstract class Scene {
 
   public abstract List<SceneObject> getSceneObjects();
 
-  public abstract List<PointLight> getLights();
+  public abstract List<Light> getLights();
 
   public abstract List<Controller> getControllers();
 

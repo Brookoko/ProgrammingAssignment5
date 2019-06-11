@@ -20,6 +20,7 @@ public class Sphere extends SceneObject {
     this.radius = radius;
   }
 
+  @SuppressWarnings("Duplicates")
   @Override
   public boolean intersect(Ray ray) {
     Vector3 originToCenter = transform.position().subtract(ray.getOrigin());
@@ -54,5 +55,9 @@ public class Sphere extends SceneObject {
     Vector3 pos = transform.position();
     Vector3 size = Vector3.ONE.multiply(radius);
     return new Box(new Transform(), pos.subtract(size), pos.add(size));
+  }
+
+  public Vector3 getNormal(Vector3 hitPoint) {
+    return hitPoint.subtract(transform.position()).normalize();
   }
 }

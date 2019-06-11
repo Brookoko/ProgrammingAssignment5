@@ -8,7 +8,11 @@ import labs.introtoprogramming.lab5.graphics.Raster;
 import java.awt.Color;
 
 public class BasicRaytracingRender implements SceneRender {
+
+  private static final boolean DEFAULT_APPLY_SHADING = true;
+
   private Raster raster;
+  private boolean applyShading = DEFAULT_APPLY_SHADING;
 
   public BasicRaytracingRender(Scene scene) {
     this(scene.getCamera().orElseThrow(NoCameraException::new));
@@ -52,12 +56,40 @@ public class BasicRaytracingRender implements SceneRender {
 
   Color getColor(Ray primaryRay, Scene scene) {
     SceneObject obj = findInteraction(primaryRay, scene);
-    return obj != null ? obj.getMesh().color() : scene.getBackgroundColor();
+
+    if (obj == null) {
+      return scene.getBackgroundColor();
+    }
+
+    if (!applyShading) {
+      return obj.getMesh().color();
+    }
+
+    double c = 0;
+
+    for (Light light : scene.getLights()) {
+      Vector3 hitNormal = obj.getNormal(primaryRay.getPoint());
+      double bias = 0.001;
+      Ray nRay = new Ray(primaryRay.getPoint().add(hitNormal.multiply(bias)), light.getTransform().rotation().multiply(-1));
+      boolean visible = findInteraction(nRay, scene, light.getMaxDist(primaryRay.getPoint())) == null;
+      if (visible) {
+        c += obj.albedo() / Math.PI * light.illuminate(hitNormal, light.getTransform().position().distance(obj.getTransform().position()));
+      }
+    }
+
+    if (c > 1) {
+      c = 1;
+    }
+
+    return new Color((int) (obj.getMesh().color().getRed() * c), (int) (obj.getMesh().color().getGreen() * c), (int) (obj.getMesh().color().getBlue() * c));
   }
 
   SceneObject findInteraction(Ray primaryRay, Scene scene) {
+    return findInteraction(primaryRay, scene, Double.POSITIVE_INFINITY);
+  }
+
+  SceneObject findInteraction(Ray primaryRay, Scene scene, double minDistance) {
     SceneObject intersection = null;
-    double minDistance = Double.POSITIVE_INFINITY;
     for (SceneObject obj : scene.getSceneObjects()) {
       if (obj.intersect(primaryRay)) {
         double distance = primaryRay.getScale();
@@ -66,6 +98,9 @@ public class BasicRaytracingRender implements SceneRender {
           intersection = obj;
         }
       }
+    }
+    if (intersection != null) {
+      primaryRay.setScale(minDistance);
     }
     return intersection;
   }
