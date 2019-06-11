@@ -48,4 +48,11 @@ public class Sphere extends SceneObject {
     ray.setScale(intersection);
     return true;
   }
+
+  @Override
+  public Box getBoundary() {
+    Vector3 pos = transform.position();
+    Vector3 size = Vector3.ONE.multiply(radius);
+    return new Box(new Transform(), pos.add(size), pos.add(size.multiply(-1)));
+  }
 }
