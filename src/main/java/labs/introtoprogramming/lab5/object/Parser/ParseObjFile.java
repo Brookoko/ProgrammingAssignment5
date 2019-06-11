@@ -116,7 +116,7 @@ public class ParseObjFile {
 
     private void processFace(String line) {
         line = line.substring(OBJ_FACE.length()).trim();
-        Integer[] vertexIndexAry = StringUtils.parseCodeLine(line, 3);
+        Integer[] vertexIndexAry = StringUtils.parseCodeLine(line);
         addPolygon(vertexIndexAry);
 
 

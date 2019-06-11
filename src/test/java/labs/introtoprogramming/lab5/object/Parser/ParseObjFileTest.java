@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class ParseTest {
+public class ParseObjFileTest {
 
 
     @Test

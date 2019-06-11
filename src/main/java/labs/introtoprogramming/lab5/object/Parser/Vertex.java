@@ -13,16 +13,13 @@ public class Vertex {
         this.vertexG = vertexG;
     }
 
-
     public void setVertexN(Vector3 vertexN) {
         this.vertexN = vertexN;
     }
 
-
     public Vector3 getVertexG() {
         return vertexG;
     }
-
 
     public Vector3 getVertexN() {
         return vertexN;
