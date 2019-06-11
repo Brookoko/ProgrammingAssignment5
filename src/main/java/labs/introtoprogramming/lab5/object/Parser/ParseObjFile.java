@@ -125,9 +125,7 @@ public class ParseObjFile {
             polygonObject.addVertex(fv);
             polygon.addVertex(fv);
             indexOfStructure += 2;
-
         }
-
         polygon.calculatePolygonNormalTriangle();
         polygonObject.addPolygon(polygon);
     }

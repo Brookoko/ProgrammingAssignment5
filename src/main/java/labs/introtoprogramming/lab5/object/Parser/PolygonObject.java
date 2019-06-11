@@ -8,7 +8,6 @@ import java.util.List;
 public class PolygonObject extends SceneObject {
     private List<Vertex> vertices = new ArrayList<>();
     private List<Polygon> polygons = new ArrayList<>();
-
     public List<Vertex> getVertices() {
         return vertices;
     }

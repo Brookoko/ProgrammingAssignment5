@@ -2,7 +2,6 @@ package labs.introtoprogramming.lab5.object.Parser;
 
 import labs.introtoprogramming.lab5.geometry.Vector3;
 import org.junit.Test;
-import org.omg.CORBA.DATA_CONVERSION;
 
 import java.io.IOException;
 
@@ -18,7 +17,7 @@ public class ParseObjFileTest {
                 ParseObjFileTest.class.getResourceAsStream("/LibertStatue.obj"));
         Vector3 geometry = obj.getVerticesGeometry().get(4);
         Polygon polygon = obj.getPolygonObject().getPolygons().get(4);
-        Vector3 findGeometry = polygon.getVertecies().get(0).getVertexG();
+        Vector3 findGeometry = polygon.getVertices().get(0).getVertexG();
         assertEquals(geometry.x, findGeometry.x, DELTA);
         obj.getPolygonObject().toString();
     }

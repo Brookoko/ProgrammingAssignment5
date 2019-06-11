@@ -8,8 +8,7 @@ import java.util.List;
 public class Polygon {
     private List<Vertex> vertices = new ArrayList<>();
     private Vector3 polygonNormal;
-
-    public List<Vertex> getVertecies() {
+    public List<Vertex> getVertices() {
         return vertices;
     }
 
@@ -17,9 +16,7 @@ public class Polygon {
         this.vertices = vertices;
     }
 
-    public void addVertex(Vertex vertex) {
-        vertices.add(vertex);
-    }
+    public void addVertex(Vertex vertex) {vertices.add(vertex);}
 
     public void setVertices(ArrayList<Vertex> vertices) {
         this.vertices = vertices;
