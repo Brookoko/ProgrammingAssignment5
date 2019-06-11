@@ -20,8 +20,7 @@ public class SceneRendererWindow extends Window {
   private Input input;
 
   public SceneRendererWindow(Scene scene) {
-    this(new BasicRaytracingRender(scene.getCamera().orElseThrow(NoCameraException::new).raster()), scene);
-    setRaster(scene.getCamera().orElseThrow(NoCameraException::new).raster());
+    this(new BasicRaytracingRender(scene), scene);
   }
 
   public SceneRendererWindow(SceneRender render, Scene scene) {
