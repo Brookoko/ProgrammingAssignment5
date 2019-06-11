@@ -1,0 +1,62 @@
+package labs.introtoprogramming.lab5.object;
+
+import labs.introtoprogramming.lab5.geometry.Ray;
+import labs.introtoprogramming.lab5.geometry.Vector3;
+import labs.introtoprogramming.lab5.scene.SceneObject;
+import labs.introtoprogramming.lab5.scene.Transform;
+
+public class Triangle extends SceneObject {
+  private static final double DELTA = 1e-6;
+
+  private Vector3 v0; // Points which define triangle
+  private Vector3 v1;
+  private Vector3 v2;
+
+  /**
+   * Representation of triangle.
+   *
+   * @param transform container of object transformations
+   * @param v0 first vertex of triangle
+   * @param v1 second vertex of triangle
+   * @param v2 third vertex of triangle
+   */
+  public Triangle(Transform transform, Vector3 v0, Vector3 v1, Vector3 v2) {
+    super(transform);
+    this.v0 = v0;
+    this.v1 = v1;
+    this.v2 = v2;
+  }
+
+  @Override
+  public boolean intersect(Ray ray) {
+    Vector3 v0 = transform.applyPoint(this.v0);
+    Vector3 v1 = transform.applyPoint(this.v1);
+    Vector3 v2 = transform.applyPoint(this.v2);
+    Vector3 v0v1 = v1.subtract(v0);
+    Vector3 v0v2 = v2.subtract(v0);
+    Vector3 direction = ray.getDirection();
+
+    Vector3 p = direction.crossProduct(v0v2);
+    double det = v0v1.dotProduct(p);
+    if (Math.abs(det) < DELTA) {
+      return false;
+    }
+    double invDet = 1 / det;
+
+    Vector3 t = ray.getOrigin().subtract(v0);
+    double u = t.dotProduct(p) * invDet;
+    if (u < 0 || u > 1) {
+      return false;
+    }
+
+    Vector3 q = t.crossProduct(v0v1);
+    double v = direction.dotProduct(q) * invDet;
+    if (v < 0 || v + u > 1) {
+      return false;
+    }
+
+    double scale = v0v2.dotProduct(q) * invDet;
+    ray.setScale(scale);
+    return true;
+  }
+}
