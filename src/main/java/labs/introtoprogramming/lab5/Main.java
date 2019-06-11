@@ -6,11 +6,4 @@ import java.awt.AWTException;
 
 public class Main {
 
-  public static void main(String[] args) {
-    try {
-      new Robot().mouseMove((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth() / 2, (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() / 2);
-    } catch (AWTException e) {
-      e.printStackTrace();
-    }
-  }
 }

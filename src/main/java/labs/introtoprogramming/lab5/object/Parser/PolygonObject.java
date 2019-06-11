@@ -30,6 +30,23 @@ public class PolygonObject {
         return polygonNormal;
     }
 
+    public void calculatePolygonNormal(){
+        if(vertices.size() == 3){
+            Vector3 fromOneToTwo = new Vector3(vertices.get(0).getVertexG().x - vertices.get(1).getVertexG().x,
+                    vertices.get(0).getVertexG().y - vertices.get(1).getVertexG().y,
+                    vertices.get(0).getVertexG().z - vertices.get(1).getVertexG().z);
+            Vector3 fromOneToThree = new Vector3(vertices.get(0).getVertexG().x - vertices.get(2).getVertexG().x,
+                    vertices.get(0).getVertexG().y - vertices.get(2).getVertexG().y,
+                    vertices.get(0).getVertexG().z - vertices.get(2).getVertexG().z);
+
+            polygonNormal = new Vector3(fromOneToTwo.x*fromOneToThree.y + fromOneToThree.x*fromOneToTwo.y,
+                    fromOneToThree.x*fromOneToTwo.z + fromOneToThree.z*fromOneToTwo.x,
+                    fromOneToTwo.y*fromOneToThree.z + fromOneToThree.y*fromOneToTwo.z);
+
+        }
+
+    }
+
     public void setPolygonNormal(Vector3 polygonNormal) {
         this.polygonNormal = polygonNormal;
     }

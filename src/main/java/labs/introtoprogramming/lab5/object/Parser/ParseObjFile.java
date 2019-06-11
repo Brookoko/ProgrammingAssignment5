@@ -144,6 +144,7 @@ public class ParseObjFile {
 
         }
 
+        polygonObject.calculatePolygonNormal();
         polygons.add(polygonObject);
     }
 }
