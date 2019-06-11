@@ -2,8 +2,6 @@ package labs.introtoprogramming.lab5.object.Parser;
 
 import java.util.logging.Logger;
 
-import static java.util.logging.Level.SEVERE;
-
 public class StringUtils {
     private static Logger log = Logger.getLogger(StringUtils.class.getName());
 
@@ -19,13 +17,11 @@ public class StringUtils {
         String[] vertexStrings = list.split(" ");
         temp = vertexStrings[0].split("/");
         boolean mark = true;
-        Integer[] parsed;
         if (!temp[1].equals("")) {
             mark = false;
-            parsed = new Integer[vertexStrings.length * 4];
-        } else {
-            parsed = new Integer[vertexStrings.length * 3];
         }
+        Integer[] parsed = new Integer[vertexStrings.length * 3];
+
 
         int j = 0;
         for (int i = 0; i < vertexStrings.length; i++) {
@@ -38,7 +34,6 @@ public class StringUtils {
             } else {
                 temp = vertexStrings[i].split("/");
                 parsed[j] = Integer.parseInt(temp[0]);
-                parsed[++j] = Integer.parseInt(temp[1]);
                 parsed[++j] = Integer.parseInt(temp[2]);
 
 
@@ -49,9 +44,6 @@ public class StringUtils {
         }
         return parsed;
     }
-
-
-
 
 
 }

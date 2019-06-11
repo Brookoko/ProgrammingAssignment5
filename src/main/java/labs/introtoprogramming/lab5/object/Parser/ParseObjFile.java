@@ -4,6 +4,7 @@ import labs.introtoprogramming.lab5.geometry.Vector3;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 import static java.util.logging.Level.INFO;
@@ -20,44 +21,36 @@ public class ParseObjFile {
     private final static String OBJ_VERTEX = "v";
     private final static String OBJ_FACE = "f";
 
-    private ArrayList<Vector3> verticesNormals = new ArrayList<>();
-    private ArrayList<Vector3> verticesGeometry = new ArrayList<>();
+    private List<Vector3> verticesNormals = new ArrayList<>();
+    private List<Vector3> verticesGeometry = new ArrayList<>();
     private PolygonObject polygonObject = null;
 
-    File objFile = null;
 
-
-    public ParseObjFile(String filename) throws FileNotFoundException, IOException {
+    public ParseObjFile(InputStream is) throws FileNotFoundException, IOException {
 
         polygonObject = new PolygonObject();
-        parseObjFile(filename);
+        parseObjFile(is);
 
     }
 
     /**
-     * This part pars object file.
-     *
-     * @param objFilename
+     * This is part to parse object file
+     * @param is
      * @throws FileNotFoundException
      * @throws IOException
      */
-    private void parseObjFile(String objFilename) throws FileNotFoundException, IOException {
+    private void parseObjFile(InputStream is) throws FileNotFoundException, IOException {
         int lineCount = 0;
         InputStreamReader fileReader;
         BufferedReader bufferedReader;
 
-        objFile = new File(objFilename);
-        fileReader = new InputStreamReader(new FileInputStream(objFilename), "UTF-8");
+        fileReader = new InputStreamReader(is, "UTF-8");
         bufferedReader = new BufferedReader(fileReader);
 
         String line;
 
         // read .obj file
-        while (true) {
-            line = bufferedReader.readLine();
-            if (null == line) {
-                break;
-            }
+        while ((line = bufferedReader.readLine()) != null) {
 
             line = line.trim();
 

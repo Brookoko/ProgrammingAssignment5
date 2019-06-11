@@ -3,25 +3,25 @@ package labs.introtoprogramming.lab5.object.Parser;
 import labs.introtoprogramming.lab5.scene.SceneObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PolygonObject extends SceneObject {
-    private ArrayList<Vertex> vertices = new ArrayList<>();
-    private ArrayList<Polygon> polygons = new ArrayList<>();
+    private List<Vertex> vertices = new ArrayList<>();
+    private List<Polygon> polygons = new ArrayList<>();
 
-    public ArrayList<Vertex> getVertices() {
+    public List<Vertex> getVertices() {
         return vertices;
     }
 
-
-    public ArrayList<Polygon> getPolygons() {
+    public List<Polygon> getPolygons() {
         return polygons;
     }
 
-    public void addVertex(Vertex vertex){
+    public void addVertex(Vertex vertex) {
         vertices.add(vertex);
     }
 
-    public void addPolygon(Polygon polygon){
+    public void addPolygon(Polygon polygon) {
         polygons.add(polygon);
     }
 }
