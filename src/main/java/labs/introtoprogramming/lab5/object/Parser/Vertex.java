@@ -25,7 +25,6 @@ public class Vertex {
         return vertexN;
     }
 
-
     public String toString() {
         return vertexG + "|" + vertexN;
     }

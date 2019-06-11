@@ -39,7 +39,7 @@ public class ParseObjFile {
      * @throws FileNotFoundException
      * @throws IOException
      */
-    private void parseObjFile(InputStream is) throws FileNotFoundException, IOException {
+    private void parseObjFile(InputStream is) throws IOException {
         int lineCount = 0;
         InputStreamReader fileReader;
         BufferedReader bufferedReader;
@@ -78,14 +78,12 @@ public class ParseObjFile {
         log.log(INFO, "Loaded " + lineCount + " lines");
     }
 
-
     public PolygonObject getPolygonObject() {
         return polygonObject;
     }
 
     /**
      * Create vertex( just coordinates of each one) from data of file.
-     *
      * @param line
      */
 
@@ -98,10 +96,8 @@ public class ParseObjFile {
         verticesGeometry.add(new Vector3(result[0], result[1], result[2]));
     }
 
-
     /**
      * Create normal-data of vertex
-     *
      * @param line
      */
     private void processVertexNormal(String line) {
@@ -118,8 +114,6 @@ public class ParseObjFile {
         line = line.substring(OBJ_FACE.length()).trim();
         Integer[] vertexIndexAry = StringUtils.parseCodeLine(line);
         addPolygon(vertexIndexAry);
-
-
     }
 
     public void addPolygon(Integer[] vertexIndices) {

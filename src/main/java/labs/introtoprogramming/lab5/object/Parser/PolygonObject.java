@@ -12,7 +12,6 @@ public class PolygonObject extends SceneObject {
     public List<Vertex> getVertices() {
         return vertices;
     }
-
     public List<Polygon> getPolygons() {
         return polygons;
     }

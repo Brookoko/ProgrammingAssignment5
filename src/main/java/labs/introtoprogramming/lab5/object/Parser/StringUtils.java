@@ -5,7 +5,6 @@ import java.util.logging.Logger;
 public class StringUtils {
     private static Logger log = Logger.getLogger(StringUtils.class.getName());
 
-
     public static Integer[] parseCodeLine(String list) {
         if (list == null) {
             return null;
