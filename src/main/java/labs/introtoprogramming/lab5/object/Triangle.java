@@ -56,7 +56,28 @@ public class Triangle extends SceneObject {
     }
 
     double scale = v0v2.dotProduct(q) * invDet;
+    if (scale < 0) {
+      return false;
+    }
     ray.setScale(scale);
     return true;
+  }
+
+  @Override
+  public Box getBoundary() {
+    Vector3 v0 = transform.applyPoint(this.v0);
+    Vector3 v1 = transform.applyPoint(this.v1);
+    Vector3 v2 = transform.applyPoint(this.v2);
+    Vector3 lower = new Vector3(
+            Math.min(Math.min(v0.x, v1.x), v2.x),
+            Math.min(Math.min(v0.y, v1.y), v2.y),
+            Math.min(Math.min(v0.z, v1.z), v2.z)
+    );
+    Vector3 upper = new Vector3(
+            Math.max(Math.max(v0.x, v1.x), v2.x),
+            Math.max(Math.max(v0.y, v1.y), v2.y),
+            Math.max(Math.max(v0.z, v1.z), v2.z)
+    );
+    return new Box(new Transform(), lower, upper);
   }
 }

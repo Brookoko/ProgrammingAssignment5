@@ -65,4 +65,21 @@ public class TriangleTests {
     assertFalse(triangle.intersect(ray));
     assertEquals(1, ray.getScale(), DELTA);
   }
+
+  @Test
+  public void testNoIntersectionOppositeDirection() {
+    Ray ray = new Ray(Vector3.ZERO, Vector3.FORWARD);
+    Triangle triangle = new Triangle(new Transform(Vector3.FORWARD.multiply(-9)),
+            Vector3.RIGHT, Vector3.UP, Vector3.RIGHT.multiply(-1));
+    assertFalse(triangle.intersect(ray));
+    assertEquals(1, ray.getScale(), DELTA);
+  }
+
+  @Test
+  public void testBoundary() {
+    Triangle triangle = new Triangle(new Transform(), Vector3.RIGHT, Vector3.FORWARD, Vector3.UP);
+    Box boundary = triangle.getBoundary();
+    assertEquals(Vector3.ONE, boundary.upperBounds);
+    assertEquals(Vector3.ZERO, boundary.lowerBounds);
+  }
 }
