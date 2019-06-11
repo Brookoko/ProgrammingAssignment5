@@ -18,9 +18,7 @@ public class Polygon {
     }
 
     public void addVertex(Vertex vertex) {
-
         vertices.add(vertex);
-
     }
 
     public void setVertices(ArrayList<Vertex> vertices) {
@@ -38,7 +36,6 @@ public class Polygon {
             Vector3 fromOneToThree = vertices.get(0).getVertexG().subtract(vertices.get(2).getVertexG());
             polygonNormal = fromOneToTwo.crossProduct(fromOneToThree);
         }
-
     }
 
     public void setPolygonNormal(Vector3 polygonNormal) {

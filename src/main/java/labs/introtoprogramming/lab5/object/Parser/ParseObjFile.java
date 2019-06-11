@@ -12,25 +12,19 @@ import static java.util.logging.Level.WARNING;
 
 public class ParseObjFile {
     private Logger log = Logger.getLogger(ParseObjFile.class.getName());
-
     /**
      * String indicators of parameter in .obj file.
      */
-
     private final static String OBJ_VERTEX_NORMAL = "vn";
     private final static String OBJ_VERTEX = "v";
     private final static String OBJ_FACE = "f";
-
     private List<Vector3> verticesNormals = new ArrayList<>();
     private List<Vector3> verticesGeometry = new ArrayList<>();
     private PolygonObject polygonObject = null;
 
-
     public ParseObjFile(InputStream is) throws FileNotFoundException, IOException {
-
         polygonObject = new PolygonObject();
         parseObjFile(is);
-
     }
 
     /**
@@ -39,19 +33,17 @@ public class ParseObjFile {
      * @throws FileNotFoundException
      * @throws IOException
      */
+
     private void parseObjFile(InputStream is) throws IOException {
         int lineCount = 0;
         InputStreamReader fileReader;
         BufferedReader bufferedReader;
-
         fileReader = new InputStreamReader(is, "UTF-8");
         bufferedReader = new BufferedReader(fileReader);
-
         String line;
 
         // read .obj file
         while ((line = bufferedReader.readLine()) != null) {
-
             line = line.trim();
 
             if (line.length() == 0) {
@@ -138,5 +130,13 @@ public class ParseObjFile {
 
         polygon.calculatePolygonNormalTriangle();
         polygonObject.addPolygon(polygon);
+    }
+
+    public List<Vector3> getVerticesNormals() {
+        return verticesNormals;
+    }
+
+    public List<Vector3> getVerticesGeometry() {
+        return verticesGeometry;
     }
 }
