@@ -56,6 +56,9 @@ public class Triangle extends SceneObject {
     }
 
     double scale = v0v2.dotProduct(q) * invDet;
+    if (scale < 0) {
+      return false;
+    }
     ray.setScale(scale);
     return true;
   }

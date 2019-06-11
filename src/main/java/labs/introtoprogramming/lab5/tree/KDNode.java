@@ -20,11 +20,11 @@ public class KDNode {
 
   public SceneObject intersect(Ray ray) {
     if (boundaryBox.intersect(ray)) {
+      double minDist = Double.MAX_VALUE;
       SceneObject res = checkChildren(ray);
       if (res != null) {
-        return res;
+        minDist = ray.getScale();
       }
-      double minDist = Double.MAX_VALUE;
       for (SceneObject obj : objects) {
         if (obj.intersect(ray)) {
           double dist = ray.getScale();
@@ -40,16 +40,21 @@ public class KDNode {
   }
 
   private SceneObject checkChildren(Ray ray) {
-    SceneObject res;
+    SceneObject res = null;
+    double minDist = Double.MAX_VALUE;
     for (KDNode node : children) {
       if (node == null) {
         continue;
       }
-      res = node.intersect(ray);
-      if (res != null) {
-        return res;
+      SceneObject obj = node.intersect(ray);
+      if (obj != null) {
+        double dist = ray.getScale();
+        if (dist < minDist) {
+          res = obj;
+          minDist = dist;
+        }
       }
     }
-    return null;
+    return res;
   }
 }
