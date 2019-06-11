@@ -9,9 +9,14 @@ public class ParseObjFileTest {
 
 
     @Test
-    public void ParseTest() throws IOException {
-        ParseObjFile obj = new ParseObjFile(new FileInputStream(
-                "LibertStatue.obj"));
+    public void ParseTest() {
+        ParseObjFile obj = null;
+        try {
+            obj = new ParseObjFile(new FileInputStream(
+                    "LibertStatue.obj"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         obj.getPolygonObject().toString();
 
 
