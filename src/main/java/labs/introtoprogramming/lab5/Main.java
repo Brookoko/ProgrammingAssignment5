@@ -7,6 +7,7 @@ import labs.introtoprogramming.lab5.graphics.Raster;
 import labs.introtoprogramming.lab5.gui.SceneRendererWindow;
 import labs.introtoprogramming.lab5.scene.Scene;
 import labs.introtoprogramming.lab5.scene.Camera;
+import labs.introtoprogramming.lab5.scene.SceneObject;
 import labs.introtoprogramming.lab5.scene.Transform;
 import labs.introtoprogramming.lab5.scenes.DemoScene;
 
@@ -22,9 +23,11 @@ public class Main {
 
   private void run() {
     Scene demoScene = new DemoScene();
+    SceneObject empty = new SceneObject();
     Camera camera = createCamera();
+    camera.getTransform().setParent(empty.getTransform());
     demoScene.addSceneObjects(camera);
-    demoScene.addController(new KeyAndMouseMovementController(camera));
+    demoScene.addController(new KeyAndMouseMovementController(empty));
 
     SceneRendererWindow window = new SceneRendererWindow(demoScene);
     window.setTitle(APP_TILE);
