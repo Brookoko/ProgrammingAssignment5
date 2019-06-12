@@ -72,7 +72,8 @@ public class BasicRaytracingRender implements SceneRender {
       double bias = 0.001;
       Ray nRay = new Ray(primaryRay.getPoint().add(hitNormal.multiply(bias)), light.getTransform().rotation().multiply(-1));
       boolean visible = findInteraction(nRay, scene, light.getMaxDist(primaryRay.getPoint())) == null;
-      if (visible) {
+      if (visible || true) {
+        System.out.println(light.illuminate(hitNormal, light.getTransform().position().distance(obj.getTransform().position())));
         c += obj.albedo() / Math.PI * light.illuminate(hitNormal, light.getTransform().position().distance(obj.getTransform().position()));
       }
     }

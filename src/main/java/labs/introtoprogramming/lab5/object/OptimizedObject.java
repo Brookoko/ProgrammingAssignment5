@@ -1,6 +1,7 @@
 package labs.introtoprogramming.lab5.object;
 
 import labs.introtoprogramming.lab5.geometry.Ray;
+import labs.introtoprogramming.lab5.geometry.Vector3;
 import labs.introtoprogramming.lab5.scene.SceneObject;
 import labs.introtoprogramming.lab5.scene.Transform;
 import labs.introtoprogramming.lab5.tree.KDTree;
@@ -26,5 +27,14 @@ public class OptimizedObject extends SceneObject {
   @Override
   public Box getBoundary() {
     return tree.boundary();
+  }
+
+  @Override
+  public Vector3 getNormal(Vector3 hitPoint) {
+    SceneObject obj = tree.getIntersection();
+    if (obj == null) {
+      return super.getNormal(hitPoint);
+    }
+    return obj.getNormal(hitPoint);
   }
 }

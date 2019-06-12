@@ -13,6 +13,9 @@ public class DistantLight extends Light {
 
   @Override
   public double illuminate(Vector3 normal, double distance) {
+    System.out.println(normal);
+    System.out.println(getTransform().rotation().multiply(-1));
+    System.out.println(normal.dotProduct(getTransform().rotation().multiply(-1)));
     return Math.max(intensity() * normal.dotProduct(getTransform().rotation().multiply(-1)), 0);
   }
 

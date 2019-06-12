@@ -7,7 +7,7 @@ import labs.introtoprogramming.lab5.object.Box;
 
 public class SceneObject {
 
-  private static double DEFAULT_ALBEDO = 0.18;
+  private static double DEFAULT_ALBEDO = 1;
 
   protected Transform transform;
   protected Mesh mesh;
@@ -44,7 +44,7 @@ public class SceneObject {
     return false;
   }
 
-  public Vector3 getNormal(Vector3 hitPoint) { return Vector3.ZERO; }
+  public Vector3 getNormal(Vector3 hitPoint) { return hitPoint.subtract(transform.position()).normalize(); }
 
   public Box getBoundary() {
     return null;

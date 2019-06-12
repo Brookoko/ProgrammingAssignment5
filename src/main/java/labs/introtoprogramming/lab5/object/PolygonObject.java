@@ -1,6 +1,7 @@
 package labs.introtoprogramming.lab5.object;
 
 import labs.introtoprogramming.lab5.geometry.Ray;
+import labs.introtoprogramming.lab5.geometry.Vector3;
 import labs.introtoprogramming.lab5.object.Triangle;
 import labs.introtoprogramming.lab5.scene.SceneObject;
 import labs.introtoprogramming.lab5.scene.Transform;
@@ -35,5 +36,13 @@ public class PolygonObject extends SceneObject {
             }
         }
         return intersection != null;
+    }
+
+    @Override
+    public Vector3 getNormal(Vector3 hitPoint) {
+        if (intersection == null) {
+            return super.getNormal(hitPoint);
+        }
+        return intersection.getNormal(hitPoint);
     }
 }

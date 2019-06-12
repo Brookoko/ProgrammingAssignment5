@@ -80,4 +80,11 @@ public class Triangle extends SceneObject {
     );
     return new Box(new Transform(), lower, upper);
   }
+
+  @Override
+  public Vector3 getNormal(Vector3 hitPoint) {
+    Vector3 v1v0 = v1.subtract(v0);
+    Vector3 v2v0 = v2.subtract(v0);
+    return v1v0.crossProduct(v2v0);
+  }
 }
