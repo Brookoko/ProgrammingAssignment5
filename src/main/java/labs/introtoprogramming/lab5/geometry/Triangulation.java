@@ -15,11 +15,12 @@ public class Triangulation {
     for (Polygon pol : polygons) {
       List<Vertex> ver = pol.getVertices();
       Vector3 pillar = ver.get(0).geometry;
-      for (int i = 0; i < ver.size() - 1; i++) {
+      for (int i = 1; i < ver.size() - 1; i++) {
         triangles.add(new Triangle(new Transform(),
                 pillar, ver.get(i).geometry, ver.get(i + 1).geometry));
       }
     }
+    System.out.println(triangles.size());
     return triangles;
   }
 }

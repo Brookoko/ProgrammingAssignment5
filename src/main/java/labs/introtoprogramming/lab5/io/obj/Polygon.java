@@ -12,13 +12,4 @@ public class Polygon {
     public List<Vertex> getVertices() {
         return vertices;
     }
-
-    public String toString() {
-        StringBuilder s = new StringBuilder();
-        for (Vertex v : vertices) {
-            s.append(v.geometry.toString())
-            .append("  ||  ");
-        }
-        return s.toString();
-    }
 }

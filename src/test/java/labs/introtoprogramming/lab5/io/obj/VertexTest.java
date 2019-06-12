@@ -1,4 +1,4 @@
-package labs.introtoprogramming.lab5.object.Parser;
+package labs.introtoprogramming.lab5.io.obj;
 
 import labs.introtoprogramming.lab5.geometry.Vector3;
 import labs.introtoprogramming.lab5.io.obj.Vertex;

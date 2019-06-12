@@ -104,12 +104,12 @@ public class ParseObjFile implements ObjReader {
 
         for (int i = 0; i < vertexStrings.length; i++) {
             String[] temp = vertexStrings[i].split("/");
-            Vector3 geometry = verticesGeometry.get(Integer.parseInt(temp[0]));
+            Vector3 geometry = verticesGeometry.get(Integer.parseInt(temp[0]) - 1);
             int index = -1;
-            if (temp.length == 3) {
+            if (temp.length >= 3) {
                 index = Integer.parseInt(temp[2]);
             }
-            Vector3 normal = index == -1 ? Vector3.ZERO : verticesNormals.get(index);
+            Vector3 normal = index == -1 ? Vector3.ZERO : verticesNormals.get(index - 1);
             vertices.add(new Vertex(geometry, normal));
         }
         return new Polygon(vertices);
