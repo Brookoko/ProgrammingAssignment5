@@ -16,6 +16,7 @@ import labs.introtoprogramming.lab5.scene.Camera;
 import labs.introtoprogramming.lab5.scene.SceneObject;
 import labs.introtoprogramming.lab5.scene.Transform;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -36,17 +37,17 @@ public class Main {
     SceneObject empty = new SceneObject();
     ParseObjFile parser = new ParseObjFile();
     parser.load(new FileInputStream(new File("assets/COW.obj")));
-    OptimizedObject obj = new OptimizedObject(new Transform(),
+    OptimizedObject obj = new OptimizedObject(new Transform(Vector3.ZERO, new Vector3(90, 0, 30)),
             parser.getPolygons().stream().map(el -> (SceneObject) el).collect(Collectors.toList()));
+    obj.getMesh().setColor(new Color(255, 0, 0));
     Camera camera = createCamera();
-    Light light = new DistantLight(new Transform(Vector3.ONE.multiply(10)), 1000);
+    Light light = new DistantLight(new Transform(Vector3.ONE.multiply(10)), 3000);
     camera.getTransform().setParent(empty.getTransform());
-    empty.getTransform().setRotation(new Vector3(0, 0, 20));
-//    camera.lookAt(new Vector3(0, 0, 20), obj.getTransform().position());
+    camera.lookAt(new Vector3(0, 0, 12), obj.getTransform().position());
     demoScene.addSceneObjects(camera);
     demoScene.addSceneObjects(obj);
     demoScene.addSceneObjects(light);
-    demoScene.addController(new KeyAndMouseMovementController(empty));
+//    demoScene.addController(new KeyAndMouseMovementController(empty));
 
     SceneRendererWindow window = new SceneRendererWindow(demoScene);
     window.setTitle(APP_TILE);
