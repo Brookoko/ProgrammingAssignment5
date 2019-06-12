@@ -1,20 +1,17 @@
 package labs.introtoprogramming.lab5.object.Parser;
 
 import labs.introtoprogramming.lab5.geometry.Vector3;
+import labs.introtoprogramming.lab5.io.obj.Vertex;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class VertexTest {
-    private static final double DELTA = 1e-10;
 
     @Test
     public void testVertex() {
-        Vertex vertex = new Vertex();
-        vertex.setVertexN(new Vector3(0, 0, 0));
-        vertex.setVertexG(new Vector3(1, 1, 1));
-        assertEquals(1, vertex.getVertexG().x, DELTA);
-        assertEquals(0, vertex.getVertexN().x, DELTA);
-        vertex.toString();
+        Vertex vertex = new Vertex(Vector3.ZERO, Vector3.ONE);
+        assertEquals(Vector3.ZERO, vertex.geometry);
+        assertEquals(Vector3.ONE, vertex.normal);
     }
 }

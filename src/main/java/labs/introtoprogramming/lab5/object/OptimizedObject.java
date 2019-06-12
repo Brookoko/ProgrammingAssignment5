@@ -12,6 +12,9 @@ public class OptimizedObject extends SceneObject {
 
   public OptimizedObject(Transform transform, List<SceneObject> objects) {
     super(transform);
+    for (SceneObject obj : objects) {
+      obj.getTransform().setParent(transform);
+    }
     tree = new KDTree(objects);
   }
 

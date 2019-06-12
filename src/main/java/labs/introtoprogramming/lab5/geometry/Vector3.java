@@ -92,4 +92,9 @@ public class Vector3 implements Cloneable {
   public Object clone() throws CloneNotSupportedException {
     return super.clone();
   }
+
+  @Override
+  public String toString() {
+    return x + " : " + y + " : " + z;
+  }
 }
