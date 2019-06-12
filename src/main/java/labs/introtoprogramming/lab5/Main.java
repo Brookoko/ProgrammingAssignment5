@@ -35,13 +35,14 @@ public class Main {
     Scene demoScene = new BasicScene();
     SceneObject empty = new SceneObject();
     ParseObjFile parser = new ParseObjFile();
-    parser.load(new FileInputStream(new File("assets/box.obj")));
+    parser.load(new FileInputStream(new File("assets/COW.obj")));
     OptimizedObject obj = new OptimizedObject(new Transform(),
             parser.getPolygons().stream().map(el -> (SceneObject) el).collect(Collectors.toList()));
     Camera camera = createCamera();
-    Light light = new DistantLight(new Transform(Vector3.ONE.multiply(10), new Vector3(0, 90, 45)), 1000);
+    Light light = new DistantLight(new Transform(Vector3.ONE.multiply(10)), 1000);
     camera.getTransform().setParent(empty.getTransform());
-    camera.lookAt(new Vector3(0, 0, 3), obj.getTransform().position());
+    empty.getTransform().setRotation(new Vector3(0, 0, 20));
+//    camera.lookAt(new Vector3(0, 0, 20), obj.getTransform().position());
     demoScene.addSceneObjects(camera);
     demoScene.addSceneObjects(obj);
     demoScene.addSceneObjects(light);

@@ -113,6 +113,7 @@ public class KDTree {
    }
 
   public boolean intersect(Ray ray) {
+    intersection = null;
     intersection = root.intersect(ray);
     return intersection != null;
   }

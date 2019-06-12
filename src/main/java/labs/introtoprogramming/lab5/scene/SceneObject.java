@@ -7,7 +7,7 @@ import labs.introtoprogramming.lab5.object.Box;
 
 public class SceneObject {
 
-  private static double DEFAULT_ALBEDO = 1;
+  private static double DEFAULT_ALBEDO = 0.18;
 
   protected Transform transform;
   protected Mesh mesh;

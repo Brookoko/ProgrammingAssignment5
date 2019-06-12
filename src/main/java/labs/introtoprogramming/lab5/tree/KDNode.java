@@ -34,6 +34,7 @@ public class KDNode {
           }
         }
       }
+      ray.setScale(minDist == Double.MAX_VALUE ? 1 : minDist);
       return res;
     }
     return null;
@@ -55,6 +56,7 @@ public class KDNode {
         }
       }
     }
+    ray.setScale(minDist == Double.MAX_VALUE ? 1 : minDist);
     return res;
   }
 }
