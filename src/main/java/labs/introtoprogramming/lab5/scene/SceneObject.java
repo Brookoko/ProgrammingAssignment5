@@ -1,12 +1,17 @@
 package labs.introtoprogramming.lab5.scene;
 
+import java.awt.Color;
 import labs.introtoprogramming.lab5.geometry.Ray;
+import labs.introtoprogramming.lab5.geometry.Vector3;
 import labs.introtoprogramming.lab5.object.Box;
 
 public class SceneObject {
 
+  private static double DEFAULT_ALBEDO = 0.18;
+
   protected Transform transform;
   protected Mesh mesh;
+  protected double albedo = DEFAULT_ALBEDO;
 
   /**
    * Base class of scene objects.
@@ -39,7 +44,13 @@ public class SceneObject {
     return false;
   }
 
+  public Vector3 getNormal(Vector3 hitPoint) { return Vector3.ZERO; }
+
   public Box getBoundary() {
     return null;
+  }
+
+  public double albedo() {
+    return albedo;
   }
 }
